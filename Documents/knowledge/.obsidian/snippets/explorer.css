@@ -1,0 +1,36 @@
+/* enable display full file name */
+.nav-file-title-content,
+.nav-folder-title-content {
+    white-space: break-spaces;
+}
+
+
+/* customization of files colors */
+.nav-file-title[data-path$=".md"] .nav-file-title-content {
+  color: #b5bfe2;
+}
+
+.nav-file-title[data-path$=".pdf"] .nav-file-title-content {
+  color: #f9e2af;
+}
+
+.nav-file-title[data-path$=".mp3"] .nav-file-title-content {
+  color: #a6e3a1;
+}
+
+.nav-file-title[data-path$=".mp4"] .nav-file-title-content {
+  color: #f38ba8;
+}
+
+.nav-file-title[data-path$=".png"] .nav-file-title-content,
+.nav-file-title[data-path $= ".jpg"] .nav-file-title-content,
+.nav-file-title[data-path $= ".svg"] .nav-file-title-content,
+.nav-file-title[data-path $= ".jpeg"] .nav-file-title-content {
+  color: #89b4fa;
+}
+
+
+/* hide folder icons */
+.nav-folder-title .nav-folder-title-content::before {
+  display: none !important;
+}

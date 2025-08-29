@@ -1,0 +1,5 @@
+{
+  "new-card-insertion-method": "append",
+  "show-checkboxes": true,
+  "new-line-trigger": "shift-enter"
+}

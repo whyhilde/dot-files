@@ -1,0 +1,28 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+
+    .click-target-container *, .top-sites-list * {
+        color: #fff !important ;
+        text-shadow: 2px 2px 2px #222 !important ;
+    }
+
+
+    body {
+        background: #1E1E2E !important;
+    }
+
+
+    .logo-and-wordmark {
+        display: none !important;
+    }
+
+
+    .body-wrapper {
+        display: none !important;
+    }
+    
+    
+    .personalize-button {
+        display: none !important;
+    }
+
+}

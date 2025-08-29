@@ -1,0 +1,13 @@
+{
+  "promptDelete": false,
+  "vimMode": false,
+  "trashOption": "local",
+  "showInlineTitle": false,
+  "showUnsupportedFiles": true,
+  "showLineNumber": false,
+  "readableLineLength": true,
+  "defaultViewMode": "source",
+  "foldIndent": false,
+  "foldHeading": false,
+  "livePreview": true
+}

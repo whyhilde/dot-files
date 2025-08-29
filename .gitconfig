@@ -1,0 +1,50 @@
+[user]
+  name = whyhilde
+  email = whyhilde@gmail.com
+
+
+[core]
+  editor = nvim
+  pager = delta
+
+
+[interactive]
+  diffFilter = delta
+
+
+[delta]
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = "catppuccin-mocha"
+  navigate = false
+  file-decoration-style = "omit"
+  hunk-header-decoration-style = "omit"
+  line-numbers-left-format = "{nm:>4} "
+  line-numbers-right-format = "{np:>4} "
+
+
+[merge]
+  conflictstyle = diff3
+
+
+[diff]
+  colorMoved = default
+
+
+[help]
+	autocorrect = 1
+
+
+[alias]
+  ac = !git add -A && git commit -m
+  co = checkout
+  br = branch
+  st = status
+  df = diff
+  up = pull --all --prune
+  tree = log --graph --oneline --all --decorate
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+
+[credential]
+  helper = store

@@ -1,0 +1,183 @@
+/* global colors */
+:root {
+    --accent-color: 30, 30, 46;
+    --second-accent-color: 0, 0, 0;
+    --third-accent-color: 0, 0, 0;
+    --light-color: 255, 255, 255;
+    --dark-color: 0, 0, 0;
+}
+
+
+/* customization tabs background color */
+#TabsToolbar {
+	background-color: rgb(var(--accent-color)) !important;
+}
+
+
+/* hide link display when you click */
+#statuspanel {
+	display: none !important;
+}
+
+
+/* hide extensions icon */
+#unified-extensions-button {
+	display: none !important;
+}
+
+
+/* customisation tabs */
+.tabbrowser-tab { 
+	height: 45px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+
+/* customisation tabs font */
+.tab-text {
+    font-family: JetBrains Mono !important;
+    font-size: 12px !important;
+    color: #FFFFFF !important;
+}
+
+
+/* customization tabs border */
+.tab-background {
+	border-radius: 0px 0px 0px 0px !important;
+}
+
+
+/* customisation unselected tabs */
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { 
+	max-width: 160px !important; 
+	min-width: 160px !important; 
+} 
+
+
+/* customisation selected tabs */ 
+.tabbrowser-tab[selected][fadein]:not([pinned]) { 
+	max-width: 200px !important;
+	min-width: 200px !important;
+}
+
+
+/* customisation selected tabs color and disable shadow */
+.tabbrowser-tab[selected="true"] .tab-background {
+	box-shadow: none !important;
+}
+
+
+/* customization text color in dropdown menu */
+.toolbarbutton-text { 
+	color: #FFFFFF !important;
+}
+
+
+/* customisation url bar */
+#urlbar-input { 
+	font-size: 12pt !important; 
+	color: #FFFFFF !important; 
+	font-family: JetBrains Mono !important;  
+	text-align: center !important;
+	background-color: rgb(var(--accent-color)) !important;
+}
+
+.urlbar-input-container {
+	background-color: rgb(var(--accent-color)) !important;
+}
+
+
+/* disable search results frame and shadow */
+#urlbar-background { 
+  background-color: rgb(var(--accent-color)) !important; 
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+/* hide placeholder in url bar */
+#urlbar-input::placeholder {
+	color: transparent !important;
+}
+
+
+/* hide icons in url bar */
+#urlbar-identity-icon {
+	display: none !important;
+}
+
+#tracking-protection-icon-container {
+	display: none !important;
+}
+
+#star-button-box {
+	display: none !important;
+}
+
+#urlbar-translation-icon, #translations-icon {
+    display: none !important;
+}
+
+#page-action-buttons { 
+	display: none !important;
+}
+
+.search-panel-search-icon {
+	display: none !important;
+}
+
+.identity-box-button {
+	display: none !important;
+}
+
+#urlbar-searchmode-switcher {
+	display: none !important;
+}
+
+.urlbar-revert-button {
+	display: none !important;
+}
+
+#canvas-notification-icon {
+	display: none !important;
+}
+
+
+/* customization icons */
+#back-button > .toolbarbutton-icon{ 
+	--backbutton-background: transparent !important; 
+	border: none !important; 
+} 
+
+#back-button { 
+	list-style-image: url("left-arrow.svg") !important; 
+} 
+
+#forward-button { 
+	list-style-image: url("right-arrow.svg") !important; 
+}
+
+#PanelUI-menu-button {
+	list-style-image: url("menu-button.svg") !important;
+}
+
+
+/* hide caption buttons */
+hbox.titlebar-buttonbox-container:nth-child(6) > hbox:nth-child(1) > toolbarbutton:nth-child(1) {
+	display: none !important;
+}
+
+hbox.titlebar-buttonbox-container:nth-child(6) > hbox:nth-child(1) > toolbarbutton:nth-child(2) {
+	display: none !important;
+}
+
+hbox.titlebar-buttonbox-container:nth-child(6) > hbox:nth-child(1) > toolbarbutton:nth-child(3) {
+	display: none !important;
+}
+
+hbox.titlebar-buttonbox-container:nth-child(6) > hbox:nth-child(1) > toolbarbutton:nth-child(4) {
+	display: none !important;
+}

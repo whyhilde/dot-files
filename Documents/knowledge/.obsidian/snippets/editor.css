@@ -1,0 +1,31 @@
+/* disable arrows in editor */
+.heading-collapse-indicator .svg-icon, .cm-fold-indicator .collapse-indicator .svg-icon {
+  display: none !important;
+}
+
+
+/* customization line height */
+.cm-content, 
+.cm-line {
+    line-height: 1.9;
+}
+
+
+/* customization tags */
+a.tag {
+  border-radius: 0px !important;
+  color: white;
+  background-color: var(--text-accent);
+}
+
+span.cm-hashtag.cm-hashtag {
+  border-radius: 0;
+  color: white;
+  background-color: var(--text-accent);
+}
+
+
+/* hide status bar */
+.status-bar {
+  display: none !important;
+}

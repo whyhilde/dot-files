@@ -1,0 +1,24 @@
+{
+  "cssTheme": "Catppuccin",
+  "accentColor": "#1e1e2e",
+  "theme": "obsidian",
+  "baseFontSize": 20,
+  "interfaceFontFamily": "JetBrains Mono",
+  "showRibbon": false,
+  "textFontFamily": "JetBrains Mono",
+  "showViewHeader": false,
+  "enabledCssSnippets": [
+    "long-file-name",
+    "sdjhv",
+    "disable-arrows",
+    "new-tab",
+    "tabs",
+    "explorer",
+    "dashboard",
+    "workplace",
+    "callout",
+    "editor"
+  ],
+  "monospaceFontFamily": "JetBrains Mono",
+  "baseFontSizeAction": true
+}

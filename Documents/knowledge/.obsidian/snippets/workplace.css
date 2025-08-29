@@ -1,0 +1,28 @@
+/* hide vault selection panel */
+.workspace-sidedock-vault-profile {
+  display: none !important;
+}
+
+
+/* hide panel icons */
+.sidebar-toggle-button.mod-right {
+  display: none !important;
+}
+
+.sidebar-toggle-button.mod-left {
+  display: none !important;
+}
+
+
+/* hide caption buttons */
+.titlebar-button.mod-minimize {
+  display: none !important;
+}
+
+.titlebar-button.mod-maximize {
+  display: none !important;
+}
+
+.titlebar-button.mod-close {
+  display: none !important;
+}

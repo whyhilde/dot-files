@@ -1,0 +1,21 @@
+.workspace-leaf-content[data-type="empty"] .view-content {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.workspace-leaf-content[data-type="empty"] .view-content::before {
+  content: "WELCOME TO OBSIDIAN";
+  font-size: 40px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+
+.workspace-leaf-content[data-type="empty"] .empty-state {
+  display: none !important;
+}
