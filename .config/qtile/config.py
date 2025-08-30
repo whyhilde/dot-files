@@ -62,7 +62,8 @@ keys = [
   Key([mod, "mod1"], "f", lazy.spawn("nautilus")),
   Key([mod, "mod1"], "p", lazy.spawn("pavucontrol --tab=3")),
   Key([mod, "mod1"], "m", lazy.spawn("ghostty -e cmus")),
-  Key(["control", mod], "s", lazy.spawn("flameshot full")),
+  Key(["control", mod], "s", lazy.spawn("flameshot gui")),
+  Key(["control", mod], "f", lazy.spawn("flameshot full")),
 
 ]
 
@@ -148,7 +149,7 @@ screens = [
         widget.Spacer(),
         widget.Wlan(
           interface = "wlan0",
-          update_interval = 1,
+          update_interval = 0.1,
           format = "󰤨",
           disconnected_message = "󰤭",
           foreground = "#89b4fa",
@@ -221,9 +222,8 @@ wl_xcursor_size = 24
 def autostart():
   subprocess.run(["xrandr", "--output", "DP-2", "--mode", "1920x1080", "--rate", "165"])
   subprocess.run(["setxkbmap", "-layout", "us,ru", "-variant", "winkeys", "-option", "grp:win_space_toggle"])
-  subprocess.run(["xset", "r", "rate", "300", "25"])
+  subprocess.run(["xset", "r", "rate", "250", "30"])
   subprocess.Popen("dunst &", shell = True)
-  subprocess.Popen("nm-applet &", shell = True)
   subprocess.Popen("picom --config ~/.config/picom/picom.conf -b", shell = True)
 
 

@@ -53,7 +53,6 @@ vim.opt.showmatch = false              -- disable highlight pair elements
 vim.cmd([[
   highlight FloatBorder guifg=#89b4fa guibg=NONE
   highlight SignColumn guibg=NONE
-  highlight TelescopePromptCounter guifg=#1e1e2e
   highlight TelescopeNormal guibg=NONE
 ]])                                    -- highlight settings
 

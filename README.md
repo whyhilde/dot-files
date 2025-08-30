@@ -8,7 +8,7 @@
 
 ## PROGRAMS
 
-| component                  | program                                              |
+| Distro                     | Arch Linux                                           |
 | -------------------------- | ---------------------------------------------------- |
 | Window Manager and Bar     | [Qtile](https://qtile.org/)                          |
 | Browser                    | [firefox](https://github.com/topics/firefox-browser) |
