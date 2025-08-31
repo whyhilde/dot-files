@@ -47,6 +47,25 @@ vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpo
 
 
 dapui.setup {
+  layouts = {
+    {
+      elements = {
+        { id = "scopes", size = 0.3, },
+        { id = "watches", size = 0.3, },
+        { id = "stacks", size = 0.3, },
+      },
+      size = 0.3,
+      position = "right",
+    },
+    {
+      elements = {
+        { id = "console", size = 0.55, },
+        { id = "repl", size = 0.45, },
+      },
+      position = "bottom",
+      size = 0.25,
+    },
+  },
   icons = {
     expanded = " ",
     collapsed = " ",

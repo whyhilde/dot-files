@@ -28,7 +28,7 @@ version: 1.0 // github: https://github.com/whyhilde
 
 SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
 DEV_PACKAGES = [ "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
-BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg" ]
+BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
 AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "light", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
@@ -290,24 +290,50 @@ def setup_dots():
             )
             print(f"{Cols.INFO}Репозиторий успешно скопирован!{Cols.END}")
             
-            # создаем backup текущего .config если он существует
-            if config_dir.exists():
-                print("Создаем backup текущего .config...")
-                if config_backup.exists():
-                    shutil.rmtree(config_backup)
-                shutil.copytree(config_dir, config_backup)
-                print(f"{Cols.INFO}Backup создан: {config_backup}{Cols.END}")
+            repo_config = temp_path / ".config"
+            if repo_config.exists():
+                # создаем backup текущего .config если он существует
+                if config_dir.exists():
+                    print("Создание копии текущего .config...")
+                    if config_backup.exists():
+                        shutil.rmtree(config_backup)
+                    shutil.copytree(config_dir, config_backup)
+                    print(f"{Cols.INFO}Backup создан в {config_backup}{Cols.END}")
                 
-                # Удаляем оригинальный .config
-                print("Удаляем текущий .config...")
-                shutil.rmtree(config_dir)
+                    # удаляем оригинальный .config
+                    print("Удаляем текущий .config...")
+                    shutil.rmtree(config_dir)
             
-            repo_config = home_dir / temp_path / ".config"
-            # Копируем .config из репозитория
-            print("Копируем .config из репозитория...")
-            shutil.copytree(repo_config, config_dir)
-            print("Конфиги успешно обновлены!")
+                # копируем .config из репозитория
+                print("Копирование .config из репозитория...")
+                shutil.copytree(repo_config, config_dir)
+                print(f"{Cols.INFO}Конфиги успешно обновлены!{Cols.END}")
+            else:
+                print(f"{Cols.WARN}Директория с конфигами не найдена в репозитории.{Cols.END}")
+
+            # копируем указанные файлы из корня репозитория
+            files_to_copy = [ ".zshrc", ".p10k.zsh", ".tmux.conf", "git/.gitconfig" ]
+            print("Копирование остальных конфигов...")
+                
+            for file_name in files_to_copy:
+                source_file = temp_path / file_name
+                dest_file = home_dir / Path(file_name).name
+                    
+                if source_file.exists():
+                    # создаем backup если файл уже существует
+                    if dest_file.exists():
+                        backup_file = home_dir / f"{file_name}_copy"
+                        shutil.copy2(dest_file, backup_file)
+                        print(f"{Cols.HINT}Создана копия: {backup_file}{Cols.END}")
+                        
+                    # копируем файл
+                    shutil.copy2(source_file, dest_file)
+                    print(f"{Cols.INFO}{file_name} успешно обновлен!{Cols.END}")
+                else:
+                    print(f"{Cols.WARN}Файл {file_name} не найден в репозитории.{Cols.END}")
             
+            print(f"{Cols.INFO}Все конфиги успешно обновленны!{Cols.END}")
+
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}Ошибка при клонировании репозитория: {e}{Cols.END}")
             print(f"Stderr: {e.stderr}")
