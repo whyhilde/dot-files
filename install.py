@@ -31,7 +31,7 @@ DEV_PACKAGES = [ "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "z
 BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
-AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "light", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
+AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "light", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
 
 
 
@@ -169,7 +169,10 @@ def install_programs():
     print("Установка программ:")
     for program in SOFTWARE():
         print(f"- {program}")
+    for aur_program in AUR_PACKAGES():
+        print(f"- {aur_program}")
     install_packages(SOFTWARE)
+    install_packages(AUR_PACKAGES)
 
     dev_packages_input = input("Установить пакеты для разработки? [Y/n] ")
     if dev_packages_input == "Y" or dev_packages_input == "":
@@ -386,6 +389,8 @@ def main():
                 if install_yay() == True:
 
                     install_fonts()
+
+                    install_programs()
 
                     change_shell()
                 
