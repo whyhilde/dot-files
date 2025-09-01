@@ -21,7 +21,6 @@ banner = f"""{Cols.HINT}
 ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██║██║██║     ██║  ██║██╔══╝  
 ╚███╔███╔╝██║  ██║   ██║   ██║  ██║██║███████╗██████╔╝███████╗
  ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚═════╝ ╚══════╝
-configuration builder
 version: 1.0 // github: https://github.com/whyhilde
 {Cols.END}"""
 
@@ -31,7 +30,7 @@ DEV_PACKAGES = [ "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "z
 BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
-AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "light", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
+AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
 
 
 
@@ -41,7 +40,6 @@ def update_repositories():
         result = subprocess.run(
             ["pacman", "-Sy"], check = True, text = True, capture_output = True
         )
-        print(result.stdout)
         print(f"{Cols.INFO}Репозитории успешно обновлены!{Cols.END}")
         return True
 
@@ -54,7 +52,7 @@ def update_repositories():
 
 
 def install_yay():
-    print(f"{Cols.HINT}Установка yay...{Cols.END}")
+    print("Установка yay...")
     
     # проверяем, установлен ли yay
     check_yay = subprocess.run("which yay", shell = True, capture_output = True, text = True)
@@ -134,7 +132,7 @@ def install_packages(packages):
     try:
         cmd = ["pacman", "-S", "--noconfirm"] + packages
         
-        # Выполняем команду
+        # выполняем команду
         result = subprocess.run(cmd, check = True, capture_output = True, text = True)
         print(f"{Cols.INFO}Пакеты успешно установлены!{Cols.END}")
         return True
@@ -155,7 +153,7 @@ def install_aur_packages(aur_packages):
     try:
         cmd = ["yay", "-S", "--noconfirm"] + aur_packages
         
-        # Выполняем команду
+        # выполняем команду
         result = subprocess.run(cmd, check = True, capture_output = True, text = True)
         print(f"{Cols.INFO}Пакеты успешно установлены!{Cols.END}")
         return True
