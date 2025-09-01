@@ -25,7 +25,7 @@ version: 1.0 // github: https://github.com/whyhilde
 {Cols.END}"""
 
 
-SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
+SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
 DEV_PACKAGES = [ "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
 BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "lib32-nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
@@ -61,13 +61,13 @@ def install_yay():
     
     # устанавлием необходимые зависимости
     print("Установка зависимостей...")
-    if not subprocess.run("sudo pacman -S --needed --noconfirm base-devel git"):
+    if not subprocess.run(["pacman", "-S", "--noconfirm", "--needed", "base-devel", "git"], check = True):
         return False
     
     # создаем временную директорию и клонируем yay
     temp_dir = "/tmp/yay-install"
     print("Создание временной директории...")
-    if not subprocess.run(f"rm -rf {temp_dir} && mkdir -p {temp_dir}"):
+    if not subprocess.run(["rm", "-rf", temp_dir, "&&", "mkdir", "-p", temp_dir], shell = True, check = True):
         return False
     
     print("Клонирование yay из AUR...")
@@ -99,7 +99,7 @@ def install_fonts():
     try:
         for font in FONTS:
             print(f"Установка {font}...")
-            subprocess.run(["yay", "-S", font, "--noconfirm", "--needed"], check =  True)
+            subprocess.run(["yay", "-S", "--noconfirm", "--needed", font], check =  True)
     
     except subprocess.CalledProcessError as e:
         print(f"{Cols.ERROR}Ошибка при установке шрифтов: {e}{Cols.END}")
