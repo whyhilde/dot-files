@@ -55,35 +55,34 @@ def install_yay():
     print("Установка yay...")
     
     # проверяем, установлен ли yay
-    check_yay = subprocess.run("which yay", shell = True, capture_output = True, text = True)
-    if check_yay.returncode == 0:
+    if shutil.which("yay"):
         print(f"{Cols.INFO}yay уже установлен!{Cols.END}")
         return True
     
     # устанавлием необходимые зависимости
     print("Установка зависимостей...")
-    if not run_command("sudo pacman -S --needed --noconfirm base-devel git"):
+    if not subprocess.run("sudo pacman -S --needed --noconfirm base-devel git"):
         return False
     
     # создаем временную директорию и клонируем yay
     temp_dir = "/tmp/yay-install"
     print("Создание временной директории...")
-    if not run_command(f"rm -rf {temp_dir} && mkdir -p {temp_dir}"):
+    if not subprocess.run(f"rm -rf {temp_dir} && mkdir -p {temp_dir}"):
         return False
     
     print("Клонирование yay из AUR...")
-    if not run_command(f"git clone https://aur.archlinux.org/yay.git {temp_dir}"):
+    if not subprocess.run(f"git clone https://aur.archlinux.org/yay.git {temp_dir}"):
         return False
     
     # переходим в директорию и собираем пакет
     os.chdir(temp_dir)
     print("Сборка yay...")
-    if not run_command("makepkg -si --noconfirm"): 
+    if not subprocess.run("makepkg -si --noconfirm"): 
         return False
     
     # очищаем временные файлы
     print("Очистка временных файлов...")
-    run_command(f"rm -rf {temp_dir}")
+    subprocess.run(f"rm -rf {temp_dir}")
     
     # проверяем установку
     check_install = subprocess.run("which yay", shell = True, capture_output = True, text = True)
