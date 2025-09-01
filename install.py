@@ -130,11 +130,11 @@ def install_fonts():
 
 
 
-def install_aur_packages(packages):
+def install_packages(packages):
     try:
-        cmd = ["yay", "-S", "--noconfirm"] + packages
+        cmd = ["pacman", "-S", "--noconfirm"] + packages
         
-        # выполняем команду
+        # Выполняем команду
         result = subprocess.run(cmd, check = True, capture_output = True, text = True)
         print(f"{Cols.INFO}Пакеты успешно установлены!{Cols.END}")
         return True
@@ -151,9 +151,9 @@ def install_aur_packages(packages):
 
 
 
-def install_packages(packages):
+def install_aur_packages(aur_packages):
     try:
-        cmd = ["pacman", "-S", "--noconfirm"] + packages
+        cmd = ["yay", "-S", "--noconfirm"] + aur_packages
         
         # Выполняем команду
         result = subprocess.run(cmd, check = True, capture_output = True, text = True)

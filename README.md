@@ -30,10 +30,13 @@
 ## INSTALLATION
 
 **step one - install dependencies for builder**
+
 `sudo pacman -S python`
 
 **step two - install builder**
+
 `curl -O https://raw.githubusercontent.com/whyhilde/dot-files/master/install.py`
 
 **step three - run builder**
+
 `sudo python ./install.py`
