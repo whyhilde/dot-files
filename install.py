@@ -130,6 +130,27 @@ def install_fonts():
 
 
 
+def install_aur_packages(packages):
+    try:
+        cmd = ["yay", "-S", "--noconfirm"] + packages
+        
+        # выполняем команду
+        result = subprocess.run(cmd, check = True, capture_output = True, text = True)
+        print(f"{Cols.INFO}Пакеты успешно установлены!{Cols.END}")
+        return True
+
+    except subprocess.CalledProcessError as e:
+        print(f"{Cols.ERROR}Ошибка при установке пакетов: {e}{Cols.END}")
+        print(f"{Cols.ERROR}Stderr: {e.stderr}{Cols.END}")
+        return False
+
+    except Exception as e:
+        print(f"{Cols.ERROR}Неожиданная ошибка: {e}{Cols.END}")
+        return False
+
+
+
+
 def install_packages(packages):
     try:
         cmd = ["pacman", "-S", "--noconfirm"] + packages
@@ -172,7 +193,7 @@ def install_programs():
     for aur_program in AUR_PACKAGES():
         print(f"- {aur_program}")
     install_packages(SOFTWARE)
-    install_packages(AUR_PACKAGES)
+    install_aur_packages(AUR_PACKAGES)
 
     dev_packages_input = input("Установить пакеты для разработки? [Y/n] ")
     if dev_packages_input == "Y" or dev_packages_input == "":
