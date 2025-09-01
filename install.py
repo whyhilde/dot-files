@@ -85,8 +85,7 @@ def install_yay():
     subprocess.run(f"rm -rf {temp_dir}")
     
     # проверяем установку
-    check_install = subprocess.run("which yay", shell = True, capture_output = True, text = True)
-    if check_install.returncode == 0:
+    if shutil.which("yay"):
         print(f"{Cols.INFO}yay успешно установлен!{Cols.END}")
         return True
     else:
@@ -402,9 +401,9 @@ def main():
         print(banner)
         menu = int(input("1: УСТАНОВКА | 2: ВЫХОД "))
         if menu == 1:
-            if update_repositories() == True:
+            if update_repositories():
 
-                if install_yay() == True:
+                if install_yay():
 
                     install_fonts()
 
