@@ -16,7 +16,6 @@ qconf = home + "/.config/qtile/"
 terminal = "ghostty"
 color_focus = "#74c7ec"
 color_unfocus = "#1e1e2e"
-separator = widget.TextBox(text = "-", foreground = "#cdd6f4", padding = 6,)
 wall = home + "/Desktop/wall-5.png"
 
 
@@ -114,7 +113,7 @@ layouts = [
 widget_defaults = dict(
   font = "JetBrains Mono Medium",
   fontsize = 19,
-  padding = 15,
+  padding = 20,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -157,12 +156,10 @@ screens = [
             "Button1": lazy.spawn(home + "/.config/scripts/wifi.sh"),
           },
         ),
-        separator,
         widget.Clock(
-          format = "%d %B - %I:%M %p",
+          format = "%d %B  %I:%M %p",
           foreground = "#cdd6f4",
         ),
-        separator,
         widget.Systray(
           icon_size = 19,
         ),

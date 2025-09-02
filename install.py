@@ -26,8 +26,8 @@ version: 1.0 // github: https://github.com/whyhilde
 
 
 SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
-DEV_PACKAGES = [ "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
-BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
+DEV_PACKAGES = [ "clang", "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
+BASE_PACKAGES = [ "nautilus", "feh", "pavucontrol", "flameshot", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "lib32-nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
 AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
@@ -38,7 +38,7 @@ AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", 
 def update_repositories():
     try:
         result = subprocess.run(
-            ["pacman", "-Sy"], check = True, text = True, capture_output = True
+            ["pacman", "-Syu"], check = True, text = True, capture_output = True
         )
         print(f"{Cols.INFO}Репозитории успешно обновлены!{Cols.END}")
         return True

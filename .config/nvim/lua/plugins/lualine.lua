@@ -58,8 +58,8 @@ require("lualine").setup {
       },
     },
     lualine_y = {
-      { "encoding", fmt = string.upper, },
-      { "fileformat", fmt = string.upper, icons_enabled = false, },
+      { "encoding", fmt = string.lower, },
+      { "fileformat", fmt = string.lower, icons_enabled = false, },
     },
     lualine_z = {
       { "progress", padding = { left = 2, right = 2, }, },
