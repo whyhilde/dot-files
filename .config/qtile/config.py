@@ -58,7 +58,7 @@ keys = [
   # run software
   Key([mod], "d", lazy.spawn("rofi -show drun -config ~/.config/rofi/launcher.rasi")),
   Key([mod], "x", lazy.spawn(home + "/.config/scripts/powermenu.sh")),
-  Key([mod, "mod1"], "f", lazy.spawn("nautilus")),
+  Key([mod, "mod1"], "f", lazy.spawn("nemo")),
   Key([mod, "mod1"], "p", lazy.spawn("pavucontrol --tab=3")),
   Key([mod, "mod1"], "m", lazy.spawn("ghostty -e cmus")),
   Key(["control", mod], "s", lazy.spawn("flameshot gui")),
@@ -195,7 +195,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
   float_rules = [
     *layout.Floating.default_float_rules,
-    Match(wm_class = "org.gnome.Nautilus"),
+    Match(wm_class = "nemo"),
     Match(wm_class = "pavucontrol"),
   ],
   y = 0.5,
