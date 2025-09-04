@@ -15,19 +15,15 @@ class Cols:
 
 
 banner = f"""{Cols.HINT}
-██╗    ██╗██╗  ██╗██╗   ██╗██╗  ██╗██╗██╗     ██████╗ ███████╗
-██║    ██║██║  ██║╚██╗ ██╔╝██║  ██║██║██║     ██╔══██╗██╔════╝
-██║ █╗ ██║███████║ ╚████╔╝ ███████║██║██║     ██║  ██║█████╗  
-██║███╗██║██╔══██║  ╚██╔╝  ██╔══██║██║██║     ██║  ██║██╔══╝  
-╚███╔███╔╝██║  ██║   ██║   ██║  ██║██║███████╗██████╔╝███████╗
- ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚═════╝ ╚══════╝
-version: 1.0 // github: https://github.com/whyhilde
+░█░█░█░█░█░█░█░█░▀█▀░█░░░█▀▄░█▀▀░░░█▀▄░█░█░▀█▀░█░░░█▀▄░█▀▀░█▀▄░░░█░█░▀█░
+░█▄█░█▀█░░█░░█▀█░░█░░█░░░█░█░█▀▀░░░█▀▄░█░█░░█░░█░░░█░█░█▀▀░█▀▄░░░▀▄▀░░█░
+░▀░▀░▀░▀░░▀░░▀░▀░▀▀▀░▀▀▀░▀▀░░▀▀▀░░░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀░░▀▀▀░▀░▀░░░░▀░░▀▀▀
 {Cols.END}"""
 
 
 SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
 DEV_PACKAGES = [ "clang", "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
-BASE_PACKAGES = [ "nemo", "feh", "pavucontrol", "flameshot", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "network-manager-applet", "python-iwlib", "gnupg", "xorg-xev" ]
+BASE_PACKAGES = [ "nemo", "feh", "pavucontrol", "flameshot", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "networkmanager", "network-manager-applet", "python-iwlib", "bluez", "gnupg", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "lib32-nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
 AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
@@ -35,10 +31,11 @@ AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", 
 
 
 
+# update repositories with pacman
 def update_repositories():
     try:
         result = subprocess.run(
-            ["pacman", "-Syu"], check = True, text = True, capture_output = True
+            ["pacman", "--noconfirm", "-Syu"], check = True, text = True, capture_output = True
         )
         print(f"{Cols.INFO}Репозитории успешно обновлены!{Cols.END}")
         return True
@@ -51,25 +48,26 @@ def update_repositories():
 
 
 
+# install yay (AUR helper)
 def install_yay():
     print("Установка yay...")
     
-    # проверяем, установлен ли yay
+    # check if yay is installed
     if shutil.which("yay"):
         print(f"{Cols.INFO}yay уже установлен!{Cols.END}")
         return True
     
-    # устанавлием необходимые зависимости
+    # install necessary dependencies
     print("Установка зависимостей...")
     if not subprocess.run(["pacman", "-S", "--noconfirm", "--needed", "base-devel", "git"], check = True):
         return False
     
-    # создаем временную директорию и клонируем yay
+    # creating temporary directory and cloning yay
     temp_dir = "/tmp/yay-install"
     print("Создание временной директории...")
     if not subprocess.run(["rm", "-rf", temp_dir, "&&", "mkdir", "-p", temp_dir], shell = True, check = True):
         return False
-    
+
     print("Клонирование yay из AUR...")
     if not subprocess.run(f"git clone https://aur.archlinux.org/yay.git {temp_dir}"):
         return False
@@ -169,12 +167,14 @@ def install_aur_packages(aur_packages):
 
 
 def install_programs():
-    drivers_input = input("Установить драйвера (Intel & NVIDIA)? [Y/n] ").strip().upper()
+    drivers_input = input("Установить драйвера для Intel & NVIDIA? [Y/n]: ").strip().upper()
     if drivers_input == "Y" or drivers_input == "":
         print("Установка драйверов...")
         install_packages(DRIVERS)
+    
     elif drivers_input == "N":
         pass
+
     else:
         print(f"{Cols.WARN}Неверный ввод. Пропуск установки драйверов.{Cols.END}")
 
@@ -191,12 +191,14 @@ def install_programs():
     install_packages(SOFTWARE)
     install_aur_packages(AUR_PACKAGES)
 
-    dev_packages_input = input("Установить пакеты для разработки? [Y/n] ")
+    dev_packages_input = input("Установить пакеты для разработки? [Y/n]: ")
     if dev_packages_input == "Y" or dev_packages_input == "":
         print("Установка пакетов...")
         install_packages(DEV_PACKAGES)
+    
     elif drivers_input == "N":
         pass
+    
     else:
         print(f"{Cols.WARN}Неверный ввод. Пропуск установки пакетов.{Cols.END}")
 
@@ -204,7 +206,7 @@ def install_programs():
 
 
 def change_shell():
-    user_input = input("Сменить shell на zsh? [Y/n] ").strip().upper()
+    user_input = input("Сменить shell на zsh? [Y/n]: ").strip().upper()
     if user_input == "Y" or user_input == "":
         try:
             subprocess.run(["pacman", "-S", "--noconfirm", "zsh"], check = True)
@@ -256,7 +258,7 @@ def change_shell():
 
 
 def change_cursors():
-    user_input = input("Сменить тему курсоров? [Y/n] ").strip().upper()
+    user_input = input("Сменить тему курсоров? [Y/n]: ").strip().upper()
     if user_input == "Y" or user_input == "":
         colors = [ "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender", "dark", "light" ]
     
@@ -366,27 +368,43 @@ def setup_dots():
 
 
 
-def setup_sddm():
-    # проверяем установлен ли SDDM
+# configure system
+def configure_system():
+
+    # configure SDDM
+    # check if SDDM is installed
     result = subprocess.run(["pacman", "-Q", "sddm"], capture_output = True, text = True)
-    
     if result.returncode != 0:
         print("Переустановка SDDM...")
         install = subprocess.run(["pacman", "-S", "--noconfirm", "sddm"])
         if install.returncode != 0:
             print(f"{Cols.ERROR}Установка sddm не удалась.{Cols.END}")
-            return False
         elif install.returncode == 0:
             print(f"{Cols.INFO}SDDM успешно установлен!{Cols.END}")
-    
-    # активируем SDDM
+            # enable SDDM
+            try:
+                subprocess.run(["systemctl", "enable", "sddm.service"])
+                subprocess.run(["systemctl", "start", "sddm.service"])
+                print(f"{Cols.INFO}SDDM настроен успешно!{Cols.END}")
+
+            except subprocess.CalledProcessError as e:
+                print(f"{Cols.ERROR}Ошибка в активации SDDM: {e}{Cols.END}")
+
+    # enable NetworkManager
     try:
-        subprocess.run(["systemctl", "enable", "sddm.service"])
-        subprocess.run(["systemctl", "start", "sddm.service"])
-        print(f"{Cols.INFO}SDDM настроен успешно!{Cols.END}")
+        subprocess.run(["systemctl", "enable", "NetworkManager"], check = True)
+        subprocess.run(["systemctl", "start", "NetworkManager"], check = True)
 
     except subprocess.CalledProcessError as e:
-        print(f"{Cols.ERROR}Ошибка в активации SDDM: {e}{Cols.END}")
+        print(f"{Cols.ERROR}Ошибка в активации NetworkManager: {e}{Cols.END}")
+
+    # enable bluetooth
+    try:
+        subprocess.run(["systemctl", "enable", "bluetooth.service"], check = True)
+        subprocess.run(["systemctl", "start", "bluetooth.service"], check = True)
+    
+    except subprocess.CalledProcessError as e:
+        print(f"{Cols.ERROR}Ошибка в активации bluetooth: {e}{Cols.END}")
 
 
 
@@ -399,7 +417,7 @@ def main():
 
     try:
         print(banner)
-        menu = int(input("1: УСТАНОВКА | 2: ВЫХОД "))
+        menu = int(input("1) INSTALL | 2) EXIT "))
         if menu == 1:
             if update_repositories():
 
@@ -415,7 +433,7 @@ def main():
 
                     setup_dots()
 
-                    setup_sddm()
+                    configure_system()
 
                 print(f"{Cols.INFO}Installation is complete!{Cols.END}")
 
