@@ -21,9 +21,9 @@ banner = f"""{Cols.HINT}
 {Cols.END}"""
 
 
-SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "micro", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
+SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
 DEV_PACKAGES = [ "clang", "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
-BASE_PACKAGES = [ "nemo", "feh", "pavucontrol", "flameshot", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "networkmanager", "network-manager-applet", "python-iwlib", "bluez", "gnupg", "xorg-xev" ]
+BASE_PACKAGES = [ "nemo", "feh", "pavucontrol", "flameshot", "networkmanager", "network-manager-applet", "python-iwlib", "bluez", "blueman", "curl", "wget", "gnupg", "dysk", "gzip", "unzip", "unrar", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "lib32-nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]
 AUR_PACKAGES = [ "picom-pijulius-next-git", "neofetch", "tty-clock", "spotify", "papirus-folders-catppuccin-git", "catppuccin-cursors-mocha", "catppuccin-gtk-theme-mocha" ]
