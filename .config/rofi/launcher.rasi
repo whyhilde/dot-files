@@ -6,7 +6,7 @@ configuration {
   disable-history: false;
   hide-scrollbar: true;
   sidebar-mode: true;
-  display-drun: "  ";
+  display-drun: "  ";
   display-clipboard: "";
   modi: "drun";
 }
@@ -77,7 +77,7 @@ entry {
 	text-color: @fg;
 	placeholder-color: @fg;
 	border-radius: 0;
-	placeholder: "searching...";
+	placeholder: "type and search..";
 	blink: false;
 	padding: 4;
 }

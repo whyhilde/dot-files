@@ -8,7 +8,7 @@
   width = 300
   height = (0, 300)
   origin = top-center
-  offset = (10, 10)
+  offset = (10, 60)
   scale = 0
   notification_limit = 10
 
@@ -67,7 +67,7 @@
   always_run_script = true
   title = Dunst
   class = Dunst
-  corner_radius = 10
+  corner_radius = 5
   corners = all
   ignore_dbusclose = false
 

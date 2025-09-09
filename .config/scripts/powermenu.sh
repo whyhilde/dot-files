@@ -8,14 +8,14 @@ rofi_cmd() {
 
 
 chosen=$(printf "⏻
-
-" | rofi_cmd)
+󰜉
+󰗼" | rofi_cmd)
 
 
 case "$chosen" in
 
   "⏻") poweroff ;;
-  "") reboot ;;
-  "") qtile cmd-obj -o cmd -f shutdown ;;
+  "󰜉") reboot ;;
+  "󰗼") qtile cmd-obj -o cmd -f shutdown ;;
 
 esac

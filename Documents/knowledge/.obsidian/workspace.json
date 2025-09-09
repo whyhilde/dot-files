@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "480eb13b1d9d284b",
+        "id": "934382bde7b3c13e",
         "type": "tabs",
         "children": [
           {
-            "id": "5d2448d7cf922c41",
+            "id": "23ea61d457e20a26",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -108,8 +108,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5d2448d7cf922c41",
+  "active": "23ea61d457e20a26",
   "lastOpenFiles": [
+    "Daily/2025/Сентябрь/09-09-25.md",
+    "README.md",
+    "Programming/Languages/Rust/Syntax.md",
+    "Programming/Languages/Rust/Functions.md",
     "Programming/DevOps/Networks/Networks.md",
     "Programming/DevOps/Networks/TCP-IP.md",
     "Programming/DevOps/Networks/OSI.md",
@@ -122,10 +126,7 @@
     "Tracker/Новые заметки.md",
     "Tracker/Не созданные заметки.md",
     "Tracker/Заметки без ссылок.md",
-    "Без названия.md",
-    "Programming/Languages/Rust/Syntax.md",
     "Programming/Languages/Rust/Cargo.md",
-    "Programming/Languages/Rust/Functions.md",
     "Programming/Languages/C and C++/Указатели.md",
     "Programming/Languages/C and C++/Структуры.md",
     "Programming/Languages/C and C++/Память.md",
@@ -138,7 +139,6 @@
     "Daily/2025/Август/Август.md",
     "Daily/2025/Август/13-08-25.md",
     "Daily/2025/Июль/Июль.md",
-    "Daily/2025/Июль/31-07-25.md",
     "Daily/2025/Сентябрь",
     "Images/photo-05-07-25.jpg",
     "lu1078319mjch.tmp",

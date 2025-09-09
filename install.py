@@ -21,8 +21,8 @@ banner = f"""{Cols.HINT}
 {Cols.END}"""
 
 
-SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "inkscape", "thunderbird", "neovim", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
-DEV_PACKAGES = [ "clang", "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
+SOFTWARE = [ "qtile", "rofi", "sddm", "dunst", "git", "firefox", "telegram-desktop", "obsidian", "bitwarden", "blender", "thunderbird", "neovim", "steam", "obs-studio", "libreoffice-fresh", "libreoffice-fresh-ru", "ghostty", "cmus", "cava", "opendoas" ]
+DEV_PACKAGES = [ "clang", "docker", "ffmpeg", "tmux", "btop", "bat", "eza", "fzf", "thefuck", "git-delta", "zoxide", "tldr", "ripgrep" ]
 BASE_PACKAGES = [ "nemo", "feh", "pavucontrol", "flameshot", "networkmanager", "network-manager-applet", "python-iwlib", "bluez", "blueman", "curl", "wget", "gnupg", "dysk", "gzip", "unzip", "unrar", "xorg-xrandr", "xorg-xset", "xorg-setxkbmap", "xorg-xev" ]
 DRIVERS = [ "nvidia", "nvidia-settings", "nvidia-utils", "lib32-nvidia-utils", "intel-ucode", "mesa", "vulkan-intel" ]
 FONTS = [ "ttf-jetbrains-mono", "ttf-meslo-nerd-font-powerlevel10k", "ttf-jetbrains-mono-nerd", "ttf-noto-sans-cjk-vf" ]

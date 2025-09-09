@@ -30,6 +30,7 @@ require("telescope").setup {
       "%.bin", "%.o", "%.a", "%.so", "%.dll",
       "%.zip", "%.tar", "%.gz",
       "%.png", "%.jpg", "%.jpeg", "%.gif", "%.pdf",
+      "%.mp3", "%.mp4",
     },
   },
   pickers = {

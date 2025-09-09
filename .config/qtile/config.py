@@ -16,7 +16,7 @@ qconf = home + "/.config/qtile/"
 terminal = "ghostty"
 color_focus = "#74c7ec"
 color_unfocus = "#1e1e2e"
-wall = home + "/Desktop/wall-5.png"
+wall = home + "/Desktop/wall-6.jpg"
 
 
 # hotkeys
@@ -58,6 +58,7 @@ keys = [
   # run software
   Key([mod], "d", lazy.spawn("rofi -show drun -config ~/.config/rofi/launcher.rasi")),
   Key([mod], "x", lazy.spawn(home + "/.config/scripts/powermenu.sh")),
+  Key([mod], "w", lazy.spawn(home + "/.config/scripts/search.sh")),
   Key([mod, "mod1"], "f", lazy.spawn("nemo")),
   Key([mod, "mod1"], "p", lazy.spawn("pavucontrol --tab=3")),
   Key([mod, "mod1"], "m", lazy.spawn("ghostty -e cmus")),
@@ -159,6 +160,14 @@ screens = [
         widget.Clock(
           format = "%d %B  %I:%M %p",
           foreground = "#cdd6f4",
+        ),
+        widget.TextBox(
+          text = "⏻",
+          font = "JetBrainsMono Nerd Font",
+          foreground = "#f38ba8",
+          mouse_callbacks = {
+            "Button1": lazy.spawn(home + "/.config/scripts/powermenu.sh"),
+          },
         ),
         widget.Systray(
           icon_size = 19,
