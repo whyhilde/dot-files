@@ -22,11 +22,11 @@ cmp.setup {
       ellipsis_char = "..",
       preset = "codicons",
       menu = {
-        nvim_lsp = "LSP",
-        buffer = "BUFFER",
-        luasnip = "SNIPPET",
-        path = "PATH",
-        nvim_lua = "LUA",
+        nvim_lsp = "",
+        buffer = "",
+        luasnip = "",
+        path = "",
+        nvim_lua = "",
       },
       symbol_map = {
         Array = "󰅨",

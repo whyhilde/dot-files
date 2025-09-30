@@ -1,8 +1,11 @@
 [general]
 method = pulse
+bar_spacing = 1
+bar_width = 2
 
 
 [input]
+method = pulse
 source = auto
 
 

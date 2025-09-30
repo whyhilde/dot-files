@@ -1,0 +1,30 @@
+format="$username$directory$character"
+right_format = "$git_branch$time"
+add_newline = false 
+
+
+[character]
+success_symbol = "[ ~>](#cdd6f4)"
+error_symbol = "[ <~](#cdd6f4)"
+
+
+[username]
+format = "[ $user ](bg:none fg:#74c7ec)"
+show_always = true
+
+
+[directory]
+format = "[  ](bg:none fg:#cdd6f4)[$path ](bg:none fg:#cdd6f4 bold)"
+home_symbol = "~"
+truncation_length = 3
+truncate_to_repo = false
+
+
+[git_branch]
+format = "[ \\($branch\\) ](bg:none fg:#cdd6f4 bold)"
+
+
+[time]
+disabled = false
+format = "[ $time](bg:none fg:#cdd6f4)"
+time_format = "%I:%M %p"

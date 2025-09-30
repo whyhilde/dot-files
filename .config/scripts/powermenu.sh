@@ -1,21 +1,19 @@
-#! /bin/sh
+#! /usr/bin/env bash
 set -e
 
 
-rofi_cmd() {
-  rofi -dmenu -theme ~/.config/rofi/powermenu.rasi
-}
+logout=""
+shutdown="⏻"
+reboot="󰜉"
+suspend="󰒲"
 
 
-chosen=$(printf "⏻
-󰜉
-󰗼" | rofi_cmd)
+chosen=$(echo -e "$logout\n$shutdown\n$reboot\n$suspend" | rofi -dmenu -theme ~/.config/rofi/powermenu.rasi)
 
 
 case "$chosen" in
-
-  "⏻") poweroff ;;
-  "󰜉") reboot ;;
-  "󰗼") qtile cmd-obj -o cmd -f shutdown ;;
-
+  "$logout") slock ;;
+  "$shutdown") systemctl poweroff ;;
+  "$reboot") systemctl reboot ;;
+  "$suspend") systemctl suspend ;;
 esac

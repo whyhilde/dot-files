@@ -8,10 +8,6 @@
   "textFontFamily": "JetBrains Mono",
   "showViewHeader": false,
   "enabledCssSnippets": [
-    "long-file-name",
-    "sdjhv",
-    "disable-arrows",
-    "new-tab",
     "tabs",
     "explorer",
     "dashboard",

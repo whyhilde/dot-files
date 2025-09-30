@@ -1,7 +1,6 @@
 local colors = {
-  bg1 = "#45475a",
-  bg2 = "#313244",
   fg = "#cdd6f4",
+  bg = "#313244",
   black = "#11111b",
   yellow = "#f9e2af",
   cyan = "#008080",
@@ -17,8 +16,8 @@ local colors = {
 local theme = {
   normal = {
     a = { fg = colors.black, bg = colors.blue },
-    b = { fg = colors.fg, bg = colors.bg1 },
-    c = { fg = colors.fg, bg = colors.bg2 },
+    b = { fg = colors.fg, bg = colors.bg },
+    c = { fg = colors.fg, bg = colors.bg },
   },
   insert = { a = { fg = colors.black, bg = colors.green } },
   visual = { a = { fg = colors.black, bg = colors.red } },
@@ -31,8 +30,8 @@ local theme = {
 require("lualine").setup {
   options = {
     theme = theme,
-    component_separators = { left = "|", right = "|", },
-    section_separators = { left = "", right = "", },
+    component_separators = { left = "::", right = "::", },
+    section_separators = { left = "", right = "", },
     globalstatus = true,
   },
   sections = {
@@ -44,12 +43,12 @@ require("lualine").setup {
       { "location", },
     },
     lualine_c = {
-      { "branch", icon = "", },
+      { "branch", icon = "", },
     },
     lualine_x = {
       { "diagnostics",
         sources = { "nvim_diagnostic" },
-        symbols = { error = " ", warn = " ", info = " ", },
+        symbols = { error = " ", warn = " ", info = " ", },
         diagnostics_color = {
           error = { fg = colors.red },
           warn = { fg = colors.yellow },
@@ -58,11 +57,11 @@ require("lualine").setup {
       },
     },
     lualine_y = {
-      { "encoding", fmt = string.lower, },
-      { "fileformat", fmt = string.lower, icons_enabled = false, },
+      { "encoding", },
+      { "fileformat", icons_enabled = false, },
     },
     lualine_z = {
-      { "progress", padding = { left = 2, right = 2, }, },
+      { "progress", fmt = string.upper, padding = { left = 2, right = 2, }, },
     },
   },
 }

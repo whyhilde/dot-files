@@ -36,7 +36,7 @@ require("telescope").setup {
   pickers = {
     find_files = {
     },
-    command_history = {
+    oldfiles = {
     },
     live_grep = {
     },
@@ -51,9 +51,9 @@ require("telescope").setup {
 
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files)
-vim.keymap.set("n", "<leader>fc", builtin.command_history)
-vim.keymap.set("n", "<leader>fw", builtin.live_grep)
-vim.keymap.set("n", "<leader>tc", "<cmd>TodoTelescope<cr>")
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
+vim.keymap.set("n", "<leader>ft", builtin.live_grep)
+vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<cr>")
 vim.keymap.set("n", "<leader>gb", builtin.git_branches)
 vim.keymap.set("n", "<leader>gc", builtin.git_commits)
 vim.keymap.set("n", "<leader>gs", builtin.git_status)

@@ -1,27 +1,29 @@
-<h1 align="center"> WHYHILDE QTILE RICE </h1>
+<h1 align="center"> WHYHILDE RICE </h1>
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
   <img src="https://img.shields.io/github/issues/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
   <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
   <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
+  <img src="https://img.shields.io/github/license/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
 </p>
 
 
 ## 📖 INFO
 
-| Distro                     | Arch Linux                                           |
-| -------------------------- | ---------------------------------------------------- |
-| Window Manager and Bar     | [Qtile](https://qtile.org/)                          |
-| Compositor                 | [Picom](https://github.com/pijulius/picom)           |
-| App Launcher and Powermenu | [Rofi](https://github.com/davatorium/rofi)           |
-| Display Manager            | [Sddm](https://github.com/sddm/sddm)                 |
-| Notification               | [Dunst](https://github.com/dunst-project/dunst)      |
-| Browser                    | [Firefox](https://github.com/topics/firefox-browser) |
-| Terminal                   | [Ghostty](https://ghostty.org/)                      |
-| Shell                      | [Zsh](https://www.zsh.org/)                          |
-| Code Editor                | [Neovim](https://github.com/neovim/neovim)           |
-| Fetch                      | [Neofetch](https://github.com/dylanaraps/neofetch)   |
-| Visualiser                 | [Cava](https://github.com/karlstav/cava)             |
+| Distro                     | Arch Linux                                              |
+| -------------------------- | ------------------------------------------------------- |
+| Window Manager             | [Xmonad](https://xmonad.org/)                           |
+| Bar                        | [Polybar](https://github.com/polybar/polybar)           |
+| Compositor                 | [Picom](https://github.com/pijulius/picom)              |
+| App Launcher and Powermenu | [Rofi](https://github.com/davatorium/rofi)              |
+| Display Manager            | [Sddm](https://github.com/sddm/sddm)                    |
+| Notification               | [Dunst](https://github.com/dunst-project/dunst)         |
+| Browser                    | [Firefox](https://github.com/topics/firefox-browser)    |
+| Terminal                   | [Ghostty](https://ghostty.org/)                         |
+| Shell                      | [Zsh](https://www.zsh.org/)                             |
+| Code Editor                | [Neovim](https://github.com/neovim/neovim)              |
+| Fetch                      | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| Visualiser                 | [Cava](https://github.com/karlstav/cava)                |
 
 
 ## :rocket: FEATURES
@@ -35,13 +37,13 @@
 
 ## 📸 SCREENSHOTS
 
-![](.screenshots/1.png)
-![](.screenshots/2.png)
-![](.screenshots/3.png)
-![](.screenshots/4.png)
-![](.screenshots/5.png)
-![](.screenshots/6.png)
-![](.screenshots/7.png)
+![](.demo/1.png)
+![](.demo/2.png)
+![](.demo/3.png)
+![](.demo/4.png)
+![](.demo/5.png)
+![](.demo/6.png)
+![](.demo/7.png)
 
 
 ## :wrench: INSTALLATION
@@ -51,7 +53,7 @@ This installation script only works on Arch Linux.
 This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
 If you find errors in the shell, please report the problem.
 
-### Steps
+### STEPS
 
 **1. install python and curl:**
 
@@ -65,32 +67,28 @@ sudo pacman -S python curl
 curl -O https://raw.githubusercontent.com/whyhilde/dot-files/master/install.py
 ```
 
-**3. run builder with sudo:**
+**3. run builder:**
 
 ```bash
-sudo python ./install.py
+python ./install.py
 ```
 
 
 ## :computer: HOTKEYS
 
-- Move window focus: super + h/j/k/l
-- Move focus window: super + alt + h/j/k/l
-- Switch to another workspace: super + 1/7
-- Move the window to another workspace: super + alt + 1/7
-- Close focused window: super + c
-- Switch the window to floating mode: super + f
-- Switch the window to fullscreen: super + s
-- Open the terminal: super + enter
-- Open the application menu: super + d
-- Open the power menu: super + x
-- Restart Qtile: super + alt + r
-- Take a screenshot: ctrl + super + s
-- Take a fullscreen screenshot: ctrl + super + f
+| Action                                 | Key                   |
+| -------------------------------------- | --------------------- |
+| Move window focus                      | super + j/k           |
+| Move focus window                      | super + alt + j/k     |
+| Switch to another workspace            | super + 1/7           |
+| Move window to another workspace       | super + alt + 1/7     |
+| Kill focused window                    | super + c             |
+| Toggle floating mode of focused window | super + f             |
+| Open terminal                          | super + enter         |
+| Open application launcher              | super + d             |
+| Open power menu                        | super + x             |
+| Restart Xmonad                         | super + alt + r       |
+| Take screenshot                        | ctrl + super + s      |
+| Take fullscreen screenshot             | ctrl + super + f      |
 
-The other hotkeys are in ~/.config/qtile/config.py.
-
-
-## :bookmark: LICENSE
-
-![License](https://img.shields.io/github/license/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e)
+The other hotkeys are in ~/.config/xmonad/xmonad.hs.

@@ -90,15 +90,13 @@ vim.opt.undofile = true                -- save history of changes
 
 
 -- mappings --
-vim.g.mapleader = " "                  -- assign <leader> key
-vim.g.maplocalleader = " "             -- assign <leader> key
-
+vim.g.mapleader = "\\"                 -- assign <leader> key
+vim.g.maplocalleader = "\\"            -- assign <leader> key
 
 -- files
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { silent = true }) -- save file
 vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>", { silent = true })-- exit without saving
 vim.keymap.set("n", "<leader>e", "<cmd>q<cr>", { silent = true }) -- exit
-
 
 -- movement
 vim.keymap.set("n", "j", "gj")         -- move down based on transfer
@@ -116,24 +114,20 @@ vim.keymap.set("n", "<C-j>", "<C-w>j") -- pane movement down
 vim.keymap.set("n", "<C-k>", "<C-w>k") -- pane movement up
 vim.keymap.set("n", "<C-l>", "<C-w>l") -- pane movement right
 
-
 -- visual
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move selection down
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move selection up
 vim.keymap.set("v", "<", "<gv")        -- indent left and keep selection
 vim.keymap.set("v", ">", ">gv")        -- indent right and keep selection
 
-
 -- yank and paste
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y') -- yank to clipboard
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p') -- paste from clipboard
 vim.keymap.set("n", "<leader>c", "yyp") -- duplicate line
 
-
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-
 
 -- other mappings
 vim.keymap.set("n", "<C-u>", "<C-u>zz")-- scrolling with centering up
@@ -142,5 +136,5 @@ vim.keymap.set("i", "jj", "<esc>")     -- exit insert mode
 vim.keymap.set("n", "+", "<C-a>")      -- increment number
 vim.keymap.set("n", "-", "<C-x>")      -- decrement number
 vim.keymap.set("n", "x", '"_x')        -- cut without storing to register
-vim.keymap.set("i", "<D-Space>", "<NOP>") -- 
+vim.keymap.set("i", "<D-space>", "<nop>") -- ignore switch keyboard layout
 vim.keymap.set("n", "<leader>hl", "<cmd>nohlsearch<cr>", { silent = true }) -- disable highlight after searching

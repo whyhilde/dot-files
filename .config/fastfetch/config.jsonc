@@ -1,0 +1,90 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "linux",
+    "color": {
+      "1": "#cdd6f4",
+      "2": "#585b70",
+      "3": "#f9e2af",
+    },
+    "padding": {
+      "top": 1,
+      "bottom": 0,
+      "left": 1,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "key": "╭───────────╮",
+    },
+    {
+      "type": "users",
+      "format": "{name}",
+      "key": "│ {#31} user    {#keys}│",
+    },
+    {
+      "type": "host",
+      "key": "│ {#32}󰇅 host    {#keys}│",
+    },
+    {
+      "type": "os",
+      "format": "{name} {version}",
+      "key": "│ {#34} distro  {#keys}│",
+    },
+    {
+      "type": "kernel",
+      "key": "│ {#35} kernel  {#keys}│",
+    },
+    {
+      "type": "uptime",
+      "key": "│ {#33} uptime  {#keys}│",
+    },
+    {
+      "type": "wm",
+      "format": "{pretty-name} {version}",
+      "key": "│ {#36} wm      {#keys}│",
+    },
+    {
+      "type": "monitor",
+      "format": "{width}x{height} @ {refresh-rate}Hz",
+      "key": "│ {#37}󰇄 screen  {#keys}│",
+    },
+    {
+      "type": "packages",
+      "key": "│ {#39}󰏔 pkgs    {#keys}│",
+    },
+    // {
+    //   "type": "shell",
+    //   "key": "│ {#32} shell   {#keys}│",
+    // },
+    {
+      "type": "memory",
+      "format": "{used} / {total}",
+      "key": "│ {#35}󰉉 memory  {#keys}│",
+    },
+    {
+      "type": "disk",
+      "folders": "/home",
+      "format": "{size-used} / {size-total}",
+      "key": "│ {#34}󰋊 disk    {#keys}│",
+    },
+    {
+      "type": "custom",
+      "key": "├───────────┤",
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "key": "│ {#39}󱥚 colors  {#keys}│",
+    },
+    {
+      "type": "custom",
+      "key": "╰───────────╯",
+    },
+  ]
+}

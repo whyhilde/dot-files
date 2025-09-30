@@ -11,6 +11,10 @@ user_pref("devtools.debugger.remote-enabled", true);
 user_pref("browser.urlbar.suggest.calculator", true);
 
 
+// hide tooltips in toolbar
+user_pref("browser.chrome.toolbar_tips", false);
+
+
 // disable link previews on tabs
 user_pref("browser.tabs.hoverPreview.enabled", false);
 

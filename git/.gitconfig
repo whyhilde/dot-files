@@ -32,13 +32,11 @@
 
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 
 [alias]
   ac = !git add -A && git commit -m
-  co = checkout
-  br = branch
   st = status
   df = diff
   up = pull --all --prune

@@ -12,8 +12,4 @@
 10. Simple Translate (sienori)
 11. uBlock Origin (Raymond Hill)
 12. Vimium (Phil Crosby)
-
-
-# THEMES
-
-1. Catppuccin Mocha - Blue (Catppuccin)
+13. Catppuccin Mocha - Blue (Catppuccin)

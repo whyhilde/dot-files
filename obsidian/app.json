@@ -9,5 +9,6 @@
   "defaultViewMode": "source",
   "foldIndent": false,
   "foldHeading": false,
-  "livePreview": true
+  "livePreview": true,
+  "alwaysUpdateLinks": true
 }
