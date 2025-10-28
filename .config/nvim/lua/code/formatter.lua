@@ -1,10 +1,15 @@
 require("conform").setup {
   formatters_by_ft = {
-    c = { "clang_format" },
-    cpp = { "clang_format" },
+    rust = {
+      "rustfmt",
+    },
   },
   format_on_save = false,
   formatters = {
+    rustfmt = {
+      prepend_args = {
+      },
+    },
     clang_format = {
       prepend_args = {
         "--style={ BasedOnStyle: LLVM, BreakBeforeBraces: Attach, SpaceBeforeParens: ControlStatements, IndentWidth: 2, ColumnLimit: 80, }"
@@ -14,9 +19,6 @@ require("conform").setup {
 }
 
 
-vim.keymap.set({ "n", "v" }, "<leader>cf", function()
-  require("conform").format {
-    async = true,
-    lsp_fallback = true,
-  }
-end)
+-- vim.keymap.set({ "n", "v", }, "<leader>fc", function()
+--   require("conform").format { async = true, lsp_fallback = true, }
+-- end)

@@ -7,7 +7,7 @@ ICON="$HOME/.config/scripts/icons/volume.svg"
 ICON_MUTED="$HOME/.config/scripts/icons/volume-mute.svg"
 
 
-send_notification() {
+sendNotification() {
   volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP "\d+(?=%)" | head -1)
   muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -oP "(yes|no)")
     
@@ -21,7 +21,7 @@ send_notification() {
     else
       icon=$ICON
     fi
-      message="volume: $volume%"
+      message="$volume%"
       progress=$volume
   fi
     
@@ -30,17 +30,11 @@ send_notification() {
 }
 
 
-case $1 in
-  up)
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
-    ;;
-  down)
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
-    ;;
-  mute)
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-    ;;
+case "$1" in
+  up) pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
+  down) pactl set-sink-volume @DEFAULT_SINK@ -5% ;;
+  mute) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
 esac
 
 
-send_notification
+sendNotification

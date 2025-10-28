@@ -75,7 +75,7 @@ myStartupHook = do
   spawnOnce "dunst &"
   spawnOnce "polybar topbar &"
   spawnOnce "picom --config ~/.config/picom/picom.conf -b"
-  spawnOnce "feh --bg-fill --no-fehbg ~/.config/xmonad/wall.jpg"
+  spawnOnce "feh --bg-fill --no-fehbg ~/.config/xmonad/wall.png"
   setDefaultCursor xC_left_ptr
   setWMName "XMonad"
 

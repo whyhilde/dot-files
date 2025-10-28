@@ -4,10 +4,10 @@ require("nvim-tree").setup {
     folders_first = true,
   },
   view = {
-    width = 30,
+    width = 32,
     side = "right",
     centralize_selection = true,
-    signcolumn = "yes",
+    signcolumn = "no",
   },
   actions = {
     open_file = {
@@ -24,27 +24,10 @@ require("nvim-tree").setup {
     symlink_destination = false,
     indent_width = 2,
     icons = {
-      git_placement = "signcolumn",
+      git_placement = "before",
       glyphs = {
-        folder = {
-          arrow_closed = " ",
-          arrow_open = " ",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "",
-          unmerged = "",
-          renamed = "",
-          untracked = "",
-          deleted = "",
-          ignored = "",
-        },
+        folder = require("icons").explorer.folder,
+        git = require("icons").explorer.git,
       },
     },
     indent_markers = {
@@ -72,4 +55,4 @@ require("nvim-tree").setup {
 }
 
 
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", { silent = true })

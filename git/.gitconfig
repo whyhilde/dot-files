@@ -15,7 +15,7 @@
 [delta]
   line-numbers = true
   side-by-side = true
-  syntax-theme = "catppuccin-mocha"
+  syntax-theme = "catppuccin"
   navigate = false
   file-decoration-style = "omit"
   hunk-header-decoration-style = "omit"

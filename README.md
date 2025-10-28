@@ -8,22 +8,21 @@
 </p>
 
 
-## 📖 INFO
+## :blue_book: INFO
 
-| Distro                     | Arch Linux                                              |
-| -------------------------- | ------------------------------------------------------- |
-| Window Manager             | [Xmonad](https://xmonad.org/)                           |
-| Bar                        | [Polybar](https://github.com/polybar/polybar)           |
-| Compositor                 | [Picom](https://github.com/pijulius/picom)              |
-| App Launcher and Powermenu | [Rofi](https://github.com/davatorium/rofi)              |
-| Display Manager            | [Sddm](https://github.com/sddm/sddm)                    |
-| Notification               | [Dunst](https://github.com/dunst-project/dunst)         |
-| Browser                    | [Firefox](https://github.com/topics/firefox-browser)    |
-| Terminal                   | [Ghostty](https://ghostty.org/)                         |
-| Shell                      | [Zsh](https://www.zsh.org/)                             |
-| Code Editor                | [Neovim](https://github.com/neovim/neovim)              |
-| Fetch                      | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
-| Visualiser                 | [Cava](https://github.com/karlstav/cava)                |
+| Distro         | Arch Linux                                              |
+| -------------- | ------------------------------------------------------- |
+| Window Manager | [Xmonad](https://xmonad.org/)                           |
+| Bar            | [Polybar](https://github.com/polybar/polybar)           |
+| Compositor     | [Picom](https://github.com/pijulius/picom)              |
+| App Launcher   | [Rofi](https://github.com/davatorium/rofi)              |
+| Notification   | [Dunst](https://github.com/dunst-project/dunst)         |
+| Browser        | [Firefox](https://github.com/topics/firefox-browser)    |
+| Terminal       | [Ghostty](https://ghostty.org/)                         |
+| Shell          | [Zsh](https://www.zsh.org/)                             |
+| Code Editor    | [Neovim](https://github.com/neovim/neovim)              |
+| Fetch          | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| Visualiser     | [Cava](https://github.com/karlstav/cava)                |
 
 
 ## :rocket: FEATURES
@@ -35,15 +34,14 @@
 - Automatic installation and configuration of all basic software for development.
 
 
-## 📸 SCREENSHOTS
+## :camera: SCREENSHOTS
 
-![](.demo/1.png)
-![](.demo/2.png)
-![](.demo/3.png)
-![](.demo/4.png)
-![](.demo/5.png)
-![](.demo/6.png)
-![](.demo/7.png)
+![preview1](.demo/1.png)
+![preview2](.demo/2.png)
+![preview3](.demo/3.png)
+![preview4](.demo/4.png)
+![preview5](.demo/5.png)
+![preview6](.demo/6.png)
 
 
 ## :wrench: INSTALLATION
@@ -53,7 +51,7 @@ This installation script only works on Arch Linux.
 This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
 If you find errors in the shell, please report the problem.
 
-### STEPS
+### :bulb: STEPS
 
 **1. install python and curl:**
 
@@ -76,19 +74,19 @@ python ./install.py
 
 ## :computer: HOTKEYS
 
-| Action                                 | Key                   |
-| -------------------------------------- | --------------------- |
-| Move window focus                      | super + j/k           |
-| Move focus window                      | super + alt + j/k     |
-| Switch to another workspace            | super + 1/7           |
-| Move window to another workspace       | super + alt + 1/7     |
-| Kill focused window                    | super + c             |
-| Toggle floating mode of focused window | super + f             |
-| Open terminal                          | super + enter         |
-| Open application launcher              | super + d             |
-| Open power menu                        | super + x             |
-| Restart Xmonad                         | super + alt + r       |
-| Take screenshot                        | ctrl + super + s      |
-| Take fullscreen screenshot             | ctrl + super + f      |
+| Action                                 | Key               |
+| -------------------------------------- | ------------------|
+| Move window focus                      | Super + j/k       |
+| Move focus window                      | Super + Alt + j/k |
+| Switch to another workspace            | Super + 1/7       |
+| Move window to another workspace       | Super + Alt + 1/7 |
+| Kill focused window                    | Super + c         |
+| Toggle floating mode of focused window | Super + f         |
+| Open terminal                          | Super + enter     |
+| Open application launcher              | Super + d         |
+| Open power menu                        | Super + x         |
+| Restart Xmonad                         | Super + Alt + r   |
+| Take screenshot                        | Ctrl + Super + s  |
+| Take fullscreen screenshot             | Ctrl + Super + f  |
 
-The other hotkeys are in ~/.config/xmonad/xmonad.hs.
+**The other hotkeys are in ~/.config/xmonad/xmonad.hs.**

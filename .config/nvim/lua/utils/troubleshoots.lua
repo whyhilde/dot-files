@@ -29,8 +29,6 @@ require("trouble").setup {
 }
 
 
-vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>")
-vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>")
-vim.keymap.set("n", "<leader>xb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>")
+-- vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>")
+-- vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>")
+-- vim.keymap.set("n", "<leader>xb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")

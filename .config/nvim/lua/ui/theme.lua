@@ -17,6 +17,7 @@ require("catppuccin").setup {
     properties = {},
     types = {},
     operators = {},
+    miscs = {},
   },
   integrations = {
     cmp = true,
