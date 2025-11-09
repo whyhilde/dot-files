@@ -43,7 +43,7 @@
 
 ## :wrench: INSTALLATION
 
-> :warning: WARNING
+> [!WARNING]
 > This installation script only works on Arch Linux.
 > This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
 > If you find errors in the shell, please report the problem.
@@ -68,19 +68,19 @@ git clone https://github.com/whyhilde/dot-files
 cd dot-files && python3 ./install.py
 ```
 
-> INFO
-> The installation is complete. If you have any problems, read the following section.**
+> [!INFO] The installation is complete. If you have any problems, read the following section.**
 
 
 ## :hammer: POST-INSTALLATION FIXES
 
 **If you have a NVIDIA graphics card:**
-    - Open `/etc/mkinitcpio.conf`.
-    - In the `MODULES` array add the following modules names:
-        `MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm ...)`
-    - You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
+- Open `/etc/mkinitcpio.conf`.
+- In the `MODULES` array add the following modules names:
+    - `MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm ...)`.
+- You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
 
-**If you don't have a NVIDIA graphics card, install the drivers for your graphics card ([Intel](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU)).**
+**If you don't have a NVIDIA graphics card:**
+- Install the drivers for your graphics card ([Intel](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU)).
 
 
 ## :computer: HOTKEYS
