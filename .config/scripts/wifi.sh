@@ -3,15 +3,13 @@ set -e
 
 
 ICON="$HOME/.config/scripts/icons/wifi.svg"
+MENU="rofi -dmenu -config ~/.config/rofi/menu.rasi"
 
 
-# load Network Manager
+# load Network Manager, if service is not running
 STATUS=$(ps aux | grep NetworkManager | grep root)
-
-
-# if service is not running
 if [ "$STATUS" = "" ]; then
-  rofi -dmenu -config ~/.config/rofi/launcher.rasi -p " root password:" | sudo -S NetworkManager
+  $MENU -p " NET " | sudo -S NetworkManager
 fi
 
 
@@ -29,37 +27,30 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 
-chosenNetwork=$(echo -e "$toggle\n$LIST" | uniq -u | rofi -dmenu -config ~/.config/rofi/launcher.rasi -i -p "")
-chosenID=$(echo "${chosenNetwork:3}" | xargs)
+chosen_network=$(echo -e "$toggle\n$LIST" | uniq -u | $MENU -p " NET ")
+chosen_id=$(echo "${chosen_network:3}" | xargs)
 
 
 # parses the list of preconfigured connections to see if it already contains the chosen SSID. This speeds up the connection process
-if [ "$chosenNetwork" = "" ]; then
+if [ "$chosen_network" = "" ]; then
   exit
-
-elif [ "$chosenNetwork" = "󰤨  Enable Wi-Fi" ]; then
+elif [ "$chosen_network" = "󰤨  Enable Wi-Fi" ]; then
   nmcli radio wifi on
-
-elif [ "$chosenNetwork" = "󰤭  Disable Wi-Fi" ]; then
+elif [ "$chosen_network" = "󰤭  Disable Wi-Fi" ]; then
   nmcli radio wifi off
-
 else
   # message to show when connection is activated successfully
-  successMessage="You are now connected to the Wi-Fi network \"$chosenID\""
+  success_message="You are now connected to the Wi-Fi network \"$chosen_id\""
 
   # get known connections
-  savedConnections=$(nmcli -g NAME connection)
+  saved_connections=$(nmcli -g NAME connection)
 
-  if [[ $(echo "$savedConnections" | grep -w "$chosenID") = "$chosenID" ]]; then
-    nmcli connection up id "$chosenID" | grep "successfully" && notify-send -i "$ICON" "Connection Established" "$successMessage"
-
+  if [[ $(echo "$saved_connections" | grep -w "$chosen_id") = "$chosen_id" ]]; then
+    nmcli connection up id "$chosen_id" | grep "successfully" && notify-send -i "$ICON" "Connection Established" "$success_message"
   else
-    if [[ "$chosenNetwork" =~ "" ]]; then
-      password=$(rofi -dmenu -config ~/.config/rofi/launcher.rasi -p " password:")
+    if [[ "$chosen_network" =~ "" ]]; then
+      password="$MENU -p \" NET \""
     fi
-
-    nmcli device wifi connect "$chosenID" password "$password" | grep "successfully" && notify-send -i "$ICON" "Connection Established" "$successMessage"
-	
+    nmcli device wifi connect "$chosen_id" password "$password" | grep "successfully" && notify-send -i "$ICON" "Connection Established" "$success_message"
   fi
-
 fi

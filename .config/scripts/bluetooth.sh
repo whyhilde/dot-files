@@ -3,6 +3,7 @@ set -e
 
 
 ICON="$HOME/.config/scripts/icons/bluetooth.svg"
+MENU="rofi -dmenu -config ~/.config/rofi/menu.rasi"
 
 
 # check status of Bluetooth service
@@ -11,9 +12,8 @@ service_status=$(systemctl is-active bluetooth)
 
 
 if [ "$service_status" != "active" ]; then
-
   # if service is not active, suggest launch it
-  chosen=$(echo -e "󰂯  Enable Bluetooth Service\n󰅖  Cancel" | rofi -dmenu -config ~/.config/rofi/launcher.rasi -i -p " Bluetooth Service Stopped ")
+  chosen=$(echo -e "󰂯  Enable Bluetooth Service\n󰅖  Cancel" | $MENU -p " BLUE ")
     
   if [ "$chosen" = "󰂯  Enable Bluetooth Service" ]; then
     sudo systemctl start bluetooth
@@ -28,9 +28,9 @@ fi
 # check Bluetooth power status
 powered=$(bluetoothctl show 2>/dev/null | grep "Powered:" | grep -q "yes" && echo "on" || echo "off")
 if [ "$powered" = "on" ]; then
-  toggle="󰂲  Disable Bluetooth"
+  toggle="󰂲 Disable Bluetooth"
 else
-  toggle="󰂯  Enable Bluetooth"
+  toggle="󰂯 Enable Bluetooth"
 fi
 
 
@@ -46,40 +46,32 @@ else
 fi
 
 
-# launch Rofi
-chosen=$(echo -e "$menu_options" | rofi -dmenu -config ~/.config/rofi/launcher.rasi -i -p "")
-
-
+# launch menu
+chosen=$(echo -e "$menu_options" | $MENU -p " BLUE ")
 if [ -z "$chosen" ]; then
   exit
 fi
 
 
 # selection processing
-if [ "$chosen" = "󰂯  Enable Bluetooth" ]; then
-
+if [ "$chosen" = "󰂯 Enable Bluetooth" ]; then
   # trying to turn on Bluetooth with error handling
   if bluetoothctl power on 2>&1 | grep -q "Failed"; then
     notify-send -i "$ICON" "Error" "Failed to enable Bluetooth. Try restarting service."
-    restart_chosen=$(echo -e "󰁪  Restart Bluetooth Service\n󰅖  Cancel" | rofi -dmenu -config ~/.config/rofi/launcher.rasi -i -p " Bluetooth Error ")
-    
+    restart_chosen=$(echo -e "󰁪  Restart Bluetooth Service\n󰅖  Cancel" | $MENU -p " BLUE ")
     if [ "$restart_chosen" = "󰁪  Restart Bluetooth Service" ]; then
       sudo systemctl restart bluetooth
       sleep 2
       bluetoothctl power on
       notify-send -i "$ICON" "Bluetooth restarted and enabled"
     fi
-    
   else
     notify-send -i "$ICON" "Bluetooth Enabled"
   fi
-
-elif [ "$chosen" = "󰂲  Disable Bluetooth" ]; then
+elif [ "$chosen" = "󰂲 Disable Bluetooth" ]; then
   bluetoothctl power off
   notify-send -i "$ICON" "Bluetooth Disabled"
-
 else
-
   # connecting to device
   chosen_mac=$(echo "$bt_list" | grep "$chosen" | awk '{print $2}')
   
@@ -90,10 +82,7 @@ else
 
   if bluetoothctl connect "$chosen_mac" 2>/dev/null; then
     notify-send -i "$ICON" "Connected" "Successfully connected to $chosen"
-  
   else
     notify-send -i "$ICON" "Connection Failed" "Failed to connect to $chosen"
-  
   fi
-
 fi

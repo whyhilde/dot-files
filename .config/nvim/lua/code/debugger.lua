@@ -101,17 +101,5 @@ virtualtext.setup {
   virt_lines = false,
   virt_text_pos = "eol",
   virt_text_win_col = nil,
-  text_prefix = "~> ",
+  text_prefix = "* ",
 }
-
-
--- vim.keymap.set("n", "<F5>", function() dap.continue() end)
--- vim.keymap.set("n", "<F10>", function() dap.step_over() end)
--- vim.keymap.set("n", "<F11>", function() dap.step_into() end)
--- vim.keymap.set("n", "<F12>", function() dap.step_out() end)
--- vim.keymap.set("n", "<leader>b", function() dap.toggle_breakpoint() end)
--- vim.keymap.set("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input("breakpoint condition: ")) end)
--- vim.keymap.set("n", "<leader>lp", function() dap.set_breakpoint(nil, nil, vim.fn.input("log point message: ")) end)
--- vim.keymap.set("n", "<leader>dr", function() dap.repl.open() end)
--- vim.keymap.set("n", "<leader>dl", function() dap.run_last() end)
--- vim.keymap.set("n", "<leader>du", function() dapui.toggle() end)

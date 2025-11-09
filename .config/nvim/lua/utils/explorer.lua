@@ -35,7 +35,7 @@ require("nvim-tree").setup {
       inline_arrows = false,
     },
     root_folder_label = function(path)
-      return " " .. vim.fn.fnamemodify(path, ":~")
+      return " EXPLORER: " .. vim.fn.toupper(vim.fn.fnamemodify(path, ":~:t"))
     end,
   },
   ui = {
@@ -53,6 +53,3 @@ require("nvim-tree").setup {
     dotfiles = false,
   },
 }
-
-
--- vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", { silent = true })

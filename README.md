@@ -10,19 +10,17 @@
 
 ## :blue_book: INFO
 
-| Distro         | Arch Linux                                              |
-| -------------- | ------------------------------------------------------- |
-| Window Manager | [Xmonad](https://xmonad.org/)                           |
-| Bar            | [Polybar](https://github.com/polybar/polybar)           |
-| Compositor     | [Picom](https://github.com/pijulius/picom)              |
-| App Launcher   | [Rofi](https://github.com/davatorium/rofi)              |
-| Notification   | [Dunst](https://github.com/dunst-project/dunst)         |
-| Browser        | [Firefox](https://github.com/topics/firefox-browser)    |
-| Terminal       | [Ghostty](https://ghostty.org/)                         |
-| Shell          | [Zsh](https://www.zsh.org/)                             |
-| Code Editor    | [Neovim](https://github.com/neovim/neovim)              |
-| Fetch          | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
-| Visualiser     | [Cava](https://github.com/karlstav/cava)                |
+| Distro             | [Arch Linux](https://archlinux.org/)                    |
+| ------------------ | ------------------------------------------------------- |
+| Wayland Compositor | [Hyprland](https://github.com/hyprwm/Hyprland)          |
+| Status Bar         | [Waybar](https://github.com/Alexays/Waybar)             |
+| App Launcher       | [Rofi](https://github.com/davatorium/rofi)              |
+| Notifications      | [Dunst](https://github.com/dunst-project/dunst)         |
+| Browser            | [Firefox](https://github.com/topics/firefox-browser)    |
+| Terminal           | [Ghostty](https://github.com/ghostty-org/ghostty)       |
+| Shell              | [Fish](https://github.com/fish-shell/fish-shell)        |
+| Code Editor        | [Neovim](https://github.com/neovim/neovim)              |
+| Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 
 
 ## :rocket: FEATURES
@@ -41,52 +39,65 @@
 ![preview3](.demo/3.png)
 ![preview4](.demo/4.png)
 ![preview5](.demo/5.png)
-![preview6](.demo/6.png)
 
 
 ## :wrench: INSTALLATION
 
-### :warning: WARNING
-This installation script only works on Arch Linux.
-This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
-If you find errors in the shell, please report the problem.
+> [!WARNING] :warning: WARNING
+> This installation script only works on Arch Linux.
+> This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
+> If you find errors in the shell, please report the problem.
 
 ### :bulb: STEPS
 
-**1. install python and curl:**
+**1. install python3 and git:**
 
 ```bash
-sudo pacman -S python curl
+sudo pacman -S python3 git
 ```
 
-**2. download builder script:**
+**2. clone repo:**
 
 ```bash
-curl -O https://raw.githubusercontent.com/whyhilde/dot-files/master/install.py
+git clone https://github.com/whyhilde/dot-files
 ```
 
-**3. run builder:**
+**3. run installer:**
 
 ```bash
-python ./install.py
+cd dot-files && python3 ./install.py
 ```
+
+> [!INFO]
+> The installation is complete. If you have any problems, read the following section.**
+
+
+## :hammer: POST-INSTALLATION FIXES
+
+- If you have a NVIDIA graphics card:
+    - Open /etc/mkinitcpio.conf.
+    - In the `MODULES` array add the following modules names:
+        - `MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm ...)`
+    - You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
+
+- If you don't have a NVIDIA graphics card, install the drivers for your graphics card ([Intel](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU)).
 
 
 ## :computer: HOTKEYS
 
-| Action                                 | Key               |
-| -------------------------------------- | ------------------|
-| Move window focus                      | Super + j/k       |
-| Move focus window                      | Super + Alt + j/k |
-| Switch to another workspace            | Super + 1/7       |
-| Move window to another workspace       | Super + Alt + 1/7 |
-| Kill focused window                    | Super + c         |
-| Toggle floating mode of focused window | Super + f         |
-| Open terminal                          | Super + enter     |
-| Open application launcher              | Super + d         |
-| Open power menu                        | Super + x         |
-| Restart Xmonad                         | Super + Alt + r   |
-| Take screenshot                        | Ctrl + Super + s  |
-| Take fullscreen screenshot             | Ctrl + Super + f  |
+| Action                                 | Key                   |
+| -------------------------------------- | --------------------- |
+| Move window focus                      | Super + H/J/K/L       |
+| Move focus window                      | Super + Alt + H/J/K/L |
+| Switch to another workspace            | Super + 1/7           |
+| Move window to another workspace       | Super + Alt + 1/7     |
+| Kill focused window                    | Super + C             |
+| Toggle floating of focused window      | Super + F             |
+| Toggle fullscreen of focused window    | Super + S             |
+| Open terminal                          | Super + ENTER         |
+| Open application launcher              | Super + D             |
+| Reload config                          | Super + Alt + R       |
+| Take screenshot                        | Ctrl + Super + S      |
+| Take fullscreen screenshot             | Ctrl + Super + F      |
 
-**The other hotkeys are in ~/.config/xmonad/xmonad.hs.**
+**The other hotkeys are in ~/.config/hypr/hyprland.conf.**

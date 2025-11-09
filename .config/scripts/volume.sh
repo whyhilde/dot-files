@@ -7,10 +7,10 @@ ICON="$HOME/.config/scripts/icons/volume.svg"
 ICON_MUTED="$HOME/.config/scripts/icons/volume-mute.svg"
 
 
-sendNotification() {
+send_notification() {
   volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP "\d+(?=%)" | head -1)
   muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -oP "(yes|no)")
-    
+
   if [ "$muted" = "yes" ]; then
     icon=$ICON_MUTED
     message="mute"
@@ -37,4 +37,4 @@ case "$1" in
 esac
 
 
-sendNotification
+send_notification

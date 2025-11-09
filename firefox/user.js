@@ -15,6 +15,10 @@ user_pref("browser.urlbar.suggest.calculator", true);
 user_pref("browser.chrome.toolbar_tips", false);
 
 
+// show new tab button on top
+user_pref("zen.view.show-newtab-button-top", true);
+
+
 // disable link previews on tabs
 user_pref("browser.tabs.hoverPreview.enabled", false);
 

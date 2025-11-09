@@ -2,18 +2,21 @@
 set -e
 
 
-logout=""
-shutdown="⏻"
-reboot="󰜉"
-suspend="󰒲"
+lock="  lock screen"
+shutdown="  poweroff"
+reboot="  reboot"
+suspend="󰒲  suspend"
+hibernate="  hibernate"
 
 
-chosen=$(echo -e "$logout\n$shutdown\n$reboot\n$suspend" | rofi -dmenu -theme ~/.config/rofi/powermenu.rasi)
+chosen=$(echo -e "$lock\n$shutdown\n$reboot\n$suspend\n$hibernate" | \
+  rofi -dmenu -config ~/.config/rofi/menu.rasi -p " POWER ")
 
 
 case "$chosen" in
-  "$logout") slock ;;
+  "$lock") hyprlock ;;
   "$shutdown") systemctl poweroff ;;
   "$reboot") systemctl reboot ;;
   "$suspend") systemctl suspend ;;
+  "$hibernate") systemctl hibernate ;;
 esac

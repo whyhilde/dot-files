@@ -1,7 +1,7 @@
 require("conform").setup {
   formatters_by_ft = {
-    rust = {
-      "rustfmt",
+    c = {
+      "clang-format",
     },
   },
   format_on_save = false,
@@ -17,8 +17,3 @@ require("conform").setup {
     },
   },
 }
-
-
--- vim.keymap.set({ "n", "v", }, "<leader>fc", function()
---   require("conform").format { async = true, lsp_fallback = true, }
--- end)

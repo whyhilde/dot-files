@@ -35,7 +35,7 @@ font-style = Medium
 
 
 # cursor settings
-cursor-style = bar
+cursor-style = "bar"
 cursor-style-blink = false
 
 
@@ -49,7 +49,6 @@ title = ghostty
 window-decoration = false
 window-padding-x = 0
 window-padding-y = 0
-resize-overlay = never
 
 
 # behaviour settings
@@ -57,3 +56,4 @@ mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false
 resize-overlay = never
+window-inherit-working-directory = false

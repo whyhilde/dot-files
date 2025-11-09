@@ -28,7 +28,7 @@ require("dashboard").setup {
       action = ":enew",
       },
       {
-      desc = "File tree",
+      desc = "Explorer",
       desc_hl = "Comment",
       key = "n",
       key_hl = "Comment",

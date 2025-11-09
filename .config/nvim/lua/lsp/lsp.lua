@@ -18,32 +18,6 @@ lspconfig.clangd.setup {
 }
 
 
--- lspconfig.rust_analyzer.setup {
---   capabilities = capabilities,
---   -- on_attach = function(client)
---   --   require("completion").on_attach(client)
---   -- end,
---   settings = {
---     ["rust-analyzer"] = {
---       imports = {
---         granularity = {
---           group = "module",
---         },
---         prefix = "self",
---       },
---       cargo = {
---         buildScripts = {
---           enable = true,
---         },
---       },
---       procMacro = {
---         enable = true
---       },
---     },
---   },
--- }
-
-
 vim.diagnostic.config {
   virtual_text = false,
   update_in_insert = false,

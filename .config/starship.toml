@@ -1,30 +1,30 @@
-format="$username$directory$character"
-right_format = "$git_branch$time"
-add_newline = false 
+format = "$username$hostname$directory$git_branch$character"
+right_format = ""
+add_newline = false
 
 
 [character]
-success_symbol = "[ ~>](#cdd6f4)"
-error_symbol = "[ <~](#cdd6f4)"
+success_symbol = "[ >](fg:#cdd6f4)"
+error_symbol = "[ >](fg:#f38ba8)"
 
 
 [username]
-format = "[ $user ](bg:none fg:#74c7ec)"
+format = "[ $user](fg:#89b4fa)[@](fg:#cdd6f4)"
 show_always = true
 
 
+[hostname]
+disabled = false
+ssh_only = false
+format = "[$hostname](fg:#89b4fa)"
+
+
 [directory]
-format = "[  ](bg:none fg:#cdd6f4)[$path ](bg:none fg:#cdd6f4 bold)"
+format = "[ $path](fg:#cdd6f4)"
 home_symbol = "~"
 truncation_length = 3
 truncate_to_repo = false
 
 
 [git_branch]
-format = "[ \\($branch\\) ](bg:none fg:#cdd6f4 bold)"
-
-
-[time]
-disabled = false
-format = "[ $time](bg:none fg:#cdd6f4)"
-time_format = "%I:%M %p"
+format = "[ \\($branch\\)](fg:#cdd6f4)"
