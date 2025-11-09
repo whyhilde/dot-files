@@ -44,9 +44,9 @@
 ## :wrench: INSTALLATION
 
 > [!WARNING]
-> This installation script only works on Arch Linux.
-> This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.
-> If you find errors in the shell, please report the problem.
+> **This installation script only works on Arch Linux.**
+> **This Configuration is designed for 1920X1080 monitors, some functionality of the shell may not work as it should. In this case you need to make adjustments manually.**
+> **If you find errors in the shell, please report the problem.**
 
 ### :bulb: STEPS
 
@@ -68,7 +68,8 @@ git clone https://github.com/whyhilde/dot-files
 cd dot-files && python3 ./install.py
 ```
 
-> [!INFO] The installation is complete. If you have any problems, read the following section.**
+> [!INFO]
+> **The installation is complete. If you have any problems, read the following section.**
 
 
 ## :hammer: POST-INSTALLATION FIXES
