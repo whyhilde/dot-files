@@ -5,7 +5,7 @@ require("nvim-tree").setup {
   },
   view = {
     width = 32,
-    side = "right",
+    side = "left",
     centralize_selection = true,
     signcolumn = "no",
   },

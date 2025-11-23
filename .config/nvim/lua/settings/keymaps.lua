@@ -1,12 +1,11 @@
 -- general options --
 local key = vim.keymap.set                  -- set local variable
-vim.g.mapleader = " "                       -- set <leader> key
+vim.g.mapleader = ""                       -- set <leader> key
 
 
 -- files --
 key("n", "<leader>w", "<cmd>w<cr>", { silent = true }) -- save file
 key("n", "<leader>q", "<cmd>q!<cr>", { silent = true })-- exit without saving
-key("n", "<leader>e", "<cmd>q<cr>", { silent = true }) -- exit
 
 
 -- movement --
@@ -39,7 +38,7 @@ key("n", "<leader>c", "yyp")                -- duplicate line
 
 
 -- window management --
-key("n", "<leader>sv", "<c-w>v")            -- split window vertically
+key("n", "<leader>sv", "<c-w>v")            -- split window vertical
 key("n", "<leader>sh", "<c-w>s")            -- split window horizontally
 
 

@@ -4,6 +4,7 @@ require("mason").setup {
     "rust-analyzer",
     "rustfmt",
     "codelldb",
+    "clangd"
   },
   ui = {
     check_outdated_packages_on_open = true,

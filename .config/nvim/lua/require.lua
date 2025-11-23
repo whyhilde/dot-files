@@ -13,10 +13,7 @@ require("code.vcs")
 
 
 -- lsp --
-require("lsp.completion")
-require("lsp.lsp")
-require("lsp.manager")
-
+require("lsp")
 
 -- ui --
 require("ui.dashboard")

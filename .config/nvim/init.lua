@@ -1,6 +1,5 @@
 require("require")
 
-
 -- -- base settings --
 -- vim.opt.termguicolors = true           -- enable true color
 -- vim.opt.encoding = "utf-8"             -- set UTF-8 encoding
@@ -69,7 +68,7 @@ require("require")
 -- vim.opt.showbreak = " 󱞩 "              -- add arrow at beginning of moved line
 -- vim.opt.backup = false                 -- disable backup files
 -- vim.opt.writebackup = false            -- disable creation of temporary backups
--- vim.opt.swapfile = false               -- disable creation .swp files
+-- vim.opt.swapfile = false               -- disable creation .swp file:checkhealth vim.lsps
 -- vim.opt.undofile = true                -- save history of changes
 
 
