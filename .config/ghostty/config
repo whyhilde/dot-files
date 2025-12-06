@@ -1,4 +1,4 @@
-# base settings
+# general
 term = "xterm-256color"
 
 
@@ -27,31 +27,32 @@ selection-background = 353749
 selection-foreground = cdd6f4
 
 
-# font settings
+# font
+font-size = 19
 font-family = JetBrains Mono
 font-family = MesloLGS NF
-font-size = 19
 font-style = Medium
 
 
-# cursor settings
+# cursor
 cursor-style = "bar"
 cursor-style-blink = false
+adjust-cursor-thickness = 1
 
 
-# background settings
+# background
 window-theme = dark
 background-opacity = 0.9
 
 
-# window settings
+# window
 title = ghostty
 window-decoration = false
 window-padding-x = 0
 window-padding-y = 0
 
 
-# behaviour settings
+# behaviour
 mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false

@@ -4,9 +4,14 @@ vim.g.mapleader = " "                       -- set <leader> key
 
 
 -- files --
-key("n", "<leader>w", "<cmd>w<cr>", { silent = true }) -- save file
-key("n", "<leader>q", "<cmd>q!<cr>", { silent = true })-- exit without saving
-key("n", "<leader>e", "<cmd>q<cr>", { silent = true }) -- exit
+key("n", "<c-s>", "<cmd>w<cr>", { silent = true }) -- save file
+key("n", "<c-q>", "<cmd>qa!<cr>", { silent = true }) -- quit
+
+
+-- buffers --
+key("n", "<leader>bd", "<cmd>bdelete<cr>")
+key("n", "<leader>bn", "<cmd>bnext<cr>")
+key("n", "<leader>bp", "<cmd>bprev<cr>")
 
 
 -- movement --
@@ -54,9 +59,10 @@ key("n", "-", "<c-x>")                      -- decrement number
 
 
 -- other keymaps --
-key("i", "jj", "<esc>")                     -- quit insert mode
+key("i", "jk", "<esc>")                     -- quit insert mode
 key("i", "<d-space>", "<nop>")              -- ignore switch keyboard layout
 key("n", "<leader>hl", "<cmd>noh<cr>", { silent = true }) -- disable highlight after searching
+
 
 key({"n", "i", "v",}, "<Left>", "<nop>")
 key({"n", "i", "v",}, "<Up>", "<nop>")

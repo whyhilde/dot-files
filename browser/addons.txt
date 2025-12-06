@@ -1,0 +1,11 @@
+- Bitwarden - Менеджер паролей
+- Catppuccin for Web File Explorer Icons
+- Dark Reader
+- Decentraleyes
+- GitZip
+- I still don't care about cookies
+- Privacy Badger
+- RYS — Remove YouTube Suggestions
+- Simple Translate
+- uBlock Origin
+- Vimium

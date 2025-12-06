@@ -105,7 +105,6 @@ insertLeft {
 
 insertLeft {
   "filesize",
-  fmt = string.upper,
   cond = conditions.buffer_not_empty,
 }
 
@@ -180,6 +179,10 @@ insertRight {
 }
 
 
-require("lualine").setup (
-  config
-)
+return {
+  "nvim-lualine/lualine.nvim",
+  event = {
+    "UIEnter",
+  },
+  config = config,
+}

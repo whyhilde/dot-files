@@ -20,7 +20,7 @@ set -g fish_color_cancel f38ba8
 
 # completion pager colors
 set -g fish_pager_color_progress 6c7086
-set -g fish_pager_color_prefix f5c2e7
+set -g fish_pager_color_prefix 89b4fa
 set -g fish_pager_color_completion cdd6f4
 set -g fish_pager_color_description 6c7086
 
@@ -36,23 +36,20 @@ fzf --fish | source
 
 
 # aliases
-alias d="doas"
-alias Ss="pacman -Ss"
-alias S="doas pacman -S"
-alias Syu="doas pacman -Syu"
-alias R="doas pacman -R"
-
-alias cd="z"
-alias ci="zi"
-alias ls="eza --tree --level=2 --git --color=always --icons=always"
-alias ll="eza -lha --group-directories-first --color=always --icons=always --git --no-filesize --time-style='+%I:%M %p %d-%m-%y' --no-symlinks"
-alias cat="bat --theme=catppuccin --color=always --style='full' --line-range=:50"
-
-alias hs="history | rg"
-alias top="btop"
-alias ff="fastfetch"
-alias n="nvim" 
-alias c="clear"
+alias d "doas"
+alias Ss "pacman -Ss"
+alias S "doas pacman -S"
+alias Syu "doas pacman -Syu"
+alias R "doas pacman -R"
+alias cd "z"
+alias ci "zi"
+alias ls "eza --tree --level=2 --color=always --icons=always"
+alias ll "eza -la --group-directories-first --color=always --icons=always --git --no-filesize --time-style=\"+%d %b %Y\""
+alias cat "bat --theme=catppuccin --color=always --style=full --line-range=:50"
+alias hs "history | rg"
+alias ff "fastfetch"
+alias n "nvim"
+alias c "clear"
 
 
 # environment variables
@@ -60,22 +57,19 @@ set -gx TERM "xterm-256color"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
 set -gx PATH "$PATH:$HOME/bin:$HOME/bin/visual"
-set -gx FZF_DEFAULT_OPTS "--style=full --smart-case --preview \"bat --wrap=never --theme=catppuccin --color=always --number {}\" --reverse --no-info --prompt= --ghost=\"type and search..\" -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
-set -gx _ZO_FZF_OPTS "--style=full --smart-case --no-separator --height 50% --reverse --no-info --prompt= --ghost=\"type and search..\" -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
+set -gx FZF_DEFAULT_OPTS "--style=full --smart-case --preview \"bat --wrap=never --theme=catppuccin --color=always --number {}\" --reverse --no-info --prompt= --ghost=\"type something\" -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
+set -gx _ZO_FZF_OPTS "--style=full --smart-case --no-separator --height 50% --reverse --no-info --prompt= --ghost=\"type something\" -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
 
 
 # greeting
-set -U fish_greeting ""
+function fish_greeting
+  set fish "$(set_color 89dceb)>$(set_color 74c7ec)<$(set_color 89b4fa)>"
+  set text "$(set_color cdd6f4)Welcome to fish, the friendly interactive shell"
+  echo "$fish $text"
+end
 
 
-# autostart ui
-if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"
-  set -gx XDG_CURRENT_DESKTOP "Hyprland"
-  set -gx XDG_SESSION_TYPE "wayland"
-  set -gx XDG_SESSION_DESKTOP "Hyprland"
-  set -gx QT_QPA_PLATFORM "wayland"
-  set -gx GDK_BACKEND wayland
-  set -gx MOZ_ENABLE_WAYLAND 1
-
-  exec Hyprland
+# autostart window manager
+if test -z "$DISPLAY" ; and test (tty) = "/dev/tty1"
+  exec Hyprland > ~/.hyprland.log 2>&1
 end

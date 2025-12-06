@@ -1,0 +1,38 @@
+# general
+font=JetBrains Mono Medium 12
+anchor=top-center
+width=300
+height=100
+padding=10
+border-size=3
+border-radius=10
+margin=8
+
+
+# colors
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=#313244
+
+
+# icons
+icons=1
+icon-location=left
+max-icon-size=48
+
+
+# misc
+sort=-time
+default-timeout=3000
+group-by=app-name
+max-visible=5
+
+
+# actions
+on-button-left=dismiss-group
+on-button-right=dismiss-group
+
+
+[urgency=high]
+border-color=#fab387

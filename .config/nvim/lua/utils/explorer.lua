@@ -1,55 +1,33 @@
-require("nvim-tree").setup {
-  sort = {
-    sorter = "case_sensitive",
-    folders_first = true,
+return {
+  "nvim-mini/mini.files",
+  version = "*",
+  event = {
+    "UIEnter",
   },
-  view = {
-    width = 32,
-    side = "right",
-    centralize_selection = true,
-    signcolumn = "no",
-  },
-  actions = {
-    open_file = {
-      quit_on_open = true,
+  opts = {
+    options = {
+      permanent_delete = false,
+      use_as_default_explorer = true,
     },
-    change_dir = {
-      enable = true,
-      global = false,
-      restrict_above_cwd = false,
+    mappings = {
+      close = "q",
+      go_in = "",
+      go_in_plus = "l",
+      go_out = "",
+      go_out_plus = "h",
+      mark_goto = "'",
+      mark_set = "m",
+      reset = "<BS>",
+      reveal_cwd = "@",
+      synchronize = "=",
+      trim_left = "<",
+      trim_right = ">",
     },
-  },
-  renderer = {
-    group_empty = false,
-    symlink_destination = false,
-    indent_width = 2,
-    icons = {
-      git_placement = "before",
-      glyphs = {
-        folder = require("icons").explorer.folder,
-        git = require("icons").explorer.git,
-      },
+    windows = {
+      preview = true,
+      width_nofocus = 25,
+      width_focus = 30,
+      width_preview = 50,
     },
-    indent_markers = {
-      enable = false,
-      inline_arrows = false,
-    },
-    root_folder_label = function(path)
-      return " EXPLORER: " .. vim.fn.toupper(vim.fn.fnamemodify(path, ":~:t"))
-    end,
-  },
-  ui = {
-    confirm = {
-      remove = true,
-      trash = true,
-      default_yes = false,
-    },
-  },
-  git = {
-    enable = true,
-    ignore = false,
-  },
-  filters = {
-    dotfiles = false,
   },
 }

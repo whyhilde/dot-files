@@ -4,24 +4,24 @@ vim.g.mapleader = " "                       -- set <leader> key
 
 
 -- debugger --
-local dap = require("dap")
-local dapui = require("dapui")
-key("n", "<F5>", function() dap.continue() end)
-key("n", "<F10>", function() dap.step_over() end)
-key("n", "<F11>", function() dap.step_into() end)
-key("n", "<F12>", function() dap.step_out() end)
-key("n", "<leader>b", function() dap.toggle_breakpoint() end)
-key("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input("breakpoint condition: ")) end)
-key("n", "<leader>lp", function() dap.set_breakpoint(nil, nil, vim.fn.input("log point message: ")) end)
-key("n", "<leader>dr", function() dap.repl.open() end)
-key("n", "<leader>dl", function() dap.run_last() end)
-key("n", "<leader>du", function() dapui.toggle() end)
+-- local dap = require("dap")
+-- local dapui = require("dapui")
+-- key("n", "<F5>", function() dap.continue() end)
+-- key("n", "<F10>", function() dap.step_over() end)
+-- key("n", "<F11>", function() dap.step_into() end)
+-- key("n", "<F12>", function() dap.step_out() end)
+-- key("n", "<leader>b", function() dap.toggle_breakpoint() end)
+-- key("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input("breakpoint condition: ")) end)
+-- key("n", "<leader>lp", function() dap.set_breakpoint(nil, nil, vim.fn.input("log point message: ")) end)
+-- key("n", "<leader>dr", function() dap.repl.open() end)
+-- key("n", "<leader>dl", function() dap.run_last() end)
+-- key("n", "<leader>du", function() dapui.toggle() end)
 
 
 -- formatter --
-key({ "n", "v", }, "<leader>fc", function()
-  require("conform").format { async = true, lsp_fallback = true, }
-end)
+-- key({ "n", "v", }, "<leader>fc", function()
+--   require("conform").format { async = true, lsp_fallback = true, }
+-- end)
 
 
 -- outline --
@@ -45,8 +45,14 @@ key("v", "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>")
 key("v", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>")
 
 
+-- bufferline --
+-- key("n", "<leader>bd", "<cmd>bdelete<cr>")
+-- key("n", "<leader>bn", "<cmd>bnext<cr>")
+-- key("n", "<leader>bp", "<cmd>bprev<cr>")
+
+
 -- explorer --
-key("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", { silent = true })
+key("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { silent = true })
 
 
 -- finder --

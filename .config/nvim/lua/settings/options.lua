@@ -1,5 +1,4 @@
 -- general --
-vim.opt.termguicolors = true                -- enable true color
 vim.opt.encoding = "utf-8"                  -- set UTF-8 encoding
 vim.opt.fileencoding = "utf-8"              -- default file encoding
 vim.opt.modelines = 0                       -- disable CVE-2007-2438 vulnerability
@@ -48,7 +47,7 @@ vim.opt.infercase = true                    -- save register when auto-complete
 -- performance --
 vim.opt.laststatus = 3                      -- enable global status line
 vim.opt.ruler = false                       -- disable character ruler
-vim.opt.showtabline = 0                     -- disable tab line
+vim.opt.showtabline = 2                     -- disable tab line
 vim.opt.showmode = false                    -- disable display mode 
 vim.opt.wrap = true                         -- enable line wrapping
 vim.opt.linebreak = true                    -- enable wrap only by words

@@ -48,7 +48,7 @@ mainbox {
 imagebox {
   padding:                     20px;
   background-color:            transparent;
-  background-image:            url("~/.config/hypr/assets/wall.png", height);
+  background-image:            url("~/.config/hypr/wallpapers/1.png", height);
   orientation:                 vertical;
   children:                    [ "inputbar", "dummy" ];
 }

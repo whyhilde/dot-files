@@ -65,10 +65,10 @@ git clone https://github.com/whyhilde/dot-files
 **3. run installer:**
 
 ```bash
-cd dot-files && python3 ./install.py
+python3 ./dot-files/builder/install.py
 ```
 
-> [!INFO]
+> [!WARNING]
 > **The installation is complete. If you have any problems, read the following section.**
 
 
@@ -81,7 +81,7 @@ cd dot-files && python3 ./install.py
 - You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
 
 **If you don't have a NVIDIA graphics card:**
-- Install the drivers for your graphics card ([Intel](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU)).
+- Install the drivers for your graphics card **([INTEL](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU))**.
 
 
 ## :computer: HOTKEYS
@@ -101,4 +101,4 @@ cd dot-files && python3 ./install.py
 | Take screenshot                        | Ctrl + Super + S      |
 | Take fullscreen screenshot             | Ctrl + Super + F      |
 
-**The other hotkeys are in ~/.config/hypr/hyprland.conf.**
+**The other hotkeys are in ~/.config/hypr/modules/keybindings.conf.**

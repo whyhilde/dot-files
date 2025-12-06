@@ -1,155 +1,209 @@
-* {
-  font-family: JetBrains Mono, Symbols Nerd Font;
-  font-weight: bold;
-  font-size: 17px;
-  min-height: 0;
-}
-
-
-@define-color bg #1e1e2e;
-@define-color bg2 #181825;
-@define-color fg #cdd6f4;
-@define-color hover #89b4fa;
+@define-color background #1e1e2e;
+@define-color foreground #cdd6f4;
 @define-color accent #89b4fa;
-@define-color red #eba0ac;
+@define-color overlay #45475a;
+@define-color red #f38ba8;
+@define-color orange #fab387;
+
+
+* {
+  font-family: "JetBrains Mono NF";
+  font-size: 17;
+}
 
 
 window#waybar {
-  border-radius: 10;
-  background-color: @bg;
+  background-color: rgba(108, 112, 134, 0.25);
+  border-radius: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-
-#custom-menu {
-  padding: 2 15;
-  margin: 5 5 5 10;
-  color: @accent;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
-}
-
-
-#custom-menu:hover {
-  color: @accent;
-}
-
-
-#workspaces {
-  padding: 2 15;
-  margin: 5;
-  color: @fg;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
+window#waybar > box {
+  padding: 5px 0px;
 }
 
 button {
   box-shadow: inset 0 -3px transparent;
   border: none;
-  border-radius: 0;
+  border-radius: 10px;
 }
 
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px transparent;
+  border: none;
+}
+
+
+#workspaces {
+  font-weight: 800;
+  margin-right: 5px;
+  background-color: @background;
+  color: @foreground;
+  border-radius: 10px;
 }
 
 #workspaces button {
-  padding: 0 5px;
+  border-radius: 0px;
+  padding: 0 8px;
+  color: inherit;
   background-color: transparent;
-  color: @fg;
+  transition: 0.5s ease-out;
 }
 
 #workspaces button:hover {
-  color: @accent;
+  background: rgba(17, 17, 27, 0.25);
+  border-radius: 0 0 0 0;
+}
+
+#workspaces button:hover:nth-child(1) {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#workspaces button:hover:nth-last-child(1) {
+  border-radius: 0 10px 10px 0;
 }
 
 #workspaces button.active {
-  color: @accent;
+  background-color: @accent;
+  color: @background;
+}
+
+#workspaces button.active:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+
+#workspaces button.active:nth-last-child(1) {
+  border-radius: 0 10px 10px 0;
+}
+
+#workspaces button.urgent {
+  border-bottom: 3px solid @orange;
+  border-radius: 0;
+}
+
+#workspaces button.urgent:nth-child(1) {
+  border-bottom: 3px solid @orange;
+  border-radius: 10px 0 0 10px;
+}
+
+#workspaces button.urgent:nth-last-child(1) {
+  border-bottom: 3px solid @orange;
+  border-radius: 0 10px 10px 0;
 }
 
 
-/* #custom-cmus { */
-/* 	padding: 2 15; */
-/* 	margin: 5; */
-/* 	color: @fg; */
-/* 	background-color: @bg2; */
-/* 	border: none; */
-/* 	border-radius: 20; */
-/* } */
-/* #custom-cmus:hover { */
-/* 	color: @hover; */
-/* } */
-
-
-#tray {
-  padding: 2 15;
-  margin: 5;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
-}
-
-
+#network,
+#hardware,
+#window,
+#tray,
 #language {
-  padding: 2 15;
-  margin: 5;
-  color: @fg;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
-}
-
-#language:hover {
-  color: @hover;
+  font-weight: 700;
+  background-color: @background;
+  color: @foreground;
+  padding: 6px 10px;
+  border-radius: 10px;
 }
 
 
-#network {
-  padding: 2 15;
-  margin: 5;
-  color: @accent;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
+#hardware {
+  margin-left: 5px;
 }
 
-#network.disconnected {
+#cpu {
+  padding-right: 10px;
+}
+
+#memory {
+  padding-left: 10px;
+}
+
+
+#audio {
+  background-color: @background;
+  color: @foreground;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+#pulseaudio:hover {
+  background-color: @overlay;
+}
+
+#pulseaudio {
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+#pulseaudio.output.muted {
+  color: @red;
+}
+
+#pulseaudio.input.source-muted {
   color: @red;
 }
 
 
-#pulseaudio {
-  padding: 2 15;
-  margin: 5;
-  color: @fg;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
+#language {
+  margin-right: 5px;
 }
 
-#pulseaudio:hover {
-  color: @hover;
+
+#time {
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: @background;
+  color: @foreground;
 }
 
+#clock.simple {
+  padding: 6px 10px;
+  background-color: @accent;
+  color: @background;
+  border-radius: 0 10px 10px 0;
+  font-weight: 700;
+}
 
 #clock {
-  padding: 2 15;
-  margin: 5;
-  color: @fg;
-  background-color: @bg2;
-  border: none;
-  border-radius: 10;
+  padding: 6px 10px;
+  border-radius: 10px 0 0 10px;
 }
 
-#clock:hover {
-  color: @hover;
+
+#network {
+  padding: 0 20 0 15;
+}
+
+
+#tray {
+  margin-right: 5px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+
+.modules-right {
+  padding: 0 10px;
+}
+
+.modules-left {
+  padding: 0 10px;
+}
+
+label:focus {
+  background-color: #000000;
 }
 
 
 tooltip {
-  background: @bg;
+  background-color: @background;
   margin: 20px;
   padding: 15px;
   border: 20px solid rgba(100, 114, 125, 0);
