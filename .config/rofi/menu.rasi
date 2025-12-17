@@ -1,14 +1,14 @@
 @theme "/dev/null"
 * {
-  bg: #1e1e2e;
+  bg: #1e1e2ee6;
   fg: #cdd6f4;
   accent: #89b4fa;
+  borderColor: #89b4fae6;
   width: 575;
 }
 
 
 configuration {
-  modi: "drun";
   font: "JetBrains Mono Medium 14";
   show-icons: false;
   location: 0;
@@ -26,7 +26,8 @@ element-text, element-icon {
 window {
   height: 400px;
   background-color: @bg;
-  border: 0px;
+  border: 3px;
+  border-color: @borderColor;
   border-radius: 10px;
 }
 
@@ -64,7 +65,7 @@ entry {
   margin: 20px 0px 0px 10px;
   text-color: @fg;
   background-color: @bg;
-  placeholder: "type something";
+  placeholder: "search";
   blink: true;
 }
 

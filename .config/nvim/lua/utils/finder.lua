@@ -40,11 +40,54 @@ return {
       pickers = {
         find_files = {},
         oldfiles = {},
+        buffers = {},
         live_grep = {},
         git_branches = {},
-        git_commits = {},
+        git_files = {},
         git_status = {},
       },
     }
   end,
+  keys = {
+    {
+      mode = "n",
+      "<leader>ff",
+      "<cmd>Telescope find_files<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>fo",
+      "<cmd>Telescope oldfiles<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>fb",
+      "<cmd>Telescope buffers<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>ft",
+      "<cmd>Telescope live_grep<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>tt",
+      "<cmd>TodoTelescope<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>gb",
+      "<cmd>Telescope git_branches<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>gf",
+      "<cmd>Telescope git_files<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>gs",
+      "<cmd>Telescope git_status<cr>",
+    },
+  },
 }

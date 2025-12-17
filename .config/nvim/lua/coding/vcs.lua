@@ -45,4 +45,66 @@ return {
     status_formatter = nil,
     max_file_length = 40000,
   },
+  keys = {
+    {
+      mode = "n",
+      "]c",
+      "<cmd>Gitsigns next_hunk<cr>",
+    },
+    {
+      mode = "n",
+      "[c",
+      "<cmd>Gitsigns prev_hunk<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hs",
+      "<cmd>Gitsigns stage_hunk<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hr",
+      "<cmd>Gitsigns reset_hunk<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hS",
+      "<cmd>Gitsigns stage_buffer<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hR",
+      "<cmd>Gitsigns reset_buffer<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hp",
+      "<cmd>Gitsigns preview_hunk<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hb",
+      "<cmd>Gitsigns blame_line<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>tb",
+      "<cmd>Gitsigns toggle_current_line_blame<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>hd",
+      "<cmd>Gitsigns diffthis<cr>",
+    },
+    {
+      mode = "v",
+      "<leader>hs",
+      "<cmd>Gitsigns stage_hunk<cr>",
+    },
+    {
+      mode = "v",
+      "<leader>hr",
+      "<cmd>Gitsigns reset_hunk<cr>",
+    },
+  },
 }

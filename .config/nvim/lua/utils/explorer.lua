@@ -30,4 +30,11 @@ return {
       width_preview = 50,
     },
   },
+  keys = {
+    {
+      mode = "n",
+      "<leader>e",
+      "<cmd>lua MiniFiles.open()<cr>",
+    },
+  },
 }

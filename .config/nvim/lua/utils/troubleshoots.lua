@@ -34,4 +34,21 @@ return {
       folder_open = " ",
     },
   },
+  keys = {
+    {
+      mode = "n",
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>xt",
+      "<cmd>Trouble todo toggle<cr>",
+    },
+    {
+      mode = "n",
+      "<leader>xb",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+    },
+  },
 }

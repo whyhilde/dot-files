@@ -1,6 +1,8 @@
--- general options --
-local key = vim.keymap.set                  -- set local variable
-vim.g.mapleader = " "                       -- set <leader> key
+local key = vim.keymap.set
+
+
+-- leader --
+vim.g.mapleader = " "
 
 
 -- files --

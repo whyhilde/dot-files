@@ -9,8 +9,8 @@ return {
       "gopls",
       "gofumpt",
       "golines",
-      "codelldb",
       "lua-language-server",
+      "pyright",
     },
     ui = {
       check_outdated_packages_on_open = true,

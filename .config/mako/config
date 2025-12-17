@@ -25,7 +25,6 @@ max-icon-size=48
 # misc
 sort=-time
 default-timeout=3000
-group-by=app-name
 max-visible=5
 
 

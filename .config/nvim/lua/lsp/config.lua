@@ -26,11 +26,16 @@ return {
     -- }
 
 
-    require("lsp.servers.go")
-    require("lsp.servers.lua")
-    require("lsp.servers.python")
-    require("lsp.servers.rust")
-    require("lsp.servers.qml")
+    local servers = {
+      "go",
+      "lua",
+      "python",
+    }
+
+
+    for _, server in ipairs(servers) do
+      require("lsp.servers." .. server)
+    end
 
 
     vim.diagnostic.config {

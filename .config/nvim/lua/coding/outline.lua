@@ -43,4 +43,21 @@ return {
       min_width = 30,
     },
   },
+  keys = {
+    {
+      mode = "n",
+      "<leader>a",
+      "<cmd>AerialToggle!<cr>",
+    },
+    {
+      mode = "n",
+      "[[",
+      "<cmd>AerialPrev<cr>",
+    },
+    {
+      mode = "n",
+      "]]",
+      "<cmd>AerialNext<cr>",
+    },
+  },
 }

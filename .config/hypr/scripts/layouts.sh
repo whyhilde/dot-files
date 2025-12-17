@@ -2,7 +2,7 @@
 set -e
 
 
-current=$(hyprctl getoption general:layout | grep "str:" | awk '{print $2}')
+current=$(hyprctl getoption general:layout | grep "str:" | sed "s/str: //")
 if [ "$current" == "master" ]; then
   hyprctl keyword general:layout dwindle
 else

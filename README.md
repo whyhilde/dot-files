@@ -1,22 +1,20 @@
-<h1 align="center"> WHYHILDE RICE </h1>
+<h1 align="center"> whyhilde shell </h1>
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
-  <img src="https://img.shields.io/github/issues/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
-  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
-  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
-  <img src="https://img.shields.io/github/license/whyhilde/dot-files?style=for-the-badge&color=89b4fa&logoColor=cdd6f4&labelColor=1e1e2e">
+  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89b4fa&labelColor=181825&logoColor=cdd6f4&logo=git">
+  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=f9e2af&labelColor=181825&logoColor=cdd6f4&logo=andela">
+  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=f38ba8&labelColor=181825&logoColor=cdd6f4&logo=protondrive">
 </p>
 
 
-## :blue_book: INFO
+## :blue_book: OVERVIEW
 
 | Distro             | [Arch Linux](https://archlinux.org/)                    |
 | ------------------ | ------------------------------------------------------- |
 | Wayland Compositor | [Hyprland](https://github.com/hyprwm/Hyprland)          |
 | Status Bar         | [Waybar](https://github.com/Alexays/Waybar)             |
 | App Launcher       | [Rofi](https://github.com/davatorium/rofi)              |
-| Notifications      | [Dunst](https://github.com/dunst-project/dunst)         |
-| Browser            | [Firefox](https://github.com/topics/firefox-browser)    |
+| Notifications      | [Mako](https://github.com/emersion/mako)                |
+| Browser            | [Zen](https://zen-browser.app)                          |
 | Terminal           | [Ghostty](https://github.com/ghostty-org/ghostty)       |
 | Shell              | [Fish](https://github.com/fish-shell/fish-shell)        |
 | Code Editor        | [Neovim](https://github.com/neovim/neovim)              |
@@ -32,13 +30,12 @@
 - Automatic installation and configuration of all basic software for development.
 
 
-## :camera: SCREENSHOTS
+## :camera: PREVIEWS
 
-![preview1](.demo/1.png)
-![preview2](.demo/2.png)
-![preview3](.demo/3.png)
-![preview4](.demo/4.png)
-![preview5](.demo/5.png)
+![preview1](previews/1.png)
+![preview2](previews/2.png)
+![preview3](previews/3.png)
+![preview4](previews/4.png)
 
 
 ## :wrench: INSTALLATION
@@ -72,7 +69,7 @@ python3 ./dot-files/builder/install.py
 > **The installation is complete. If you have any problems, read the following section.**
 
 
-## :hammer: POST-INSTALLATION FIXES
+## :hammer: POST-INSTALLATION
 
 **If you have a NVIDIA graphics card:**
 - Open `/etc/mkinitcpio.conf`.

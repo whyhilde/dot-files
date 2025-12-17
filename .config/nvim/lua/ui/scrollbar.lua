@@ -1,6 +1,5 @@
 local disabled_ft = {
   "aerial",
-  "NvimTree",
 }
 
 

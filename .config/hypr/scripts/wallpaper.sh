@@ -5,4 +5,4 @@ set -e
 WALLS_DIR="$HOME/.config/hypr/wallpapers"
 RANDOM_WALL=$(find "$WALLS_DIR" -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
 
-swww img "$RANDOM_WALL" --transition-type=any
+swww img "$RANDOM_WALL" --transition-type=wipe --transition-angle=30 --transition-fps=165

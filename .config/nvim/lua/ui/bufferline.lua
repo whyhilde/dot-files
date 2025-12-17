@@ -4,9 +4,6 @@ return {
   event = {
     "UIEnter",
   },
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   opts = {
     options = {
       name_formatter = function(buf)

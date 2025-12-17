@@ -19,6 +19,8 @@ class Patches:
         Patches.configure_opendoas()
         Patches.set_scripts_permissions()
         Patches.create_default_folders()
+        Patches.set_theme_for_btop()
+        Patches.setup_neovim()
 
     @staticmethod
     def change_shell():
@@ -168,3 +170,27 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
         print(
             f"{Cols.INFO}[+] The default folders were created successfully.{Cols.END}"
         )
+
+    @staticmethod
+    def set_theme_for_btop():
+        try:
+            print(":: Setting theme for btop...")
+
+            url = "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
+            output_file = "~/.config/btop/themes/catppuccin.theme"
+
+            os.system("mkdir -p ~/.config/btop/themes/")
+            os.system(f"curl -o {output_file} {url}")
+
+            print(f"{Cols.INFO}[+] Theme have been successfully changed.{Cols.END}")
+
+        except Exception as e:
+            print(f"{Cols.ERROR}[-] Error: {e}{Cols.END}")
+
+    @staticmethod
+    def setup_neovim():
+        pass
+
+    @staticmethod
+    def setup_fonts():
+        pass

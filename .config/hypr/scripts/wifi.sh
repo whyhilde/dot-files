@@ -2,7 +2,6 @@
 set -e
 
 
-DIVIDER="--------"
 RESCAN_BUTTON="  Rescan"
 BACK_BUTTON="Back"
 MENU="rofi -dmenu -config ~/.config/rofi/menu.rasi"
@@ -42,7 +41,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 
-choose_options="$toggle\n$RESCAN_BUTTON\n$DIVIDER\n$wifi_list"
+choose_options="$toggle\n$RESCAN_BUTTON\n$wifi_list"
 
 
 # if wifi is disabled, then the options change
@@ -51,7 +50,7 @@ if [ "$wifi_list" = "" ]; then
 fi
 
 
-chosen_network=$(echo -e "$choose_options" | uniq -u | $MENU -selected-row 0 -p " NET " )
+chosen_network=$(echo -e "$choose_options" | uniq -u | $MENU -p " NET ")
 chosen_id=$(echo "${chosen_network:3}" | xargs)
 
 
@@ -76,8 +75,8 @@ else
     connection_info=$(nmcli --fields "SSID,BSSID,MODE,FREQ,RATE,SECURITY" device wifi list | sed "s/$chosen_id/$modified_id/" | awk -v chosen_id="$modified_id" '$1 == chosen_id {print "BS:", $2, "\nMODE:", $3, "\nFREQ:", $4, $5, "\nRATE:", $6, $7, "\nSECURITY:", $8}')
 
     # processing logic in connection information
-    wifi_details_options="$connection_info\n$DIVIDER\nChange password\nForget access point\nShare connection\n$BACK_BUTTON"
-    chosen="$(echo -e "$wifi_details_options" | uniq -u | $MENU -selected-row 0 -p "$chosen_id")"
+    wifi_details_options="$connection_info\n\nChange password\nForget access point\nShare connection\n$BACK_BUTTON"
+    chosen=$(echo -e "$wifi_details_options" | uniq -u | $MENU -p "$chosen_id")
     echo $chosen
 
     case "$chosen" in

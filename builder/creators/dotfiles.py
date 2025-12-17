@@ -2,6 +2,7 @@ from options import Cols
 
 
 from pathlib import Path
+import os
 import shutil
 import subprocess
 
@@ -11,6 +12,7 @@ class Dotfiles:
     def setup_all_dotfiles():
         Dotfiles.setup_configs()
         Dotfiles.setup_git()
+        Dotfiles.setup_browser()
 
     @staticmethod
     def setup_configs():
@@ -56,7 +58,7 @@ class Dotfiles:
                 return
 
             home_dir = Path.home()
-            repo_dir = Path(__file__).parent
+            repo_dir = Path(__file__).resolve().parents[2]
             source_file = repo_dir / "home-configs" / ".gitconfig"
             dest_file = home_dir / ".gitconfig"
 
@@ -75,6 +77,23 @@ class Dotfiles:
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Command execution error: {e}.{Cols.END}")
+
+        except Exception as e:
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+
+    @staticmethod
+    def setup_browser():
+        try:
+            print(":: Configuring Zen Browser...")
+
+            repo_dir = Path(__file__).resolve().parents[2]
+
+            os.system(f"mv {repo_dir}/browser/user.js ~/.zen/*(release)/")
+            os.system("mkdir -p ~/.zen/*(release)/chrome/")
+            os.system(f"mv {repo_dir}/browser/chrome/userChrome.css ~/.zen/*(release)/chrome/")
+            os.system(f"mv {repo_dir}/browser/chrome/userContent.css ~/.zen/*(release)/chrome/")
+
+            print(f"{Cols.INFO}[+] Zen Browser has been successfully configured.{Cols.END}")
 
         except Exception as e:
             print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")

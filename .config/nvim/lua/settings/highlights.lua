@@ -27,6 +27,10 @@ hl(0, "MyDashboardDesc", { link = "Comment" })
 hl(0, "MyDashboardKey", { link = "Comment" })
 
 
+-- icons --
+hl(0, "MiniIconsGrey", { fg = "#a6adc8" })
+
+
 -- notifications --
 hl(0, "NotifyERRORBorder", { fg = "#f38ba8" })
 hl(0, "NotifyWARNBorder", { fg = "#f9e2af" })

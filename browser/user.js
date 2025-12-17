@@ -10,8 +10,8 @@ user_pref("devtools.debugger.remote-enabled", true);
 // integrated calculator in urlbar
 user_pref("browser.urlbar.suggest.calculator", true);
 
-// enable custom homepage
-user_pref("browser.startup.homepage", "~/.mozilla/homepage/index.html");
+// set homepage
+user_pref("browser.startup.homepage", "about:home");
 
 
 // convenience
