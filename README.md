@@ -1,8 +1,8 @@
 <h1 align="center"> whyhilde shell </h1>
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89b4fa&labelColor=181825&logoColor=cdd6f4&logo=git">
-  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=f9e2af&labelColor=181825&logoColor=cdd6f4&logo=andela">
-  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=f38ba8&labelColor=181825&logoColor=cdd6f4&logo=protondrive">
+  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=git">
+  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=andela">
+  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=protondrive">
 </p>
 
 
