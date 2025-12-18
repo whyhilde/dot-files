@@ -32,12 +32,13 @@
 
 <h2 align="center">previews</h2>
 
-| Desktop | Launcher |
-|:---|:---------------|
-| <img width="1920" height="1080" alt="image" src="previews/1.png" /> | <img width="1920" height="1080" alt="image" src="previews/2.png" /> |
-| Window management | Built with love |
-|:---|:---------------|
-| <img width="1920" height="1080" alt="image" src="previews/3.png" /> | <img width="1920" height="1080" alt="image" src="previews/4.png" /> |
+| Desktop                    | Launcher                    |
+| -------------------------- | --------------------------- |
+| ![Desktop](previews/1.png) | ![Launcher](previews/2.png) |
+
+| Neovim                     | Powermenu                    |
+| -------------------------- | ---------------------------- |
+| ![Neovim](previews/3.png)  | ![Powermenu](previews/4.png) |
 
 
 <h2 align="center">installation</h2>
