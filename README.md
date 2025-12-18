@@ -6,7 +6,7 @@
 </p>
 
 
-## :blue_book: OVERVIEW
+<h2 align="center">overview</h2>
 
 | Distro             | [Arch Linux](https://archlinux.org/)                    |
 | ------------------ | ------------------------------------------------------- |
@@ -21,7 +21,7 @@
 | Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 
 
-## :rocket: FEATURES
+<h2 align="center">features</h2>
 
 - Beautiful and minimalistic system.
 - Customizing software on the system.
@@ -30,7 +30,7 @@
 - Automatic installation and configuration of all basic software for development.
 
 
-## :camera: PREVIEWS
+<h2 align="center">previews</h2>
 
 ![preview1](previews/1.png)
 ![preview2](previews/2.png)
@@ -38,7 +38,7 @@
 ![preview4](previews/4.png)
 
 
-## :wrench: INSTALLATION
+<h2 align="center">installation</h2>
 
 > [!WARNING]
 > **This installation script only works on Arch Linux.**
@@ -69,12 +69,12 @@ python3 ./dot-files/builder/install.py
 > **The installation is complete. If you have any problems, read the following section.**
 
 
-## :hammer: POST-INSTALLATION FIXES
+<h2 align="center">post-installation</h2>
 
 **If there are any problems after installation, read [these](DOCS.md) instructions.**
 
 
-## :computer: HOTKEYS
+<h2 align="center">hotkeys</h2>
 
 | Action                                 | Key                   |
 | -------------------------------------- | --------------------- |
