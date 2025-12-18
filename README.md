@@ -1,4 +1,4 @@
-<h1 align="center"> whyhilde shell </h1>
+<h1 align="center">whyhilde shell</h1>
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=git">
   <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=andela">
@@ -32,10 +32,11 @@
 
 <h2 align="center">previews</h2>
 
-![preview1](previews/1.png)
-![preview2](previews/2.png)
-![preview3](previews/3.png)
-![preview4](previews/4.png)
+| Desktop | Launcher |
+|:---|:---------------|
+| <img width="1920" height="1080" alt="image" src="previews/1.png" /> | <img width="1920" height="1080" alt="image" src="previews/2.png" /> |
+| Window management | Built with love |
+| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a7e6d29c-e82c-4934-98db-36c810ec999b" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b806b53-9310-4c63-84a9-cec9e311d439" /> |
 
 
 <h2 align="center">installation</h2>
@@ -92,3 +93,8 @@ python3 ./dot-files/builder/install.py
 | Take fullscreen screenshot             | Ctrl + Super + F      |
 
 **The other hotkeys are in ~/.config/hypr/modules/keybindings.conf.**
+
+
+<h2 align="center">license</h2>
+
+© 2025 whyhilde — Licensed under the MIT License. See `LICENSE.md` for details.
