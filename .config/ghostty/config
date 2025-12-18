@@ -19,7 +19,7 @@ palette = 12=#89b4fa
 palette = 13=#f5c2e7
 palette = 14=#94e2d5
 palette = 15=#bac2de
-background = 1e1e2e
+background = 181825
 foreground = cdd6f4
 cursor-color = f5e0dc
 cursor-text = 1e1e2e
@@ -42,14 +42,14 @@ adjust-cursor-thickness = 1
 
 # background
 window-theme = dark
-background-opacity = 0.9
+background-opacity = 0.98
 
 
 # window
 title = ghostty
 window-decoration = false
-window-padding-x = 0
-window-padding-y = 0
+window-padding-x = 10
+window-padding-y = 10
 
 
 # behaviour
