@@ -1,9 +1,8 @@
 @theme "/dev/null"
 * {
-  bg: #1e1e2ee6;
+  bg: #1e1e2e;
   fg: #cdd6f4;
   accent: #89b4fa;
-  borderColor: #89b4fae6;
   width: 575;
 }
 
@@ -27,7 +26,7 @@ window {
   height: 400px;
   background-color: @bg;
   border: 3px;
-  border-color: @borderColor;
+  border-color: @accent;
   border-radius: 10px;
 }
 
@@ -54,18 +53,12 @@ prompt {
 }
 
 
-textbox-prompt-colon {
-  expand: false;
-  str: ":";
-}
-
-
 entry {
   padding: 6px;
   margin: 20px 0px 0px 10px;
   text-color: @fg;
   background-color: @bg;
-  placeholder: "search";
+  placeholder: "find anything";
   blink: true;
 }
 
