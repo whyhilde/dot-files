@@ -69,17 +69,7 @@ INTEL_PACKAGES = [
 ]
 
 
-# FONTS = [
-#     "ttf-jetbrains-mono",
-#     "ttf-jetbrains-mono-nerd",
-#     "ttf-meslo-nerd-font-powerlevel10k",
-# ]
-
-
 AUR_PACKAGES = [
-    "catppuccin-cursors-mocha",
-    "catppuccin-gtk-theme-mocha",
-    "papirus-folders-catppuccin-git",
     "zen-browser-bin",
     "wlogout",
 ]

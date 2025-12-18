@@ -6,6 +6,7 @@ from creators.software import Software
 import shutil
 import subprocess
 import os
+import sys
 import glob
 import getpass
 from pathlib import Path
@@ -20,7 +21,6 @@ class Patches:
         Patches.set_scripts_permissions()
         Patches.create_default_folders()
         Patches.set_theme_for_btop()
-        Patches.setup_neovim()
 
     @staticmethod
     def change_shell():
@@ -188,9 +188,30 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
             print(f"{Cols.ERROR}[-] Error: {e}{Cols.END}")
 
     @staticmethod
-    def setup_neovim():
-        pass
+    def apply_appearance():
+        try:
+            print(":: Installing themes...")
 
-    @staticmethod
-    def setup_fonts():
-        pass
+            DEFAULT = [
+                "ttf-jetbrains-mono",
+                "ttf-jetbrains-mono-nerd",
+            ]
+            AUR = [
+                "catppuccin-cursors-mocha",
+                "catppuccin-gtk-theme-mocha",
+                "papirus-folders-catppuccin-git",
+                "ttf-meslo-nerd-font-powerlevel10k",
+            ]
+
+            subprocess.run(packages.DEFAULT_CMD + DEFAULT, check=True)
+            subprocess.run(packages.AUR_CMD + AUR, check=True)
+
+            print(f"{Cols.INFO}[+] Themes have been successfully installed.{Cols.END}")
+
+        except subprocess.CalledProcessError as e:
+            print(f"{Cols.ERROR}[-] Error when installing themes: {e}{Cols.END}")
+            sys.exit(1)
+
+        except Exception as e:
+            print(f"{Cols.ERROR}[-] Unexpected error: {e}{Cols.END}")
+            sys.exit(1)

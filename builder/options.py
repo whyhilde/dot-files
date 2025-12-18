@@ -45,7 +45,7 @@ class UserInterface:
         print("2) Install all packages? (y/n): ", end="")
         option_2 = UserInterface.is_verify_response(input())
 
-        print("3) Install all fonts? (y/n): ", end="")
+        print("3) Install theme, icons, fonts? (y/n): ", end="")
         option_3 = UserInterface.is_verify_response(input())
 
         print("4) Install all dotfiles? (y/n): ", end="")

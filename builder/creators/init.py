@@ -2,7 +2,6 @@ from options import Cols
 
 
 import shutil
-import os
 import subprocess
 
 
@@ -11,12 +10,7 @@ class Init:
     def update_database():
         try:
             print(":: Updating repositories...")
-            subprocess.run(
-                ["sudo", "pacman", "--noconfirm", "-Syu"],
-                check=True,
-                text=True,
-                capture_output=True,
-            )
+            subprocess.run(["sudo", "pacman", "--noconfirm", "-Syu"], check=True)
             print(
                 f"{Cols.INFO}[+] Repositories have been updated successfully.{Cols.END}"
             )
@@ -49,11 +43,16 @@ class Init:
                 return False
 
             print(":: Cloning yay from AUR...")
-            if not subprocess.run(["sudo", "git", "clone", "https://aur.archlinux.org/yay.git", "/tmp/"], check=True):
+            if not subprocess.run(
+                ["sudo", "git", "clone", "https://aur.archlinux.org/yay.git", "/tmp/"],
+                check=True,
+            ):
                 return False
 
             print(":: Building yay...")
-            if not subprocess.run(["cd", "/tmp/yay", "&&", "makepkg", "-si", "--noconfirm"]):
+            if not subprocess.run(
+                ["cd", "/tmp/yay", "&&", "makepkg", "-si", "--noconfirm"]
+            ):
                 return False
 
             print(f"{Cols.INFO}[+] yay has been successfully installed.{Cols.END}")

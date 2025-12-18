@@ -23,12 +23,10 @@ def main():
                 sys.exit(1)
 
             if options[1]:
-                if not Software.install_all_packages():
-                    sys.exit(1)
+                Software.install_all_packages()
 
             if options[2]:
-                if not Patches.setup_fonts():
-                    sys.exit(1)
+                Patches.apply_appearance()
 
             if options[3]:
                 Dotfiles.setup_all_dotfiles()

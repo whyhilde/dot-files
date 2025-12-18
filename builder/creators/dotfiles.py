@@ -59,7 +59,7 @@ class Dotfiles:
 
             home_dir = Path.home()
             repo_dir = Path(__file__).resolve().parents[2]
-            source_file = repo_dir / "home-configs" / ".gitconfig"
+            source_file = repo_dir / "home" / ".gitconfig"
             dest_file = home_dir / ".gitconfig"
 
             if source_file.exists():
@@ -90,10 +90,16 @@ class Dotfiles:
 
             os.system(f"mv {repo_dir}/browser/user.js ~/.zen/*(release)/")
             os.system("mkdir -p ~/.zen/*(release)/chrome/")
-            os.system(f"mv {repo_dir}/browser/chrome/userChrome.css ~/.zen/*(release)/chrome/")
-            os.system(f"mv {repo_dir}/browser/chrome/userContent.css ~/.zen/*(release)/chrome/")
+            os.system(
+                f"mv {repo_dir}/browser/chrome/userChrome.css ~/.zen/*(release)/chrome/"
+            )
+            os.system(
+                f"mv {repo_dir}/browser/chrome/userContent.css ~/.zen/*(release)/chrome/"
+            )
 
-            print(f"{Cols.INFO}[+] Zen Browser has been successfully configured.{Cols.END}")
+            print(
+                f"{Cols.INFO}[+] Zen Browser has been successfully configured.{Cols.END}"
+            )
 
         except Exception as e:
             print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
