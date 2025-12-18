@@ -69,16 +69,9 @@ python3 ./dot-files/builder/install.py
 > **The installation is complete. If you have any problems, read the following section.**
 
 
-## :hammer: POST-INSTALLATION
+## :hammer: POST-INSTALLATION FIXES
 
-**If you have a NVIDIA graphics card:**
-- Open `/etc/mkinitcpio.conf`.
-- In the `MODULES` array add the following modules names:
-    - `MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm ...)`.
-- You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
-
-**If you don't have a NVIDIA graphics card:**
-- Install the drivers for your graphics card **([INTEL](https://wiki.archlinux.org/title/Intel_graphics), [AMD](https://wiki.archlinux.org/title/AMDGPU))**.
+**If there are any problems after installation, read [these](DOCS.md) instructions.**
 
 
 ## :computer: HOTKEYS
