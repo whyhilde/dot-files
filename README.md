@@ -34,14 +34,17 @@
 
 </details>
 
-<!-- <details> -->
-<!--     <summary>Other software</summary> -->
-<!---->
-<!-- | software                               | description                                                     | -->
-<!-- | -------------------------------------- | --------------------------------------------------------------- | -->
-<!-- | [Zen](https://zen-browser.app) | Beautifully designed, privacy-focused, and packed with features browser | -->
-<!-- | [Obsidian](https://obsidian.md) | -->
-<!-- | [Vesktop]                       | -->
+<details>
+    <summary>Repository layout</summary>
+
+- /.config/ - software configuration.
+- /browser/ - browser configuration.
+- /home/ - home configurations.
+- /builder/ - installer scripts and bootstrap utilities.
+- /previews/ - example screenshots used in this README.
+- /LICENSE.md - license.
+
+</details>
 
 
 
