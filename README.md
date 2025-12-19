@@ -12,12 +12,12 @@
 <details> 
   <summary>Notable features</summary>
 
-    | software                                       | description                       |
-    | ---------------------------------------------- | --------------------------------- |
-    | [Hyprland](https://github.com/hyprwm/Hyprland) | Dynamic tiling Wayland compositor |
-    | [Waybar](https://github.com/Alexays/Waybar)    | Highly customizable Wayland bar   |
-    | [Rofi](https://github.com/davatorium/rofi)     | Application launcher              |
-    | [Mako](https://github.com/emersion/mako)       | Lightweight notification daemon   |
+| software                                       | description                       |
+| ---------------------------------------------- | --------------------------------- |
+| [Hyprland](https://github.com/hyprwm/Hyprland) | Dynamic tiling Wayland compositor |
+| [Waybar](https://github.com/Alexays/Waybar)    | Highly customizable Wayland bar   |
+| [Rofi](https://github.com/davatorium/rofi)     | Application launcher              |
+| [Mako](https://github.com/emersion/mako)       | Lightweight notification daemon   |
 
 </details>
 
