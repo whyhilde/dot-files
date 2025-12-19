@@ -8,17 +8,32 @@
 
 <h2 align="center">overview</h2>
 
-| Distro             | [Arch Linux](https://archlinux.org/)                    |
-| ------------------ | ------------------------------------------------------- |
-| Wayland Compositor | [Hyprland](https://github.com/hyprwm/Hyprland)          |
-| Status Bar         | [Waybar](https://github.com/Alexays/Waybar)             |
-| App Launcher       | [Rofi](https://github.com/davatorium/rofi)              |
-| Notifications      | [Mako](https://github.com/emersion/mako)                |
-| Browser            | [Zen](https://zen-browser.app)                          |
-| Terminal           | [Ghostty](https://github.com/ghostty-org/ghostty)       |
-| Shell              | [Fish](https://github.com/fish-shell/fish-shell)        |
-| Code Editor        | [Neovim](https://github.com/neovim/neovim)              |
-| Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+**whyhilde shell** delivers a modern Hyprland system designed to increase productivity and convenience.
+<details> 
+  <summary>Notable features</summary>
+
+    | software                                       | description                       |
+    | ---------------------------------------------- | --------------------------------- |
+    | [Hyprland](https://github.com/hyprwm/Hyprland) | Dynamic tiling Wayland compositor |
+    | [Waybar](https://github.com/Alexays/Waybar)    | Highly customizable Wayland bar   |
+    | [Rofi](https://github.com/davatorium/rofi)     | Application launcher              |
+    | [Mako](https://github.com/emersion/mako)       | Lightweight notification daemon   |
+
+</details>
+<details> 
+
+
+<!-- | Distro             | [Arch Linux](https://archlinux.org/)                    | -->
+<!-- | ------------------ | ------------------------------------------------------- | -->
+<!-- | Wayland Compositor |           | -->
+<!-- | Status Bar         |              | -->
+<!-- | App Launcher       |               | -->
+<!-- | Notifications      | [Mako](https://github.com/emersion/mako)                | -->
+<!-- | Browser            | [Zen](https://zen-browser.app)                          | -->
+<!-- | Terminal           | [Ghostty](https://github.com/ghostty-org/ghostty)       | -->
+<!-- | Shell              | [Fish](https://github.com/fish-shell/fish-shell)        | -->
+<!-- | Code Editor        | [Neovim](https://github.com/neovim/neovim)              | -->
+<!-- | Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) | -->
 
 
 <h2 align="center">features</h2>
@@ -32,21 +47,10 @@
 
 <h2 align="center">previews</h2>
 
-| Desktop                    |
-| -------------------------- |
-| ![Desktop](previews/1.png) |
-
-| Launcher                    |
-| --------------------------- |
-| ![Launcher](previews/2.png) |
-
-| Neovim                     |
-| -------------------------- |
-| ![Neovim](previews/3.png)  |
-
-| Powermenu                    |
-| ---------------------------- |
-| ![Powermenu](previews/4.png) |
+![preview1](previews/1.png)
+![preview2](previews/2.png)
+![preview3](previews/3.png)
+![preview4](previews/4.png)
 
 
 <h2 align="center">installation</h2>
@@ -107,4 +111,4 @@ python3 ./dot-files/builder/install.py
 
 <h2 align="center">license</h2>
 
-© 2025 whyhilde — Licensed under the MIT License. See `LICENSE.md` for details.
+© 2025 whyhilde — Licensed under the MIT License. See [LICENSE](LICENSE.md) for details.
