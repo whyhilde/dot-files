@@ -9,17 +9,40 @@
 <h2 align="center">overview</h2>
 
 **whyhilde shell** delivers a modern Hyprland system designed to increase productivity and convenience.
-<details> 
-  <summary>Notable features</summary>
+
+<details>
+    <summary>Software overview</summary>
 
 | software                                       | description                       |
 | ---------------------------------------------- | --------------------------------- |
 | [Hyprland](https://github.com/hyprwm/Hyprland) | Dynamic tiling Wayland compositor |
 | [Waybar](https://github.com/Alexays/Waybar)    | Highly customizable Wayland bar   |
 | [Rofi](https://github.com/davatorium/rofi)     | Application launcher              |
-| [Mako](https://github.com/emersion/mako)       | Lightweight notification daemon   |
+| [Mako](https://github.com/emersion/mako)       | Notification daemon               |
 
 </details>
+
+<details>
+    <summary>developer software</summary>
+
+| software                                          | description                                        |
+| ------------------------------------------------- | -------------------------------------------------- |
+| [Ghostty](https://github.com/ghostty-org/ghostty) | Fast terminal emulator                             |
+| [Neovim](https://github.com/neovim/neovim)        | Code editor focused on extensibility and usability |
+| [Fish](https://github.com/fish-shell/fish-shell)  | The user-friendly command line shell               |
+| [Yazi](https://github.com/sxyazi/yazi)            | Blazing fast terminal file manager written in Rust |
+
+</details>
+
+<!-- <details> -->
+<!--     <summary>Other software</summary> -->
+<!---->
+<!-- | software                               | description                                                     | -->
+<!-- | -------------------------------------- | --------------------------------------------------------------- | -->
+<!-- | [Zen](https://zen-browser.app) | Beautifully designed, privacy-focused, and packed with features browser | -->
+<!-- | [Obsidian](https://obsidian.md) | -->
+<!-- | [Vesktop]                       | -->
+
 
 
 <!-- | Distro             | [Arch Linux](https://archlinux.org/)                    | -->
@@ -29,7 +52,7 @@
 <!-- | App Launcher       |               | -->
 <!-- | Notifications      | [Mako](https://github.com/emersion/mako)                | -->
 <!-- | Browser            | [Zen](https://zen-browser.app)                          | -->
-<!-- | Terminal           | [Ghostty](https://github.com/ghostty-org/ghostty)       | -->
+<!-- | Terminal           |        | -->
 <!-- | Shell              | [Fish](https://github.com/fish-shell/fish-shell)        | -->
 <!-- | Code Editor        | [Neovim](https://github.com/neovim/neovim)              | -->
 <!-- | Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) | -->
