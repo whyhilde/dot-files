@@ -20,7 +20,6 @@
     | [Mako](https://github.com/emersion/mako)       | Lightweight notification daemon   |
 
 </details>
-<details> 
 
 
 <!-- | Distro             | [Arch Linux](https://archlinux.org/)                    | -->
