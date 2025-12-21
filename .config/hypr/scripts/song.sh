@@ -2,5 +2,4 @@
 set -e
 
 
-SONG_INFO=$(playerctl metadata --format "  {{artist}} - {{title}}")
-echo "$SONG_INFO"
+echo $(playerctl metadata --format "  {{artist}} - {{title}}" 2>/dev/null || echo "  Nothing Playing")

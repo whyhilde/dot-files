@@ -60,10 +60,6 @@ set -gx FZF_DEFAULT_OPTS "--style=full --smart-case --preview \"bat --wrap=never
 set -gx _ZO_FZF_OPTS "--style=full --smart-case --no-separator --height 50% --reverse --no-info --prompt= --ghost=\"type something\" -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
 
 
-# path
-fish_add_path ~/.bin
-
-
 # greeting
 function fish_greeting
 end
