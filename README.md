@@ -23,7 +23,7 @@
 </details>
 
 <details>
-    <summary>developer software</summary>
+    <summary>Developer software</summary>
 
 | software                                          | description                                        |
 | ------------------------------------------------- | -------------------------------------------------- |
@@ -37,28 +37,16 @@
 <details>
     <summary>Repository layout</summary>
 
-- /.config/ - software configuration.
-- /browser/ - browser configuration.
-- /home/ - home configurations.
-- /builder/ - installer scripts and bootstrap utilities.
-- /previews/ - example screenshots used in this README.
-- /LICENSE.md - license.
+| directory   | description                             |
+| ----------- | --------------------------------------- |
+| /.config/   | software configuration                  |
+| /browser/   | browser configuration                   |
+| /home/      | home configurations                     |
+| /builder/   | util for install shell                  |
+| /previews/  | example screenshots used in this README |
+| /LICENSE.md | license                                 |
 
 </details>
-
-
-
-<!-- | Distro             | [Arch Linux](https://archlinux.org/)                    | -->
-<!-- | ------------------ | ------------------------------------------------------- | -->
-<!-- | Wayland Compositor |           | -->
-<!-- | Status Bar         |              | -->
-<!-- | App Launcher       |               | -->
-<!-- | Notifications      | [Mako](https://github.com/emersion/mako)                | -->
-<!-- | Browser            | [Zen](https://zen-browser.app)                          | -->
-<!-- | Terminal           |        | -->
-<!-- | Shell              | [Fish](https://github.com/fish-shell/fish-shell)        | -->
-<!-- | Code Editor        | [Neovim](https://github.com/neovim/neovim)              | -->
-<!-- | Fetch              | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) | -->
 
 
 <h2 align="center">features</h2>
@@ -131,9 +119,9 @@ python3 ./dot-files/builder/install.py
 | Take screenshot                        | Ctrl + Super + S      |
 | Take fullscreen screenshot             | Ctrl + Super + F      |
 
-**The other hotkeys are in ~/.config/hypr/modules/keybindings.conf.**
+**The other hotkeys are in `~/.config/hypr/modules/keybindings.conf`.**
 
 
 <h2 align="center">license</h2>
 
-© 2025 whyhilde — Licensed under the MIT License. See [LICENSE](LICENSE.md) for details.
+© 2025 whyhilde - Licensed under the MIT License. See [LICENSE](LICENSE.md) for details.
