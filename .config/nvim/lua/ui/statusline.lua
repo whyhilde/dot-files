@@ -143,7 +143,7 @@ insertLeft {
 
 insertRight {
   "branch",
-  icon = "",
+  icon = "󰘬",
   color = { fg = colors.blue, },
 }
 

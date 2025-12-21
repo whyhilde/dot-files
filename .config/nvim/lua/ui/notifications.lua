@@ -5,7 +5,7 @@ return {
   },
   config = function()
     require("notify").setup {
-      background_colour = "#11111b",
+      background_colour = "#181825",
       render = "wrapped-compact",
       stages = "fade_in_slide_out",
       max_width = 30,

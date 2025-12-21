@@ -1,9 +1,4 @@
--- general options --
-local hl = vim.api.nvim_set_hl              -- set local variable
-vim.opt.background = "dark"                 -- enable dark theme
-vim.cmd.colorscheme "catppuccin"            -- choose color scheme
-vim.opt.syntax = "on"                       -- enable syntax highlighting
-vim.opt.showmatch = false                   -- disable highlight pair elements
+local hl = vim.api.nvim_set_hl
 
 
 -- general --

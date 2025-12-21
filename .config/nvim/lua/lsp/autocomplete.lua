@@ -17,11 +17,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
-
-
-    -- vim.api.nvim_set_hl(0, "CmpCursorLine", { fg = "#181825", bg = "#89b4fa" })
-
-
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -33,7 +28,7 @@ return {
           winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CmpCursorLine,Search:None",
           scrollbar = false,
         },
-        documentation = cmp.config.disable,
+        documentation = cmp.config.window.bordered {},
       },
       formatting = {
         format = lspkind.cmp_format {

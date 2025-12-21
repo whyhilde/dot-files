@@ -1,5 +1,4 @@
--- setup plugins --
-require("lazy").setup {   
+require("lazy").setup {
   ui = {
     border = "rounded",
     size = {

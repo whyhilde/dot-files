@@ -73,8 +73,6 @@ local icons = {
     extension = {},
     file = {
       ["init.lua"] = { glyph = "", hl = "MiniIconsAzure", },
-      ["LICENSE"] = { glyph = "󱈤", },
-      ["LICENSE.txt"] = { glyph = "󱈤", },
       ["README"] = { glyph = "󰯂", },
       ["README.md"] = { glyph = "󰯂", },
     },
@@ -171,27 +169,6 @@ local icons = {
     Variable = "󰀫 ",
     WhileStatement = "󰑖 ",
   },
-  -- explorer = {
-  --   folder = {
-  --     arrow_closed = " ",
-  --     arrow_open = " ",
-  --     default = "",
-  --     open = "",
-  --     empty = "",
-  --     empty_open = "",
-  --     symlink = "",
-  --     symlink_open = "",
-  --   },
-  --   git = {
-  --     staged = "",
-  --     unstaged = "",
-  --     unmerged = "",
-  --     deleted = "",
-  --     ignored = "",
-  --     renamed = "",
-  --     untracked = "",
-  --   },
-  -- },
 }
 
 
