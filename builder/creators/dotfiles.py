@@ -5,6 +5,7 @@ from pathlib import Path
 import os
 import shutil
 import subprocess
+import sys
 
 
 class Dotfiles:
@@ -54,32 +55,27 @@ class Dotfiles:
         try:
             print(":: Configuring Git...")
 
-            if not subprocess.run(["sudo", "pacman", "-S", "git"], check=True):
-                return
-
             home_dir = Path.home()
             repo_dir = Path(__file__).resolve().parents[2]
             source_file = repo_dir / "home" / ".gitconfig"
             dest_file = home_dir / ".gitconfig"
+            backup_file = home_dir / ".gitconfig_copy"
 
-            if source_file.exists():
-                if dest_file.exists():
-                    backup_file = f"{dest_file}_backup"
-                    shutil.copy2(dest_file, backup_file)
-                    print(f"{Cols.HINT}[!] Backup created: {backup_file}.{Cols.END}")
+            if dest_file.exists():
+                subprocess.run(["mv", dest_file, backup_file], check=True)
+                print(f"{Cols.HINT}[!] Backup created: {backup_file}.{Cols.END}")
 
-                shutil.copy2(source_file, dest_file)
-                print(f"{Cols.INFO}[+] {dest_file} successfully updated.{Cols.END}")
-            else:
-                raise FileNotFoundError(f"The {source_file} file was not found")
+            subprocess.run(["cp", source_file, dest_file], check=True)
 
             print(f"{Cols.INFO}[+] Git has been successfully configured.{Cols.END}")
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Command execution error: {e}.{Cols.END}")
+            sys.exit(1)
 
         except Exception as e:
             print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def setup_browser():

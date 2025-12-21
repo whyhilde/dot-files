@@ -3,6 +3,7 @@ from options import Cols
 
 import shutil
 import subprocess
+import sys
 
 
 class Init:
@@ -17,18 +18,23 @@ class Init:
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Error updating repositories: {e}{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def install_aur_helper():
         try:
             if shutil.which("yay"):
                 print(f"{Cols.INFO}[+] yay is already installed.{Cols.END}")
-                return True
+                upgrade = input("Upgrade yay? (y/n): ").strip().lower()
+                if upgrade == "y":
+                    pass
+                else:
+                    return
 
             print(":: Installing yay...")
 
             print(":: Installing dependencies...")
-            if not subprocess.run(
+            subprocess.run(
                 [
                     "sudo",
                     "pacman",
@@ -39,25 +45,22 @@ class Init:
                     "git",
                 ],
                 check=True,
-            ):
-                return False
+            )
 
             print(":: Cloning yay from AUR...")
-            if not subprocess.run(
+            subprocess.run(
                 ["sudo", "git", "clone", "https://aur.archlinux.org/yay.git", "/tmp/"],
                 check=True,
-            ):
-                return False
+            )
 
             print(":: Building yay...")
-            if not subprocess.run(
-                ["cd", "/tmp/yay", "&&", "makepkg", "-si", "--noconfirm"]
-            ):
-                return False
+            subprocess.run(
+                ["cd", "/tmp/yay", "&&", "makepkg", "-si", "--noconfirm"],
+                check=True,
+            )
 
             print(f"{Cols.INFO}[+] yay has been successfully installed.{Cols.END}")
-            return True
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Error when installing yay: {e}{Cols.END}")
-            return False
+            sys.exit(1)

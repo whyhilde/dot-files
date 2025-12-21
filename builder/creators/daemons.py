@@ -2,6 +2,7 @@ from options import Cols
 
 
 import subprocess
+import sys
 
 
 class Daemons:
@@ -26,6 +27,7 @@ class Daemons:
             print(
                 f"{Cols.ERROR}[-] Error when activating NetworkManager: {e}{Cols.END}"
             )
+            sys.exit(1)
 
     @staticmethod
     def enable_bluetooth():
@@ -43,3 +45,4 @@ class Daemons:
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Error when activating Bluetooth: {e}{Cols.END}")
+            sys.exit(1)

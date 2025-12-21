@@ -3,13 +3,10 @@ from options import Cols
 from creators.software import Software
 
 
-import shutil
 import subprocess
 import os
 import sys
-import glob
 import getpass
-from pathlib import Path
 
 
 class Patches:
@@ -26,28 +23,14 @@ class Patches:
     def change_shell():
         try:
             print(":: Changing the shell...")
-
-            fish_path = shutil.which("fish")
-            if not fish_path:
-                print(":: Repeat the fish installation...")
-                subprocess.run(packages.DEFAULT_CMD + ["fish"], check=True)
-            else:
-                subprocess.run(["chsh", "-s", fish_path], check=True)
-                print(
+            subprocess.run(["chsh", "-s", "$(which fish)"], check=True)
+            print(
                     f"{Cols.INFO}[+] The shell has been changed successfully.{Cols.END}"
                 )
 
-            starship_path = shutil.which("starship")
-            if not starship_path:
-                print(":: Repeat the starship installation...")
-                subprocess.run(packages.DEFAULT_CMD + ["starship"], check=True)
-            else:
-                print(
-                    f"{Cols.INFO}[+] Starship has been successfully installed.{Cols.END}"
-                )
-
         except subprocess.CalledProcessError as e:
-            print(f"{Cols.ERROR}[-] Command execution error: {e}.{Cols.END}")
+            print(f"{Cols.ERROR}[-] Error when changing shell: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def setup_autologin():
@@ -84,15 +67,14 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
 
         except subprocess.CalledProcessError as e:
             print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def configure_nvidia():
         print(":: Configuring the NVIDIA graphics card...")
 
         print(":: Installing drivers...")
-        if not Software.install_packages(packages.DEFAULT_CMD, packages.NVIDIA):
-            print(f"{Cols.ERROR}[-] The driver installation failed.{Cols.END}")
-            return False
+        Software.install_packages(packages.DEFAULT_CMD, packages.NVIDIA)
 
         print(":: Setting up for Wayland...")
         try:
@@ -109,11 +91,9 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
                 check=True,
             )
 
-            return True
-
         except subprocess.CalledProcessError as e:
-            print(f"{Cols.ERROR}Ошибка: {e}{Cols.END}")
-            return False
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def configure_opendoas():
@@ -128,48 +108,60 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
             )
 
         except subprocess.CalledProcessError as e:
-            print(f"{Cols.ERROR}Ошибка: {e}{Cols.END}")
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def set_scripts_permissions():
         try:
             print(":: Setting permissions for scripts...")
 
-            scripts_dir = os.path.expanduser("~/.config/hypr/scripts/")
+            scripts_dir = os.path.expanduser("~/.config/hypr/scripts")
             if not os.path.exists(scripts_dir):
                 raise FileNotFoundError(f"The {scripts_dir} directory was not found.")
 
-            sh_files = glob.glob(os.path.join(scripts_dir, "*.sh"))
-            if not sh_files:
-                raise FileNotFoundError("No scripts were found.")
+            subprocess.run(["chmod", "744", f"{scripts_dir}/*.sh"], check=True)
 
-            for file_path in sh_files:
-                os.chmod(file_path, 0o744)
+            # sh_files = glob.glob(os.path.join(scripts_dir, "*.sh"))
+            # if not sh_files:
+            #     raise FileNotFoundError("No scripts were found.")
+
+            # for file_path in sh_files:
+            #     os.chmod(file_path, 0o744)
 
             print(
                 f"{Cols.INFO}[+] Scripts permissions have been successfully set.{Cols.END}"
             )
 
-        except Exception as e:
-            print(f"{Cols.ERROR}[-] Error: {e}{Cols.END}")
+        except subprocess.CalledProcessError as e:
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
+
+        except FileNotFoundError as e:
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def create_default_folders():
-        print(":: Creating default folders...")
-        default_folders = [
-            "~/Videos",
-            "~/Pictures",
-            "~/Documents",
-            "~/Downloads",
-            "~/Music",
-            "~/Desktop",
-        ]
-        for folder in default_folders:
-            path = Path(folder)
-            path.mkdir(parents=True, exist_ok=True)
-        print(
-            f"{Cols.INFO}[+] The default folders were created successfully.{Cols.END}"
-        )
+        try:
+            print(":: Creating default folders...")
+            default_folders = [
+                "~/Videos",
+                "~/Pictures",
+                "~/Documents",
+                "~/Downloads",
+                "~/Music",
+                "~/Desktop",
+            ]
+            for folder in default_folders:
+                subprocess.run(["mkdir", "-p", folder], check=True)
+            print(
+                f"{Cols.INFO}[+] The default folders were created successfully.{Cols.END}"
+            )
+
+        except subprocess.CalledProcessError as e:
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def set_theme_for_btop():
@@ -179,13 +171,14 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
             url = "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
             output_file = "~/.config/btop/themes/catppuccin.theme"
 
-            os.system("mkdir -p ~/.config/btop/themes/")
-            os.system(f"curl -o {output_file} {url}")
+            subprocess.run(["mkdir", "-p", "~/.config/btop/themes/"], check=True)
+            subprocess.run(["curl", "-o", output_file, url], check=True)
 
             print(f"{Cols.INFO}[+] Theme have been successfully changed.{Cols.END}")
 
-        except Exception as e:
-            print(f"{Cols.ERROR}[-] Error: {e}{Cols.END}")
+        except subprocess.CalledProcessError as e:
+            print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+            sys.exit(1)
 
     @staticmethod
     def apply_appearance():
@@ -209,7 +202,7 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
             print(f"{Cols.INFO}[+] Themes have been successfully installed.{Cols.END}")
 
         except subprocess.CalledProcessError as e:
-            print(f"{Cols.ERROR}[-] Error when installing themes: {e}{Cols.END}")
+            print(f"{Cols.ERROR}[-] Error when installing themes: {e}.{Cols.END}")
             sys.exit(1)
 
         except Exception as e:

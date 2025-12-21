@@ -19,8 +19,7 @@ def main():
             if options[0]:
                 Init.update_database()
 
-            if not Init.install_aur_helper():
-                sys.exit(1)
+            Init.install_aur_helper()
 
             if options[1]:
                 Software.install_all_packages()
@@ -35,8 +34,7 @@ def main():
                 Patches.setup_all_patches()
 
             if options[5]:
-                if not Patches.configure_nvidia():
-                    sys.exit(1)
+                Patches.configure_nvidia()
 
             if options[6]:
                 Daemons.enable_all_daemons()
