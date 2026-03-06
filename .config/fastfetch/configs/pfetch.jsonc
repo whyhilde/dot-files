@@ -1,0 +1,64 @@
+{
+  "logo": {
+    "source": "arch_small",
+    "color": {
+      "1": "#89b4fa",
+      "2": "#89b4fa",
+    },
+    "padding": {
+      "left": 0,
+      "top": 0,
+      "bottom": 0,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": " ",
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "#f5c2e7",
+        "at": "#cdd6f4",
+        "host": "#f5c2e7",
+      },
+    },
+    {
+      "type": "os",
+      "key": "os    ",
+      "keyColor": "#89b4fa",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "kernel",
+      "key": "kernel",
+      "keyColor": "#89b4fa",
+      "format": "{release}",
+    },
+    {
+      "type": "uptime",
+      "key": "uptime",
+      "keyColor": "#89b4fa",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
+    },
+    {
+      "type": "packages",
+      "key": "pkgs  ",
+      "keyColor": "#89b4fa",
+      "format": "{all}",
+    },
+    {
+      "type": "wm",
+      "key": "wm    ",
+      "keyColor": "#89b4fa",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "command",
+      "key": "memory",
+      "keyColor": "#89b4fa",
+      "text": "free -m | awk 'NR==2{printf \"%dM / %dM\",$3,$2}'",
+    },
+  ],
+}

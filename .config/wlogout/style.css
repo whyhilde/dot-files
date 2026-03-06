@@ -1,10 +1,10 @@
-@define-color bg rgba(30, 30, 46, 0.8);
+@define-color background #181825;
 @define-color accent #89b4fa;
 @define-color dark #11111b;
 
 
 window {
-  background-color: @bg;
+  background-color: @background;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -18,7 +18,7 @@ button {
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s ease-in;
   box-shadow: 0px 0px 0px 0px transparent;
-  border-radius: 10px;
+  border-radius: 14px;
   margin: 10px;
 }
 
@@ -34,36 +34,40 @@ button:focus {
 
 
 #shutdown {
-  background-image: image(url("./icons/shutdown.png"));
+  background-image: image(url("icons/shutdown.png"));
 }
 
+
 #shutdown:focus {
-  background-image: image(url("./icons/shutdown-focus.png"));
+  background-image: image(url("icons/shutdown-focus.png"));
 }
 
 
 #reboot {
-  background-image: image(url("./icons/reboot.png"));
+  background-image: image(url("icons/reboot.png"));
 }
 
+
 #reboot:focus {
-  background-image: image(url("./icons/reboot-focus.png"));
+  background-image: image(url("icons/reboot-focus.png"));
 }
 
 
 #lock {
-  background-image: image(url("./icons/lock.png"));
+  background-image: image(url("icons/lock.png"));
 }
 
+
 #lock:focus {
-  background-image: image(url("./icons/lock-focus.png"));
+  background-image: image(url("icons/lock-focus.png"));
 }
 
 
 #suspend {
-  background-image: image(url("./icons/suspend.png"));
+  background-image: image(url("icons/suspend.png"));
 }
 
+
 #suspend:focus {
-  background-image: image(url("./icons/suspend-focus.png"));
+  background-image: image(url("icons/suspend-focus.png"));
 }

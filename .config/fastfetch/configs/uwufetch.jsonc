@@ -1,0 +1,90 @@
+{
+  "logo": {
+    "source": "~/.config/fastfetch/logos/uwufetch.txt",
+    "color": {
+      "1": "#89b4fa",
+    },
+    "padding": {
+      "left": 0,
+      "top": 2,
+      "bottom": 0,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": " ",
+    "size": {
+      "binaryPrefix": "jedec",
+      "maxPrefix": "MB",
+      "ndigits": 0,
+      "spaceBeforeUnit": "always",
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "#cdd6f4",
+        "at": "#cdd6f4",
+        "host": "#cdd6f4",
+      },
+    },
+    {
+      "type": "os",
+      "key": "OWOS    ",
+      "keyColor": "#cdd6f4",
+    },
+    {
+      "type": "host",
+      "key": "HOST    ",
+      "keyColor": "#cdd6f4",
+    },
+    {
+      "type": "kernel",
+      "key": "KEWNEL  ",
+      "keyColor": "#cdd6f4",
+      "format": "{release}",
+    },
+    {
+      "type": "cpu",
+      "key": "CPUWU   ",
+      "keyColor": "#cdd6f4",
+      "format": "{name}",
+    },
+    {
+      "type": "gpu",
+      "key": "GPUWU   ",
+      "keyColor": "#cdd6f4",
+      "format": "{name}",
+    },
+    {
+      "type": "memory",
+      "key": "MEMOWY  ",
+      "keyColor": "#cdd6f4",
+      "format": "{used} / {total}",
+    },
+    {
+      "type": "shell",
+      "key": "SHEWW   ",
+      "keyColor": "#cdd6f4",
+    },
+    {
+      "type": "packages",
+      "key": "PKGS    ",
+      "keyColor": "#cdd6f4",
+    },
+    {
+      "type": "uptime",
+      "key": "UWUPTIME",
+      "keyColor": "#cdd6f4",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
+    },
+    {
+      "type": "colors",
+      "block": {
+        "range": [1, 7],
+        "width": 2,
+      },
+    },
+  ],
+}

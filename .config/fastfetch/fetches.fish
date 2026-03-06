@@ -1,0 +1,7 @@
+alias nitch "fastfetch -c ~/.config/fastfetch/configs/nitch.jsonc"
+alias pfetch "fastfetch -c ~/.config/fastfetch/configs/pfetch.jsonc"
+alias neofetch "fastfetch -c ~/.config/fastfetch/configs/neofetch.jsonc"
+alias zfetch "fastfetch -c ~/.config/fastfetch/configs/zfetch.jsonc"
+alias christmasfetch "fastfetch -c ~/.config/fastfetch/configs/christmasfetch.jsonc"
+alias rxfetch "fastfetch -c ~/.config/fastfetch/configs/rxfetch.jsonc"
+alias uwufetch "fastfetch -c ~/.config/fastfetch/configs/uwufetch.jsonc"

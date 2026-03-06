@@ -1,0 +1,52 @@
+{
+  "logo": {
+    "source": "~/.config/fastfetch/logos/christmasfetch.txt",
+    "color": {
+      "1": "#a6e3a1",
+    },
+    "padding": {
+      "left": 0,
+      "top": 0,
+      "bottom": 0,
+      "right": 2,
+    },
+  },
+  "display": {
+    "separator": " ",
+  },
+  "modules": [
+    {
+      "type": "datetime",
+      "key": " ",
+      "format": "{##a6e3a1}Christmas{##cdd6f4}@{##a6e3a1}{1}",
+    },
+    {
+      "type": "custom",
+      "format": "{#}-{##a6e3a1}*{#}-{##f38ba8}*{#}-{##89b4fa}*{#}-{##f9e2af}*{#}-{##a6e3a1}*{#}-{##f38ba8}*{#}-{##89b4fa}*",
+    },
+    {
+      "type": "command",
+      "key": "Is on:",
+      "keyColor": "reset_#a6e3a1",
+      "text": "y=$(($(date +%Y) + 1)) ; echo $(date -d \"$y-01-01\" +%A)",
+    },
+    {
+      "type": "command",
+      "key": "Is in:",
+      "keyColor": "reset_#a6e3a1",
+      "text": "y=$(($(date +%Y) + 1)) ; echo \"$((($(date -d \"$y-01-01\" +%s) - $(date +%s)) / 86400)) days\"",
+    },
+    {
+      "type": "command",
+      "key": "Today is:",
+      "keyColor": "reset_#a6e3a1",
+      "text": "echo $(date \"+%b %d, %Y\")",
+    },
+    {
+      "type": "custom",
+      "key": "Gift idea:",
+      "keyColor": "reset_#a6e3a1",
+      "format": "think for yourself",
+    },
+  ],
+}

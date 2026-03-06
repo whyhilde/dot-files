@@ -1,0 +1,18 @@
+vim.diagnostic.config {
+  virtual_text = false,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    source = "always",
+    border = "rounded",
+  },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.ERROR] = "",
+    },
+  },
+}

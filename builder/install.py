@@ -43,8 +43,11 @@ def main():
             sys.exit()
 
         else:
-            print(f"{Cols.ERROR}[-] Incorrect input.{Cols.END}")
-            sys.exit(1)
+            raise ValueError("Incorrect input")
+
+    except ValueError as e:
+        print(f"{Cols.ERROR}[-] Error: {e}.{Cols.END}")
+        sys.exit(1)
 
     except KeyboardInterrupt:
         sys.exit(1)

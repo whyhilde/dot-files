@@ -14,10 +14,13 @@ BASE_PACKAGES = [
     "git",
     "obsidian",
     "telegram-desktop",
+    "blender",
+    "discord",
     "bitwarden",
     "spotify-launcher",
     "neovim",
-    "ghostty",
+    "tree-sitter-cli",
+    "foot",
     "yazi",
     "fish",
     "starship",
@@ -48,7 +51,7 @@ BASE_PACKAGES = [
     "ripgrep",
     "fd",
     "jq",
-    "tmux",
+    "zellij",
 ]
 
 

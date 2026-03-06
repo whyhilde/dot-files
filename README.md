@@ -1,12 +1,12 @@
 <h1 align="center">whyhilde shell</h1>
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=git">
-  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=andela">
-  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=89dceb&labelColor=181825&logoColor=cdd6f4&logo=protondrive">
+  <img src="https://img.shields.io/github/last-commit/whyhilde/dot-files?&style=for-the-badge&color=74c7ec&labelColor=181825&logoColor=cdd6f4&logo=git">
+  <img src="https://img.shields.io/github/stars/whyhilde/dot-files?style=for-the-badge&color=74c7ec&labelColor=181825&logoColor=cdd6f4&logo=andela">
+  <img src="https://img.shields.io/github/repo-size/whyhilde/dot-files?style=for-the-badge&color=74c7ec&labelColor=181825&logoColor=cdd6f4&logo=protondrive">
 </p>
 
 
-<h2 align="center">overview</h2>
+<h2 align="center">• overview •</h2>
 
 **whyhilde shell** delivers a modern Hyprland system designed to increase productivity and convenience.
 
@@ -37,19 +37,19 @@
 <details>
     <summary>Repository layout</summary>
 
-| directory   | description                             |
-| ----------- | --------------------------------------- |
-| /.config/   | software configuration                  |
-| /browser/   | browser configuration                   |
-| /home/      | home configurations                     |
-| /builder/   | util for install shell                  |
-| /previews/  | example screenshots used in this README |
-| /LICENSE.md | license                                 |
+| directory                | description                             |
+| ------------------------ | --------------------------------------- |
+| [.config/](.config/)     | software configuration                  |
+| [browser/](browser/)     | browser configuration                   |
+| [home/](home/)           | home configurations                     |
+| [builder/](builder/)     | util for install shell                  |
+| [previews/](previews/)   | example screenshots used in this README |
+| [LICENSE.md](LICENSE.md) | license                                 |
 
 </details>
 
 
-<h2 align="center">features</h2>
+<h2 align="center">• features •</h2>
 
 - Beautiful and minimalistic system.
 - Customizing software on the system.
@@ -58,7 +58,7 @@
 - Automatic installation and configuration of all basic software for development.
 
 
-<h2 align="center">previews</h2>
+<h2 align="center">• previews •</h2>
 
 ![preview1](previews/1.png)
 ![preview2](previews/2.png)
@@ -66,7 +66,7 @@
 ![preview4](previews/4.png)
 
 
-<h2 align="center">installation</h2>
+<h2 align="center">• installation •</h2>
 
 > [!WARNING]
 > **This installation script only works on Arch Linux.**
@@ -94,15 +94,28 @@ python3 ./dot-files/builder/install.py
 ```
 
 > [!WARNING]
-> **The installation is complete. If you have any problems, read the following section.**
+> **The installation is complete. If you have any problems, read the next section.**
 
 
-<h2 align="center">post-installation</h2>
+<h2 align="center">• post-installation •</h2>
 
-**If there are any problems after installation, read [these](DOCS.md) instructions.**
+#### Hyprland is not working / Have display problems
 
+- **If you have a NVIDIA graphics card:**
+Open `/etc/mkinitcpio.conf`, for example, `nano /etc/mkinitcpio.conf`.
+In the `MODULES` array add the following modules names: `i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm`.
+You can then rebuild the initramfs with `sudo mkinitcpio -P`, and reboot.
 
-<h2 align="center">hotkeys</h2>
+- **If you have a Amd / Intel graphics card:**
+You need to go to Arch Wiki and do the installation manually.
+For Intel - https://wiki.archlinux.org/title/Intel_graphics.
+For Amd - https://wiki.archlinux.org/title/AMDGPU.
+
+#### Other errors
+
+- If you find bugs that aren't listed here and you're sure you followed the manual, then be sure to contact us so we can fix the bug in the next update.
+
+<h2 align="center">• hotkeys •</h2>
 
 | Action                                 | Key                   |
 | -------------------------------------- | --------------------- |
@@ -122,6 +135,6 @@ python3 ./dot-files/builder/install.py
 **The other hotkeys are in `~/.config/hypr/modules/keybindings.conf`.**
 
 
-<h2 align="center">license</h2>
+<h2 align="center">• license •</h2>
 
 © 2025 whyhilde - Licensed under the MIT License. See [LICENSE](LICENSE.md) for details.

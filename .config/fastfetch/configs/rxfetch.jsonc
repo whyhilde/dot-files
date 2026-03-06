@@ -1,0 +1,90 @@
+{
+  "logo": {
+    "source": "Linux_small",
+    "color": {
+      "1": "#585b70",
+      "2": "#cdd6f4",
+      "3": "#f9e2af",
+    },
+    "padding": {
+      "left": 0,
+      "top": 2,
+      "bottom": 0,
+      "right": 4,
+    },
+  },
+  "display": {
+    "separator": "  ",
+    "size": {
+      "binaryPrefix": "jedec",
+      "ndigits": 0,
+      "spaceBeforeUnit": "never",
+    },
+  },
+  "modules": [
+    {
+      "type": "break",
+    },
+    {
+      "type": "os",
+      "key": "os   ",
+      "keyColor": "#f5c2e7",
+      "format": "{name}",
+    },
+    {
+      "type": "kernel",
+      "key": "ker  ",
+      "keyColor": "#a6e3a1",
+      "format": "{release}",
+    },
+    {
+      "type": "packages",
+      "key": "pkgs ",
+      "keyColor": "#89dceb",
+      "format": "{all}",
+    },
+    {
+      "type": "shell",
+      "key": "sh   ",
+      "keyColor": "#89b4fa",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "memory",
+      "key": "ram  ",
+      "keyColor": "#f9e2af",
+      "format": "{used} / {total}",
+    },
+    {
+      "type": "initsystem",
+      "key": "init ",
+      "keyColor": "#f5c2e7",
+      "format": "{name}",
+    },
+    {
+      "type": "wm",
+      "key": "wm   ",
+      "keyColor": "#a6e3a1",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "uptime",
+      "key": "up   ",
+      "keyColor": "#89dceb",
+    },
+    {
+      "type": "disk",
+      "key": "disk ",
+      "keyColor": "#89b4fa",
+      "folders": "/",
+      "format": "{size-used} / {size-total}",
+    },
+    {
+      "type": "break",
+    },
+    {
+      "type": "custom",
+      "format": "{##f9e2af}󰮯  {##f5c2e7}󰊠  {##a6e3a1}󰊠  {##89dceb}󰊠  {##89b4fa}󰊠",
+    },
+  ],
+}

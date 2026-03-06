@@ -11,7 +11,7 @@ source = auto
 
 [color]
 gradient = 0
-foreground = "#cdd6f4"
+color = #cdd6f4
 
 
 [smoothing]

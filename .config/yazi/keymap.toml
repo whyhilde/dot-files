@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on = [ "<space>", "h" ]
+run = "cd ~"
+desc = "go home"

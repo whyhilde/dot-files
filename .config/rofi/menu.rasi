@@ -1,18 +1,12 @@
 @theme "/dev/null"
-* {
-  bg: #1e1e2e;
-  fg: #cdd6f4;
-  accent: #89b4fa;
-  width: 575;
-}
+@theme "~/.config/rofi/colors.rasi"
 
 
 configuration {
   font: "JetBrains Mono Medium 14";
-  show-icons: false;
   location: 0;
+  show-icons: false;
   hide-scrollbar: true;
-  sidebar-mode: false;
 }
 
 
@@ -23,49 +17,42 @@ element-text, element-icon {
 
 
 window {
+  width: 575;
   height: 400px;
-  background-color: @bg;
-  border: 3px;
-  border-color: @accent;
-  border-radius: 10px;
+  background-color: @base;
+  border: 4px;
+  border-color: @blue;
+  border-radius: 14px;
 }
 
 
 mainbox {
-  background-color: @bg;
+  background-color: @base;
 }
 
 
 inputbar {
-  children: [ "prompt", "entry" ];
-  background-color: @bg;
+  children: [ "entry" ];
+  background-color: @base;
   border-radius: 5px;
   padding: 2px;
 }
 
 
-prompt {
-  background-color: @accent;
-  padding: 6px;
-  text-color: @bg;
-  border-radius: 3px;
-  margin: 20px 0px 0px 20px;
-}
-
-
 entry {
   padding: 6px;
-  margin: 20px 0px 0px 10px;
-  text-color: @fg;
-  background-color: @bg;
-  placeholder: "find anything";
+  margin: 20px 0px 0px 30px;
+  text-color: @text;
+  background-color: @base;
+  placeholder: "Search...";
+  placeholder-color: @subtext0;
   blink: true;
 }
 
 
 listview {
   columns: 1;
-  background-color: @bg;
+  background-color: @base;
   border: 0px 0px 0px 0px;
   padding: 8px 15px 8px 15px;
   margin: 10px 0px 0px 20px;
@@ -74,11 +61,11 @@ listview {
 
 element {
   padding: 5px;
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @base;
+  text-color: @text;
 }
 
 
 element selected {
-  text-color: @accent;
+  text-color: @blue;
 }

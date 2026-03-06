@@ -1,9 +1,6 @@
 [mgr]
 cwd = { fg = "#94e2d5", bold = true }
 
-hovered = { fg = "#181825", bg = "#89b4fa" }
-preview_hovered = { fg = "#181825", bg = "#89b4fa" }
-
 find_keyword = { fg = "#f9e2af", italic = true }
 find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
 
@@ -20,6 +17,13 @@ border_symbol = " "
 border_style = { fg = "#a6adc8" }
 
 syntect_theme = "~/.config/bat/themes/catppuccin.tmTheme"
+
+
+[indicator]
+parent = { fg = "#181825", bg = "#89b4fa" }
+current = { fg = "#181825", bg = "#89b4fa" }
+preview = { fg = "#181825", bg = "#89b4fa" }
+padding = { open = "█", close = "█" }
 
 
 [tabs]
@@ -39,10 +43,10 @@ unset_alt = { fg = "#f2cdcd", bg = "#313244"}
 
 
 [status]
-sep_left = { open = "", close = "" }
-sep_right = { open = "", close = "" }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
-progress_label = { fg = "#ffffff", bold = true }
+progress_label = { fg = "#cdd6f4", bold = true }
 progress_normal = { fg = "#89b4fa", bg = "#45475a" }
 progress_error = { fg = "#f38ba8", bg = "#45475a" }
 
@@ -86,11 +90,11 @@ hovered = { underline = true }
 
 
 [which]
-mask = { bg = "#313244" }
-cand = { fg = "#94e2d5" }
+mask = { bg = "#1e1e2e" }
+cand = { fg = "#89b4fa" }
 rest = { fg = "#9399b2" }
-desc = { fg = "#f5c2e7" }
-separator = "  "
+desc = { fg = "#b4befe" }
+separator = ": "
 separator_style = { fg = "#585b70" }
 
 
@@ -110,16 +114,10 @@ title_error = { fg = "#f38ba8" }
 
 [filetype]
 rules = [
-  { mime = "image/*", fg = "#94e2d5" },
-  { mime = "{audio,video}/*", fg = "#f9e2af" },
-
-  { mime = "application/*zip", fg = "#f5c2e7" },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
-
-  { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
-
-  { name = "*", fg = "#cdd6f4" },
-  { name = "*/", fg = "#89b4fa" },
+  { url = "*", is = "link", fg = "#89dceb" },
+  { url = "*", fg = "#cdd6f4" },
+  { url = "*/", is = "link", fg = "#89dceb" },
+  { url = "*/", fg = "#89b4fa" },
 ]
 
 

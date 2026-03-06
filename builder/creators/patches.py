@@ -122,13 +122,6 @@ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I $TERM"""
 
             subprocess.run(["chmod", "744", f"{scripts_dir}/*.sh"], check=True)
 
-            # sh_files = glob.glob(os.path.join(scripts_dir, "*.sh"))
-            # if not sh_files:
-            #     raise FileNotFoundError("No scripts were found.")
-
-            # for file_path in sh_files:
-            #     os.chmod(file_path, 0o744)
-
             print(
                 f"{Cols.INFO}[+] Scripts permissions have been successfully set.{Cols.END}"
             )

@@ -5,16 +5,16 @@
   "keybind": "l",
 },
 {
-  "label": "reboot",
-  "action": "systemctl reboot",
-  "text": "",
-  "keybind": "r",
-},
-{
   "label": "shutdown",
   "action": "systemctl poweroff",
   "text": "",
   "keybind": "q",
+},
+{
+  "label": "reboot",
+  "action": "systemctl reboot",
+  "text": "",
+  "keybind": "r",
 },
 {
   "label": "suspend",

@@ -4,7 +4,7 @@ set -e
 
 RESCAN_BUTTON="  Rescan"
 BACK_BUTTON="Back"
-MENU="rofi -dmenu -config ~/.config/rofi/menu.rasi"
+THEME="rofi -dmenu -config ~/.config/rofi/menu.rasi"
 ICON="$HOME/.config/hypr/scripts/icons/wifi.svg"
 
 
@@ -14,7 +14,7 @@ network_status=$(ps aux | grep NetworkManager | grep root)
 
 # if the service is not running
 if [ "$network_status" = "" ]; then
-  $MENU -password -p " PASS " | sudo -S NetworkManager
+  $THEME -password | sudo -S NetworkManager
 fi
 
 
@@ -50,7 +50,7 @@ if [ "$wifi_list" = "" ]; then
 fi
 
 
-chosen_network=$(echo -e "$choose_options" | uniq -u | $MENU -p " NET ")
+chosen_network=$(echo -e "$choose_options" | uniq -u | $THEME)
 chosen_id=$(echo "${chosen_network:3}" | xargs)
 
 
@@ -76,13 +76,13 @@ else
 
     # processing logic in connection information
     wifi_details_options="$connection_info\n\nChange password\nForget access point\nShare connection\n$BACK_BUTTON"
-    chosen=$(echo -e "$wifi_details_options" | uniq -u | $MENU -p "$chosen_id")
+    chosen=$(echo -e "$wifi_details_options" | uniq -u | $THEME)
     echo $chosen
 
     case "$chosen" in
 
       "Change password")
-        new_password=$($MENU -password -p " PASS ")
+        new_password=$($THEME -password)
         nmcli con modify "$chosen_id" wifi-sec.psk "$new_password"
         notify-send -i "$ICON" "The password for point $chosen_id has been changed."
       ;;
@@ -97,7 +97,7 @@ else
       ;;
 
       "Share connection")
-        ghostty -e sh -c "nmcli dev wifi show-password; read -n 1 -s -r -p \"Press any key to exit\""
+        foot -e sh -c "nmcli dev wifi show-password; read -n 1 -s -r -p \"Press any key to exit\""
       ;;
 
       *)
@@ -110,7 +110,7 @@ else
 
   else
     if [[ "$chosen_network" =~ "" ]]; then
-      wifi_password=$($MENU -password -p " PASS " )
+      wifi_password=$($THEME -password)
     fi
     nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send -i "$ICON" "Connection Established" "$success_message"
   fi

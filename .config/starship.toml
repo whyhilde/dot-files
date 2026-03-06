@@ -1,29 +1,39 @@
-format = "$cmd_duration$directory$git_branch$character"
+format = "$username$hostname$directory$git_branch\n$character"
 right_format = ""
-add_newline = false
+add_newline = true
+
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "fg:#f9e2af"
+
+
+[hostname]
+ssh_only = false
+format = "@[$hostname]($style)"
+style = "fg:#eba0ac"
+
+
+[directory]
+home_symbol = "~"
+read_only = ""
+truncation_length = 1
+truncation_symbol = ""
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+format = " [$path]($style)"
+style = "fg:#94e2d5"
+
+
+[git_branch]
+truncation_length = 12
+truncation_symbol = ".."
+format = " on [󰘬 $branch]($style)"
+style = "fg:#b4befe"
 
 
 [character]
 format = "$symbol"
-success_symbol = "[  ](fg:blue)"
-error_symbol = "[  ](fg:red)"
-
-
-[cmd_duration]
-min_time = 0
-format = "[](fg:yellow bold)[󰪢 $duration](fg:#1e1e2e bg:yellow bold)[](fg:yellow bold)"
-
-
-[directory]
-format = " 󰜥 [](fg:green bold)[󰉋 $path](fg:#1e1e2e bg:green bold)[](fg:green bold)"
-home_symbol = "  "
-read_only = ""
-truncation_length = 3
-truncation_symbol = ""
-truncate_to_repo = false
-
-
-[git_branch]
-format = " 󰜥 [](fg:cyan bold)[󰘬 $branch](fg:#1e1e2e bg:cyan bold)[](fg:cyan bold)"
-truncation_length = 12
-truncation_symbol = ".."
+success_symbol = "[➜ ](fg:#a6e3a1)"
+error_symbol = "[➜ ](fg:#f38ba8)"

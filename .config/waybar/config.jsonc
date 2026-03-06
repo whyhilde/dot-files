@@ -1,43 +1,58 @@
 {
   "position": "top",
   "height": 40,
-  "margin-left": 0,
-  "margin-right": 0,
-
+  "spacing": 2,
+  "exclusive": true,
+  "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window",
+    "custom/launcher",
+    "group/disks",
+    "custom/player",
   ],
   "modules-center": [
-    "group/time",
+    "hyprland/workspaces",
   ],
   "modules-right": [
     "tray",
-    "hyprland/language",
-    "group/audio",
+    "pulseaudio",
     "network",
-    "group/hardware",
+    "hyprland/language",
+    "clock",
+    "custom/power",
   ],
-
-  "hyprland/window": {
-    "format": "{initialTitle}",
-    "max-length": 30,
-    "rewrite": {
-      "": "Hyprland",
-      "ghostty": "Terminal",
-    },
-    "separate-outputs": false,
+  "group/disks": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk#root",
+      "disk#home",
+    ],
+  },
+  "custom/launcher": {
+    "format": "󰣇 Arch",
+    "on-click": "rofi -show drun",
     "tooltip": false,
   },
-
-  "hyprland/language": {
-    "format": "<span color=\"#89b4fa\">󰌏</span> {}",
-    "format-en": "US",
-    "format-ru": "RU",
+  "disk#root": {
+    "format": "/ {percentage_used}%",
+    "path": "/",
+    "interval": 10,
+    "tooltip": false,
   },
-
+  "disk#home": {
+    "format": "/home {percentage_used}%",
+    "path": "/home",
+    "interval": 10,
+    "tooltip": false,
+  },
+  "custom/player": {
+    "format": "{}",
+    "exec": "playerctl metadata --format \"󰎆 {{artist}} - {{title}}\" || echo \"󰎆 No music\"",
+    "max-length": 30,
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "tooltip": false,
+  },
   "hyprland/workspaces": {
-    "sort-by-number": true,
     "persistent-workspaces": {
       "1": "1",
       "2": "2",
@@ -47,94 +62,44 @@
       "6": "6",
       "7": "7",
     },
+    "disable-scroll": false,
+    "all-outputs": true,
     "on-click": "activate",
+    "format": "{name}",
   },
-
-
-  "group/hardware": {
-    "modules": [ "cpu", "memory" ],
-    "orientation": "horizontal",
-  },
-
-  "cpu": {
-    "format": "<span color=\"#89b4fa\"></span> {usage}%",
-    "tooltip": false,
-  },
-
-  "memory": {
-    "format": "<span color=\"#89b4fa\">󰉉</span> {percentage}%",
-    "tooltip": false,
-  },
-
-  "group/audio": {
-    "modules": [ "pulseaudio#output", "pulseaudio#input", ],
-    "orientation": "horizontal",
-  },
-
-  "pulseaudio#output": {
-    "format": "<span color=\"#89b4fa\">{icon}</span> {volume}%",
-    "format-muted": "  mute",
-    "format-icons": {
-      "headphone": "",
-      "default": [ "", "", " ", ],
-    },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " Muted",
     "scroll-step": 5,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol --tab=1",
-    "tooltip": false,
+    "on-click-right": "pavucontrol",
   },
-
-  "pulseaudio#input": {
-    "format": "{format_source}",
-    "format-source": "<span color=\"#89b4fa\"></span> {volume}%",
-    "format-source-muted": "  mute",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-    "on-click-right": "pavucontrol --tab=4",
-    "tooltip": false,
-  },
-
-  "group/time": {
-    "modules": [ "clock", "clock#simple", ],
-    "orientation": "horizontal",
-  },
-
-  "clock": {
-    "format": "{:%A, %d %B}",
-    "tooltip-format": "<big><span color=\"#cdd6f4\">{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode"          : "month",
-      "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
-      "on-scroll"     : 1,
-      "format": {
-        "months":     "<span color=\"#cdd6f4\"><b>{}</b></span>",
-        "days":       "<span color=\"#cdd6f4\"><b>{}</b></span>",
-        "weeks":      "<span color=\"#89b4fa\"><b>W{}</b></span>",
-        "weekdays":   "<span color=\"#89b4fa\"><b>{}</b></span>",
-        "today":      "<span color=\"#89b4fa\"><b><u>{}</u></b></span>",
-      },
-    },
-  },
-
-  "clock#simple": {
-    "format": "{:%I:%M %p}",
-    "tooltip": false,
-    "interval": 1,
-  },
-
   "network": {
-    "format-wifi": "<span color=\"#89b4fa\">󰤨</span>",
-    "format-disconnected": "<span color=\"#f38ba8\">󰤭</span>",
-    "tooltip-format": "{essid} ({signalStrength}%)",
-    "format-linked": "{ifname} (No IP) ",
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰤭 Off",
     "interval": 1,
     "on-click": "~/.config/hypr/scripts/wifi.sh",
+    "tooltip": false,
   },
-
   "tray": {
-    "icon-size": 18,
+    "icon-size": 14,
     "spacing": 10,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU",
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%d %b %Y}",
+    "tooltip": false,
+  },
+  "custom/power": {
+    "format": " Power",
+    "on-click": "wlogout -b 4",
+    "tooltip": false,
   },
 }

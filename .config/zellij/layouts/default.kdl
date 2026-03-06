@@ -1,0 +1,57 @@
+layout {
+  swap_tiled_layout name="vertical" {
+    tab max_panes=5 {
+      pane split_direction="vertical" {
+        pane
+        pane { children; }
+      }
+    }
+    tab max_panes=8 {
+      pane split_direction="vertical" {
+        pane { children; }
+        pane { pane; pane; pane; pane; }
+      }
+    }
+    tab max_panes=12 {
+      pane split_direction="vertical" {
+        pane { children; }
+        pane { pane; pane; pane; pane; }
+        pane { pane; pane; pane; pane; }
+      }
+    }
+  }
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+        format_left "#[bg=#181825,fg=#cdd6f4,bold]{mode} ({session}) {tabs}"
+        format_center ""
+        format_right ""
+        format_space  ""
+
+        mode_normal "normal"
+        mode_locked "locked"
+        mode_resize "resize"
+        mode_pane "pane"
+        mode_tab "tab"
+        mode_scroll "scroll"
+        mode_enter_search "ent-search"
+        mode_search "search"
+        mode_rename_tab "rename-tab"
+        mode_rename_pane "rename-pane"
+        mode_session "session"
+        mode_move "move"
+        mode_prompt "prompt"
+        mode_tmux "tmux"
+
+        tab_normal "#[bg=#cdd6f4,fg=#181825,bold] {name} #[bg=#181825,fg=#cdd6f4,bold]"
+        tab_active "#[bg=#89b4fa,fg=#181825,bold] {name} #[bg=#181825,fg=#89b4fa,bold]"
+        tab_separator ""
+
+        datetime "#[bg=#181825,fg=#89b4fa,bold]#[bg=#89b4fa,fg=#181825,bold] {format} "
+        datetime_format "%d %b %Y %I:%M %p"
+        datetime_timezone "Asia/Yekaterinburg"
+      }
+    }
+    children
+  }
+}

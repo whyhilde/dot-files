@@ -12,7 +12,7 @@ SEARCH_ENGINES=(
   "  GitHub:https://github.com/search?q={query}&type=repositories"
   "  YouTube:https://www.youtube.com/results?search_query={query}"
 )
-MENU="rofi -dmenu -config ~/.config/rofi/config.rasi"
+MENU="rofi -dmenu -config ~/.config/rofi/launcher.rasi"
 
 
 show_engine_menu() {

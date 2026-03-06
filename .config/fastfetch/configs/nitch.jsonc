@@ -1,0 +1,84 @@
+{
+  "logo": {
+    "source": "~/.config/fastfetch/logos/nitch.txt",
+    "position": "top",
+    "color": {
+      "1": "#89b4fa",
+    },
+    "padding": {
+      "left": 1,
+      "top": 0,
+      "bottom": 0,
+      "right": 1,
+    },
+  },
+  "display": {
+    "separator": " ",
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "key": " ╭───────────╮",
+    },
+    {
+      "type": "users",
+      "key": " │ {##f38ba8} {##cdd6f4}user    │",
+      "format": "{name}",
+      "outputColor": "bold_#f38ba8",
+    },
+    {
+      "type": "title",
+      "key": " │ {##f9e2af}󰌢 {##cdd6f4}host    │",
+      "format": "{host-name}",
+      "outputColor": "bold_#f9e2af",
+    },
+    {
+      "type": "os",
+      "key": " │ {##a6e3a1}󰻀 {##cdd6f4}distro  │",
+      "format": "{pretty-name}",
+      "outputColor": "bold_#a6e3a1",
+    },
+    {
+      "type": "kernel",
+      "key": " │ {##94e2d5} {##cdd6f4}kernel  │",
+      "format": "{release}",
+      "outputColor": "bold_#94e2d5",
+    },
+    {
+      "type": "uptime",
+      "key": " │ {##89b4fa} {##cdd6f4}uptime  │",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
+      "outputColor": "bold_#89b4fa",
+    },
+    {
+      "type": "packages",
+      "key": " │ {##cba6f7}󰏔 {##cdd6f4}pkgs    │",
+      "outputColor": "bold_#cba6f7",
+    },
+    {
+      "type": "wm",
+      "key": " │ {##f38ba8} {##cdd6f4}wm      │",
+      "format": "{pretty-name} {version}",
+      "outputColor": "bold_#f38ba8",
+    },
+    {
+      "type": "command",
+      "key": " │ {##f9e2af}󰉉 {##cdd6f4}memory  │",
+      "text": "free -m | awk 'NR==2{printf \"%d | %d MiB\",$3,$2}'",
+      "outputColor": "bold_#f9e2af",
+    },
+    {
+      "type": "custom",
+      "key": " ├───────────┤",
+    },
+    {
+      "type": "colors",
+      "key": " │ {##cdd6f4}󱥚 {##cdd6f4}colors  │",
+      "symbol": "circle",
+    },
+    {
+      "type": "custom",
+      "key": " ╰───────────╯",
+    },
+  ],
+}

@@ -5,22 +5,20 @@ local start = vim.health.start or vim.health.report_start
 local ok = vim.health.ok or vim.health.report_ok
 local warn = vim.health.warn or vim.health.report_warn
 local error = vim.health.error or vim.health.report_error
-local info = vim.health.info or vim.health.report_info
 
 
 function M.check()
-  start("whyhilde nvim")
-
+  start("neovim version")
   if vim.fn.has("nvim-0.11.0") == 1 then
     ok("neovim >= 0.11.0")
   else
     error("neovim >= 0.11.0 is required")
   end
 
-  for _, cmd in ipairs({ "git", "rg", "curl" }) do
+  start("dependencies")
+  for _, cmd in ipairs({ "git", "curl", "rg", "fd", }) do
     local name = type(cmd) == "string" and cmd or vim.inspect(cmd)
     local commands = type(cmd) == "string" and { cmd } or cmd
-    ---@cast commands string[]
     local found = false
 
     for _, c in ipairs(commands) do

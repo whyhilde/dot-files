@@ -2,7 +2,7 @@
 set -e
 
 
-ICON="$HOME/.config/scripts/icons/bluetooth.svg"
+ICON="$HOME/.config/hypr/scripts/icons/bluetooth.svg"
 MENU="rofi -dmenu -config ~/.config/rofi/menu.rasi"
 
 
