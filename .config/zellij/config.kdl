@@ -8,6 +8,7 @@ keybinds clear-defaults=true {
     bind "k" { MoveFocus "up"; }
     bind "l" { MoveFocus "right"; }
     bind "n" { NewPane; SwitchToMode "normal"; }
+    bind "x" { CloseFocus; SwitchToMode "normal"; }
     bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
     bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
     bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
@@ -128,6 +129,7 @@ keybinds clear-defaults=true {
     bind "Alt u" { GoToPreviousTab; }
     bind "Alt i" { GoToNextTab; }
     bind "Alt n" { NewPane; }
+    bind "Alt c" { CloseFocus; }
     bind "Ctrl q" { Quit; }
     bind "Ctrl g" { SwitchToMode "locked"; }
   }
@@ -158,9 +160,9 @@ keybinds clear-defaults=true {
   shared_except "normal" "locked" "entersearch" "renametab" "renamepane" {
     bind "esc" { SwitchToMode "normal"; }
   }
-  shared_among "pane" "tmux" {
-    bind "x" { CloseFocus; SwitchToMode "normal"; }
-  }
+  // shared_among "pane" "tmux" {
+  //   bind "x" { CloseFocus; SwitchToMode "normal"; }
+  // }
   shared_among "scroll" "search" {
     bind "h" { PageScrollDown; }
     bind "j" { ScrollDown; }
@@ -339,7 +341,7 @@ show_release_notes false
 ui {
   pane_frames {
     rounded_corners false
-    hide_session_name false
+    hide_session_name true
   }
 }
 

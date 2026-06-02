@@ -1,0 +1,17 @@
+vim.pack.add({
+  "https://github.com/nvim-mini/mini.nvim",
+  "https://github.com/akinsho/toggleterm.nvim",
+  "https://github.com/catgoose/nvim-colorizer.lua",
+  "https://github.com/stevearc/conform.nvim",
+  "https://github.com/Wansmer/langmapper.nvim",
+  "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/hrsh7th/nvim-cmp",
+  "https://github.com/hrsh7th/cmp-nvim-lsp",
+  "https://github.com/hrsh7th/cmp-buffer",
+  "https://github.com/hrsh7th/cmp-path",
+  "https://github.com/hrsh7th/cmp-cmdline",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+  "https://github.com/nvim-treesitter/nvim-treesitter-context",
+})

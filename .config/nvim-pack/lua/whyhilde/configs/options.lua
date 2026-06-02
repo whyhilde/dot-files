@@ -1,0 +1,64 @@
+local options = {
+  background = "dark",
+  backup = false,
+  clipboard = "unnamedplus",
+  cursorline = true,
+  encoding = "utf-8",
+  expandtab = true,
+  fileencoding = "utf-8",
+  fillchars = {
+    eob = " ",
+    horiz = "━",
+    horizdown = "┳",
+    horizup = "┻",
+    vert = "┃",
+    verthoriz = "╋",
+    vertleft = "┫",
+    vertright = "┣",
+  },
+  hlsearch = true,
+  ignorecase = true,
+  incsearch = true,
+  infercase = true,
+  laststatus = 3,
+  linebreak = true,
+  modelines = 0,
+  mouse = "a",
+  number = true,
+  numberwidth = 2,
+  relativenumber = true,
+  ruler = false,
+  scrolloff = 10,
+  shiftwidth = 2,
+  showbreak = "",
+  showmode = false,
+  showtabline = 0,
+  signcolumn = "yes",
+  smartcase = true,
+  smartindent = true,
+  smarttab = true,
+  smoothscroll = true,
+  softtabstop = 2,
+  splitbelow = true,
+  splitright = true,
+  swapfile = false,
+  tabstop = 2,
+  undofile = true,
+  updatetime = 5000,
+  whichwrap = "",
+  wildmode = "longest:full,full",
+  winborder = "bold",
+  wrap = true,
+  writebackup = false,
+
+  -- langmap = {
+  --   "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  --   "фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
+  -- },                                   -- enable support russian layout
+
+}
+
+
+for option, value in pairs(options) do
+  vim.opt[option] = value
+end

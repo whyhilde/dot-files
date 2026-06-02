@@ -1,5 +1,5 @@
 [mgr]
-cwd = { fg = "#94e2d5", bold = true }
+cwd = { fg = "#89b482" }
 
 find_keyword = { fg = "#f9e2af", italic = true }
 find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
@@ -7,33 +7,31 @@ find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
 marker_copied = { fg = "#a6e3a1", bg = "#a6e3a1" }
 marker_cut = { fg = "#f38ba8", bg = "#f38ba8" }
 marker_marked = { fg = "#94e2d5", bg = "#94e2d5" }
-marker_selected = { fg = "#89b4fa", bg = "#89b4fa" }
+marker_selected = { fg = "#7daea3", bg = "#89b4fa" }
 
 count_copied = { fg = "#1e1e2e", bg = "#a6e3a1" }
 count_cut = { fg = "#1e1e2e", bg = "#f38ba8" }
-count_selected = { fg = "#1e1e2e", bg = "#89b4fa" }
+count_selected = { fg = "#1e1e2e", bg = "#7daea3" }
 
 border_symbol = " "
 border_style = { fg = "#a6adc8" }
 
-syntect_theme = "~/.config/bat/themes/catppuccin.tmTheme"
-
 
 [indicator]
-parent = { fg = "#181825", bg = "#89b4fa" }
-current = { fg = "#181825", bg = "#89b4fa" }
-preview = { fg = "#181825", bg = "#89b4fa" }
+parent = { fg = "#1d2021", bg = "#7daea3" }
+current = { fg = "#1d2021", bg = "#7daea3" }
+preview = { fg = "#1d2021", bg = "#7daea3" }
 padding = { open = "█", close = "█" }
 
 
 [tabs]
-active = { fg = "#1e1e2e", bg = "#cdd6f4", bold = true }
-inactive = { fg = "#cdd6f4", bg = "#45475a" }
+active = { fg = "#1e1e2e", bg = "#fbf1c7", bold = true }
+inactive = { fg = "#fbf1c7", bg = "#45475a" }
 
 
 [mode]
-normal_main = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
-normal_alt = { fg = "#89b4fa", bg = "#313244"}
+normal_main = { fg = "#1e1e2e", bg = "#7daea3", bold = true }
+normal_alt = { fg = "#7daea3", bg = "#313244"}
 
 select_main = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
 select_alt = { fg = "#a6e3a1", bg = "#313244"}
@@ -43,11 +41,11 @@ unset_alt = { fg = "#f2cdcd", bg = "#313244"}
 
 
 [status]
-sep_left = { open = "", close = "" }
-sep_right = { open = "", close = "" }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
-progress_label = { fg = "#cdd6f4", bold = true }
-progress_normal = { fg = "#89b4fa", bg = "#45475a" }
+progress_label = { fg = "#fbf1c7", bold = true }
+progress_normal = { fg = "#7daea3", bg = "#45475a" }
 progress_error = { fg = "#f38ba8", bg = "#45475a" }
 
 perm_type = { fg = "#b4befe" }
@@ -58,21 +56,21 @@ perm_sep = { fg = "#b4befe" }
 
 
 [input]
-border = { fg = "#89b4fa" }
+border = { fg = "#7daea3" }
 title = {}
 value = {}
 selected = { reversed = true }
 
 
 [pick]
-border = { fg = "#89b4fa" }
+border = { fg = "#7daea3" }
 active = { fg = "#f5c2e7" }
 inactive = {}
 
 
 [confirm]
-border = { fg = "#89b4fa" }
-title = { fg = "#89b4fa" }
+border = { fg = "#7daea3" }
+title = { fg = "#7daea3" }
 content = {}
 list = {}
 btn_yes = { reversed = true }
@@ -80,18 +78,18 @@ btn_no = {}
 
 
 [cmp]
-border = { fg = "#89b4fa" }
+border = { fg = "#7daea3" }
 
 
 [tasks]
-border = { fg = "#89b4fa" }
+border = { fg = "#7daea3" }
 title = {}
 hovered = { underline = true }
 
 
 [which]
 mask = { bg = "#1e1e2e" }
-cand = { fg = "#89b4fa" }
+cand = { fg = "#7daea3" }
 rest = { fg = "#9399b2" }
 desc = { fg = "#b4befe" }
 separator = ": "
@@ -103,7 +101,7 @@ on = { fg = "#94e2d5" }
 run = { fg = "#f5c2e7" }
 desc = { fg = "#9399b2" }
 hovered = { bg = "#585b70", bold = true }
-footer = { fg = "#cdd6f4", bg = "#45475a" }
+footer = { fg = "#fbf1c7", bg = "#45475a" }
 
 
 [notify]
@@ -114,26 +112,30 @@ title_error = { fg = "#f38ba8" }
 
 [filetype]
 rules = [
-  { url = "*", is = "link", fg = "#89dceb" },
-  { url = "*", fg = "#cdd6f4" },
-  { url = "*/", is = "link", fg = "#89dceb" },
-  { url = "*/", fg = "#89b4fa" },
+  { url = "*", is = "link", fg = "#89b482" },
+  { url = "*", fg = "#fbf1c7" },
+  { url = "*/", is = "link", fg = "#89b482" },
+  { url = "*/", fg = "#7daea3" },
 ]
 
 
 [spot]
-border = { fg = "#89b4fa" }
-title = { fg = "#89b4fa" }
-tbl_cell = { fg = "#89b4fa", reversed = true }
+border = { fg = "#7daea3" }
+title = { fg = "#7daea3" }
+tbl_cell = { fg = "#7daea3", reversed = true }
 tbl_col = { bold = true }
 
 
 [icon]
-dirs = [
-  { name = "*", text = "" },
-]
-prepend_conds = [
-  { if = "link", text = "" },
-]
+# dirs = [
+#   { name = "*", text = "" },
+# ]
+# prepend_conds = [
+#   { if = "link", text = "" },
+# ]
+# files = []
+# append_exts = []
+conds = []
+dirs = []
 files = []
-append_exts = []
+exts = []

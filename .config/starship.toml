@@ -6,13 +6,13 @@ add_newline = true
 [username]
 show_always = true
 format = "[$user]($style)"
-style_user = "fg:#f9e2af"
+style_user = "fg:#ea6962"
 
 
 [hostname]
 ssh_only = false
 format = "@[$hostname]($style)"
-style = "fg:#eba0ac"
+style = "fg:#ea6962"
 
 
 [directory]
@@ -23,17 +23,17 @@ truncation_symbol = ""
 truncate_to_repo = false
 fish_style_pwd_dir_length = 1
 format = " [$path]($style)"
-style = "fg:#94e2d5"
+style = "fg:#a9b665"
 
 
 [git_branch]
 truncation_length = 12
 truncation_symbol = ".."
-format = " on [󰘬 $branch]($style)"
-style = "fg:#b4befe"
+format = " \\([$branch]($style)\\)"
+style = "fg:#7daea3"
 
 
 [character]
 format = "$symbol"
-success_symbol = "[➜ ](fg:#a6e3a1)"
-error_symbol = "[➜ ](fg:#f38ba8)"
+success_symbol = "[& ](fg:#a9b665)"
+error_symbol = "[& ](fg:#ea6962)"

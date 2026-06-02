@@ -12,8 +12,26 @@ M.lsp = function()
       filetypes = {
         "go",
       },
+      settings = {
+        gopls = {
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+        },
+      },
     }
   )
+end
+
+
+M.test = function()
+  require("neotest-golang")
 end
 
 
@@ -66,6 +84,15 @@ M.debug = function()
     },
   }
 end
+
+
+M.plugins = {
+  {
+    "fredrikaverpil/neotest-golang",
+    lazy = true,
+    opts = {},
+  },
+}
 
 
 return M
