@@ -3,11 +3,11 @@ vim.keymap.set("n", "<leader>fc", function()
     async = true,
     lsp_fallback = true,
   })
-end)
+end, { desc = "format code" })
 
 vim.keymap.set("v", "<leader>fc", function()
   require("conform").format({
     async = true,
     lsp_fallback = true,
   })
-end)
+end, { desc = "format code" })

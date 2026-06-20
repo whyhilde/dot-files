@@ -1,0 +1,105 @@
+{
+  "height": 40,
+  "width": 1880,
+  "margin-top": 10,
+  "margin-bottom": 0,
+
+  "modules-left": [ "custom/menu", "hyprland/workspaces", ],
+  "modules-center": [],
+  "modules-right": [ "tray", "hyprland/language", "network", "pulseaudio", "clock", ],
+
+  "custom/menu": {
+    "format": "{icon}",
+    "format-icons": "󰣇",
+    "on-click": "rofi -show drun -config ~/.config/rofi/config.rasi",
+    "escape": true,
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰫍",
+      "default": "󰫍"
+    },
+    "persistent-workspaces": {
+      "*": 7,
+    },
+    "on-click": "activate",
+    "tooltip": false,
+  },
+
+  "custom/cmus": {
+    "format": "{icon} {}",
+    "format-icons": {
+      "default": ["<span color='#89b4fa'></span>"]
+    },
+    "max-length": 45,
+    "interval": 1,
+    "exec": "cmus-remote -C \"format_print '%F'\"",
+    "exec-if": "pgrep cmus",
+    "on-click": "cmus-remote -u",
+    "on-scroll-up": "cmus-remote --next",
+    "on-scroll-down": "cmus-remote --prev",
+    "escape": true,
+    "tooltip": false,
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+
+  "hyprland/language": {
+    "format": "<span color='#89b4fa'>󰌏</span> {}",
+    "format-en": "EN",
+    "format-ru": "RU",
+  },
+  
+  "network": {
+    "interval": 1,
+    "format-wifi": "󰤨",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-linked": "{ifname} (No IP) ",
+    "on-click": "~/.config/hypr/scripts/wifi2.sh",
+  },
+
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "<span color='#a6e3a1'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#f38ba8'></span> mute",
+    "format-icons": {
+      "default": [ "", "", "" ],
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol --tab=1",
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "<span color='#89b4fa'></span> {:%I:%M %p}",
+    "tooltip-format": "<big><span color='#cdd6f4'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<span color='#eba0ac'></span> <span color='#cdd6f4'>{:%d-%m-%y}</span>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#cdd6f4'><b>{}</b></span>",
+        "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks":      "<span color='#89b4fa'><b>W{}</b></span>",
+        "weekdays":   "<span color='#89b4fa'><b>{}</b></span>",
+        "today":      "<span color='#89b4fa'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+}

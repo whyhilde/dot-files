@@ -43,6 +43,7 @@ require("nvim-treesitter").install({
   "python",
   "rust",
   "toml",
+  "zig",
 })
 
 

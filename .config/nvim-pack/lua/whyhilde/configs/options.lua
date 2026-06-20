@@ -50,14 +50,7 @@ local options = {
   winborder = "bold",
   wrap = true,
   writebackup = false,
-
-  -- langmap = {
-  --   "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  --   "фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
-  -- },                                   -- enable support russian layout
-
 }
-
 
 for option, value in pairs(options) do
   vim.opt[option] = value

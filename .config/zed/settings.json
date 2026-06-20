@@ -1,0 +1,56 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cursor_blink": false,
+  "cursor_shape": "block",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_line_height": {
+    "custom": 2.0
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "inlay_hints": {
+    "enabled": false
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "toolbar": {
+    "agent_review": true,
+    "code_actions": false
+  },
+  "minimap": {
+    "max_width_columns": 90,
+    "show": "always"
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "relative_line_numbers": "enabled",
+  "project_panel": {
+    "scrollbar": {
+      "show": "never"
+    },
+    "indent_size": 25.0,
+    "entry_spacing": "comfortable",
+    "default_width": 250.0,
+    "dock": "left"
+  },
+  "which_key": {
+    "delay_ms": null,
+    "enabled": null
+  },
+  "autosave": "off",
+  "ui_font_size": 18.0,
+  "buffer_font_size": 18.0,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark",
+  },
+}

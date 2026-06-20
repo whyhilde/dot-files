@@ -1,0 +1,13 @@
+name := "dwmblocks"
+bin_dir := "/usr/local/bin"
+target_dir := "zig-out/bin"
+
+default:
+  @just --list
+
+build:
+  @zig build
+
+install: build
+  @mkdir -p {{bin_dir}}
+  @cp {{target_dir}}/{{name}} {{bin_dir}}

@@ -1,0 +1,38 @@
+-- require("neotest").setup({
+--   adapters = {
+--     require("neotest-go"),
+--     require("neotest-rust"),
+--   },
+--   icons = {
+--     child_indent = " ",
+--     child_prefix = " ",
+--     collapsed = " ",
+--     expanded = " ",
+--     failed = "",
+--     final_child_indent = " ",
+--     final_child_prefix = " ",
+--     non_collapsible = " ",
+--     notify = "󰙨",
+--     passed = "",
+--     running = "",
+--     running_animated = {
+--       "/",
+--       "|",
+--       "\\",
+--       "-",
+--       "/",
+--       "|",
+--       "\\",
+--       "-",
+--     },
+--     skipped = "",
+--     test = "󰙨",
+--     unknown = "",
+--     watching = "󰈈",
+--   },
+-- })
+--
+--
+-- vim.keymap.set("n", "<leader>tr", "<cmd>Neotest run<cr>")
+-- vim.keymap.set("n", "<leader>tf", "<cmd>Neotest run file<cr>")
+-- vim.keymap.set("n", "<leader>ts", "<cmd>Neotest summary toggle<cr>")

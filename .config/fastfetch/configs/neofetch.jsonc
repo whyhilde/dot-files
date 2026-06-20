@@ -1,9 +1,9 @@
 {
   "logo": {
-    "source": "arch",
+    "source": "artix",
     "color": {
-      "1": "#89b4fa",
-      "2": "#89b4fa",
+      "1": "green",
+      "2": "white",
     },
     "padding": {
       "left": 0,
@@ -23,9 +23,9 @@
     {
       "type": "title",
       "color": {
-        "user": "#89b4fa",
-        "at": "#cdd6f4",
-        "host": "#89b4fa",
+        "user": "green",
+        "at": "white",
+        "host": "green",
       },
     },
     {
@@ -33,79 +33,95 @@
     },
     {
       "type": "os",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "host",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "kernel",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
       "format": "{release}",
     },
     {
       "type": "uptime",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "display",
       "compactType": "original-with-refresh-rate",
       "key": "Resolution",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "wm",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
+    },
+    {
+      "type": "initsystem",
+      "keyColor": "green",
     },
     {
       "type": "packages",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "shell",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "terminal",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
     },
     {
       "type": "cpu",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
       "format": "{name}",
     },
     {
       "type": "gpu",
       "key": "GPU",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
       "format": "{name}",
     },
     {
       "type": "memory",
       "key": "Memory",
-      "keyColor": "#89b4fa",
+      "keyColor": "green",
+      "format": "{used} / {total}",
+    },
+    {
+      "type": "swap",
+      // "key": "Swap",
+      "keyColor": "green",
       "format": "{used} / {total}",
     },
     {
       "type": "disk",
       "folders": "/",
-      "key": "Disk (/)",
-      "keyColor": "#89b4fa",
+      // "key": "Disk (/)",
+      "key": "Disk",
+      "keyColor": "green",
       "format": "{size-used} / {size-total}",
     },
     {
-      "type": "disk",
-      "folders": "/home",
-      "key": "Disk (/home)",
-      "keyColor": "#89b4fa",
-      "format": "{size-used} / {size-total}",
+      "type": "locale",
+      "keyColor": "green",
     },
+    // {
+    //   "type": "disk",
+    //   "folders": "/home",
+    //   "key": "Disk (/home)",
+    //   "keyColor": "green",
+    //   "format": "{size-used} / {size-total}",
+    // },
     {
       "type": "break",
     },
     {
       "type": "colors",
+      "symbol": "circle",
     },
   ],
 }

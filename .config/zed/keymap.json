@@ -1,0 +1,38 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "\\ f f": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "\\ t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "\\ e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "\\ shift-e": "workspace::ToggleRightDock"
+    }
+  }
+]

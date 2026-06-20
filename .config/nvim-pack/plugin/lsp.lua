@@ -18,33 +18,10 @@ vim.api.nvim_create_autocmd(
 
 
       local map = vim.keymap.set
-
-      map(
-        "n",
-        "<leader>d",
-        vim.diagnostic.open_float,
-        {
-          desc = "show diagnostic of current line",
-        }
-      )
-
-      map(
-        "n",
-        "grd",
-        vim.lsp.buf.definition,
-        {
-          desc = "go to definitions",
-        }
-      )
-
-      map(
-        "n",
-        "grD",
-        vim.lsp.buf.declaration,
-        {
-          desc = "go to declaration",
-        }
-      )
+      map("n", "<leader>ll", vim.diagnostic.open_float, { desc = "lsp diagnostic" })
+      map("n", "<leader>lh", vim.lsp.buf.hover, { desc = "lsp hover" })
+      map("n", "<leader>ld", vim.lsp.buf.definition, { desc = "go to definitions" })
+      map("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "go to declaration" })
     end,
   }
 )

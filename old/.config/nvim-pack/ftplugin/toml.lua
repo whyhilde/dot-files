@@ -1,0 +1,28 @@
+-- local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+-- if filename ~= "Cargo.toml" then
+--   return
+-- end
+--
+--
+-- require("crates").setup({
+--   text = {
+--     searching = " searching...",
+--     loading = " loading...",
+--     version = " %s",
+--     prerelease = " %s",
+--     yanked = " %s yanked",
+--     nomatch = " not found",
+--     upgrade = " %s",
+--     error = " error fetching crate",
+--   },
+--   highlight = {
+--     searching = "Comment",
+--     loading = "Comment",
+--     version = "Comment",
+--     prerelease = "Comment",
+--     yanked = "Comment",
+--     nomatch = "Comment",
+--     upgrade = "Special",
+--     error = "Comment",
+--   },
+-- })

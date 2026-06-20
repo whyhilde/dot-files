@@ -29,6 +29,40 @@ local default = {
 }
 
 
+local hex_to_rgb = function(hex_str)
+  local hex = "[abcdef0-9][abcdef0-9]"
+  local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
+	hex_str = string.lower(hex_str)
+
+  assert(string.find(hex_str, pat) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
+
+  local red, green, blue = string.match(hex_str, pat)
+	return {
+    tonumber(red, 16),
+    tonumber(green, 16),
+    tonumber(blue, 16)
+  }
+end
+
+
+local function blend(fg, bg, alpha)
+  bg = hex_to_rgb(bg)
+  fg = hex_to_rgb(fg)
+
+  local blendChannel = function(i)
+    local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
+    return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+  end
+
+  return string.format("#%02X%02X%02X", blendChannel(1), blendChannel(2), blendChannel(3))
+end
+
+
+local function darken(hex, amount, bg)
+  return blend(hex, bg or "#000000", math.abs(amount))
+end
+
+
 function Colors.setup(config)
   config = config or default
 
@@ -135,10 +169,10 @@ function Colors.setup(config)
   hi("PmenuSbar", { bg = p.bg2 })
   hi("PmenuThumb", { bg = p.bg4 })
   hi("PmenuKind", { link = "Pmenu" })
-  hi("DiffDelete", { bg = p.dark_red })
-  hi("DiffAdd", { bg = p.dark_green })
-  hi("DiffChange", { bg = p.dark_aqua })
-  hi("DiffText", { bg = p.yellow, fg = p.bg0 })
+  hi("DiffDelete", { bg = darken(p.red, 0.18, p.bg0) })
+  hi("DiffAdd", { bg = darken(p.green, 0.18, p.bg0) })
+  hi("DiffChange", { bg = darken(p.blue, 0.07, p.bg0) })
+  hi("DiffText", { bg = darken(p.blue, 0.30, p.bg0) })
   hi("SpellCap", { link = "ColorsBlue" })
   hi("SpellBad", { link = "ColorsRed" })
   hi("SpellLocal", { link = "ColorsAqua" })
@@ -737,40 +771,6 @@ function Colors.setup(config)
   hi("CmpItemKindStructIcon", { link = "CmpItemKindStruct" })
   hi("CmpItemKindTypeParameterIcon", { link = "CmpItemKindTypeParameter" })
   hi("CmpCursorLine", { fg = p.bg0, bg = p.blue })
-
-  -- mfussenegger/nvim-dap
-  -- hi("DapBreakpointSymbol", { fg = p.red, bg = p.bg1 })
-  -- hi("DapStoppedSymbol", { fg = p.green, bg = p.bg1 })
-
-  -- rcarriga/nvim-dap-ui
-  -- hi("DapUIBreakpointsCurrentLine", { link = "ColorsYellow" })
-  -- hi("DapUIBreakpointsDisabledLine", { link = "ColorsGray" })
-  -- hi("DapUIBreakpointsInfo", { link = "ColorsAqua" })
-  -- hi("DapUIBreakpointsLine", { link = "ColorsYellow" })
-  -- hi("DapUIBreakpointsPath", { link = "ColorsBlue" })
-  -- hi("DapUICurrentFrameName", { link = "ColorsPurple" })
-  -- hi("DapUIDecoration", { link = "ColorsPurple" })
-  -- hi("DapUIEndofBuffer", { link = "EndOfBuffer" })
-  -- hi("DapUIFloatBorder", { link = "ColorsAqua" })
-  -- hi("DapUILineNumber", { link = "ColorsYellow" })
-  -- hi("DapUIModifiedValue", { link = "ColorsRed" })
-  -- hi("DapUIPlayPause", { link = "ColorsGreen" })
-  -- hi("DapUIRestart", { link = "ColorsGreen" })
-  -- hi("DapUIScope", { link = "ColorsBlue" })
-  -- hi("DapUISource", { link = "ColorsFg1" })
-  -- hi("DapUIStepBack", { link = "ColorsBlue" })
-  -- hi("DapUIStepInto", { link = "ColorsBlue" })
-  -- hi("DapUIStepOut", { link = "ColorsBlue" })
-  -- hi("DapUIStepOver", { link = "ColorsBlue" })
-  -- hi("DapUIStop", { link = "ColorsRed" })
-  -- hi("DapUIStoppedThread", { link = "ColorsBlue" })
-  -- hi("DapUIThread", { link = "ColorsBlue" })
-  -- hi("DapUIType", { link = "ColorsOrange" })
-  -- hi("DapUIUnavailable", { link = "ColorsGray" })
-  -- hi("DapUIWatchesEmpty", { link = "ColorsGray" })
-  -- hi("DapUIWatchesError", { link = "ColorsRed" })
-  -- hi("DapUIWatchesValue", { link = "ColorsYellow" })
-  -- hi("DapUIWinSelect", { link = "ColorsYellow" })
 
   -- nvim-mini/mini.nvim
   hi("MiniHipatternsFixme", { fg = p.bg0, bg = p.red })

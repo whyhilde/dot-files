@@ -35,16 +35,6 @@ require("mini.pick").setup({
     content_from_bottom = false,
     use_cache = false,
   },
-  source = {
-    items = nil,
-    name = nil,
-    cwd = nil,
-    match = nil,
-    show = nil,
-    preview = nil,
-    choose = nil,
-    choose_marked = nil,
-  },
   window = {
     config = function()
       local height = math.floor(0.618 * vim.o.lines)
@@ -67,8 +57,13 @@ require("mini.pick").setup({
 require("mini.extra").setup()
 
 
-vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>")
-vim.keymap.set("n", "<leader>ft", "<cmd>Pick grep_live<cr>")
-vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<cr>")
-vim.keymap.set("n", "<leader>fd", "<cmd>Pick diagnostic<cr>")
-vim.keymap.set("n", "<leader>fp", "<cmd>Pick hipatterns<cr>")
+local map = vim.keymap.set
+map("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "find files" })
+map("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "find buffers" })
+map("n", "<leader>ft", "<cmd>Pick grep_live<cr>", { desc = "find text" })
+map("n", "<leader>fd", "<cmd>Pick diagnostic<cr>", { desc = "find diagnostic" })
+map("n", "<leader>fp", "<cmd>Pick hipatterns<cr>", { desc = "find todo" })
+map("n", "<leader>fs", "<cmd>Pick colorschemes<cr>", { desc = "find colorschemes" })
+map("n", "<leader>fgb", "<cmd>Pick git_branches<cr>", { desc = "find git branches" })
+map("n", "<leader>fgc", "<cmd>Pick git_commits<cr>", { desc = "find git commits" })
+map("n", "<leader>fgf", "<cmd>Pick git_files<cr>", { desc = "find git files" })

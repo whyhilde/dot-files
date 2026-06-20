@@ -1,0 +1,64 @@
+-- local dap = require("dap")
+-- local dapui = require("dapui")
+-- local map = vim.keymap.set
+--
+-- -- vim.fn.sign_define("DapBreakpoint", { text = "b", texthl = "DapBreakpoint" })
+-- -- vim.fn.sign_define("DapBreakpointCondition", { text = "B", texthl = "DapBreakpointCondition" })
+-- -- vim.fn.sign_define("DapLogPoint", { text = "I", texthl = "DapLogPoint" })
+-- -- vim.fn.sign_define("DapStopped", { text = "X", texthl = "DapStopped" })
+-- -- vim.fn.sign_define("DapBreakpointRejected", { text = "!", texthl = "DapBreakpointRejected" })
+--
+--
+-- dapui.setup({
+--   layouts = {
+--     {
+--       elements = {
+--         { id = "scopes", size = 0.33, },
+--         { id = "watches", size = 0.33, },
+--         { id = "stacks", size = 0.33, },
+--       },
+--       position = "right",
+--       size = 0.4,
+--     },
+--     {
+--       elements = {
+--         { id = "console", size = 0.5, },
+--         { id = "repl", size = 0.5, },
+--       },
+--       position = "bottom",
+--       size = 0.3,
+--     },
+--   },
+--   icons = {
+--     expanded = " ",
+--     collapsed = " ",
+--     current_frame = " ",
+--   },
+-- })
+--
+--
+-- dap.listeners.after.event_initialized["dapui_config"] = function()
+--   dapui.open({
+--     reset = true,
+--   })
+-- end
+--
+-- dap.listeners.before.event_terminated["dapui_config"] = function()
+--   dapui.close()
+-- end
+--
+-- dap.listeners.before.event_exited["dapui_config"] = function()
+--   dapui.close()
+-- end
+--
+--
+-- map("n", "<F5>", function() dap.continue() end)
+-- map("n", "<F10>", function() dap.step_over() end)
+-- map("n", "<F11>", function() dap.step_into() end)
+-- map("n", "<F12>", function() dap.step_out() end)
+-- -- map("n", "<leader>db", function() dap.toggle_breakpoint() end)
+-- -- map("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("breakpoint condition: ")) end)
+-- -- map("n", "<leader>dl", function() dap.set_breakpoint(nil, nil, vim.fn.input("log point message: ")) end)
+-- -- map("n", "<leader>do", function() dap.repl.open() end)
+-- -- map("n", "<leader>dr", function() dap.run_last() end)
+-- -- map("n", "<leader>du", function() dapui.toggle() end)

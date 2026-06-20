@@ -9,11 +9,11 @@ OPTS = [
     "--cycle",
     "--prompt=> ",
     "--ghost=type & search",
-    "--color=spinner:#d4be98,hl:#ea6962",
-    "--color=fg:#fbf1c7,header:#ea6962,info:#d3869b,pointer:#7daea3",
-    "--color=marker:#d3869b,fg+:#7daea3,prompt:#7daea3,hl+:#ea6962",
-    "--color=selected-bg:#504945",
-    "--color=border:#665c54,label:#7daea3",
+    "--color=spinner:white,hl:red",
+    "--color=header:red,info:magenta,pointer:blue",
+    "--color=marker:magenta,fg+:blue,prompt:blue,hl+:red",
+    "--color=selected-bg:black",
+    "--color=border:black,label:blue",
 ]
 
 

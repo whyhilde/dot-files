@@ -37,9 +37,11 @@ fzf --fish | source
 
 # aliases
 alias d "doas"
+alias dn "doas nvim"
 alias pmi "doas pacman -S"
 alias pmu "doas pacman -Syu"
 alias pmr "doas pacman -R"
+
 alias cd "z"
 alias ci "zi"
 alias ls "eza --color --icons --group-directories-first --no-quotes"
@@ -48,13 +50,18 @@ alias cat "bat --theme gruvbox-dark --color always --style full"
 alias hs "history | rg"
 # alias n "nvim"
 alias n "NVIM_APPNAME=nvim-pack nvim"
-alias dn "doas nvim"
 alias c "clear"
+
+# RUST
+alias cr "cargo run --release"
+alias cb "cargo build --release"
+alias ct "cargo test --release"
 
 
 # environment variables
-set -gx TERM "xterm-256color"
+# set -gx TERM "xterm-256color"
 set -gx LC_ALL "en_US.UTF-8"
+# set -gx LC_TIME "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
 # set -gx FZF_DEFAULT_OPTS "--style full --smart-case --preview \"bat --wrap never --theme catppuccin --color always --number {}\" --reverse --no-info --prompt= --ghost= -1 -0 --color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#cdd6f4"
 # set -gx FZF_DEFAULT_OPTS "--color=spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#b4befe,fg+:#89b4fa,prompt:#cba6f7,hl+:#f38ba8 --color=selected-bg:#45475a --color=border:#6c7086,label:#89b4fa"
@@ -67,7 +74,7 @@ source ~/.config/fastfetch/fetches.fish
 
 
 # greeting
-set -g fish_greeting
+set -gx fish_greeting
 
 
 # autostart window manager

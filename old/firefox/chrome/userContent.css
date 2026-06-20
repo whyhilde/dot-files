@@ -1,0 +1,19 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+
+  body {
+    background: #1e1e2e !important;
+  }
+
+  .logo-and-wordmark {
+    display: none !important;
+  }
+
+  .body-wrapper {
+    display: none !important;
+  }
+  
+  .personalize-button {
+    display: none !important;
+  }
+
+}

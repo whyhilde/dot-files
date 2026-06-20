@@ -1,9 +1,9 @@
 {
   "logo": {
     "source": "~/.config/fastfetch/logos/uwufetch.txt",
-    "color": {
-      "1": "#89b4fa",
-    },
+    // "color": {
+    //   "1": "blue",
+    // },
     "padding": {
       "left": 0,
       "top": 2,
@@ -23,67 +23,67 @@
   "modules": [
     {
       "type": "title",
-      "color": {
-        "user": "#cdd6f4",
-        "at": "#cdd6f4",
-        "host": "#cdd6f4",
-      },
+      // "color": {
+      //   "user": "blue",
+      //   "at": "white",
+      //   "host": "blue",
+      // },
     },
     {
       "type": "os",
-      "key": "OWOS    ",
-      "keyColor": "#cdd6f4",
+      "key": "OS    ",
+      // "keyColor": "blue",
+      "format": "{pretty-name}",
     },
     {
       "type": "host",
-      "key": "HOST    ",
-      "keyColor": "#cdd6f4",
+      "key": "HOST  ",
+      // "keyColor": "blue",
     },
     {
       "type": "kernel",
-      "key": "KEWNEL  ",
-      "keyColor": "#cdd6f4",
+      "key": "KERNEL",
+      // "keyColor": "blue",
       "format": "{release}",
     },
     {
       "type": "cpu",
-      "key": "CPUWU   ",
-      "keyColor": "#cdd6f4",
+      "key": "CPU   ",
+      // "keyColor": "blue",
       "format": "{name}",
     },
     {
       "type": "gpu",
-      "key": "GPUWU   ",
-      "keyColor": "#cdd6f4",
+      "key": "GPU   ",
+      // "keyColor": "blue",
       "format": "{name}",
     },
     {
       "type": "memory",
-      "key": "MEMOWY  ",
-      "keyColor": "#cdd6f4",
-      "format": "{used} / {total}",
+      "key": "MEMORY",
+      // "keyColor": "blue",
+      "format": "{used} | {total}",
     },
     {
       "type": "shell",
-      "key": "SHEWW   ",
-      "keyColor": "#cdd6f4",
+      "key": "SHELL ",
+      // "keyColor": "blue",
     },
     {
       "type": "packages",
-      "key": "PKGS    ",
-      "keyColor": "#cdd6f4",
+      "key": "PKGS  ",
+      // "keyColor": "blue",
     },
     {
       "type": "uptime",
-      "key": "UWUPTIME",
-      "keyColor": "#cdd6f4",
+      "key": "UPTIME",
+      // "keyColor": "blue",
       "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
     },
     {
       "type": "colors",
       "block": {
         "range": [1, 7],
-        "width": 2,
       },
     },
   ],

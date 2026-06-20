@@ -1,0 +1,92 @@
+{
+  // base
+  "workbench.startupEditor": "none",
+  "window.zoomLevel": 1.5,
+  "window.openFilesInNewWindow": "off",
+  "editor.smoothScrolling": true,
+  "editor.detectIndentation": true,
+  "editor.suggestSelection": "first",
+  "editor.multiCursorModifier": "ctrlCmd",
+
+  // wrapping
+  "editor.wordWrap": "bounded",
+  "editor.wrappingIndent": "same",
+  "editor.wordWrapColumn": 100,
+
+  // editor
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "all",
+  "editor.guides.indentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.minimap.enabled": false,
+  "editor.matchBrackets": "never",
+  "editor.occurrencesHighlight": "off",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.stickyScroll.enabled": false,
+  "workbench.statusBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorCursor.background": "#000000",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
+    "editorOverviewRuler.selectionHighlightForeground": "#0000",
+    "editorOverviewRuler.rangeHighlightForeground": "#0000",
+    "editorOverviewRuler.wordHighlightForeground": "#0000",
+    "editorOverviewRuler.bracketMatchForeground": "#0000",
+    "editorOverviewRuler.findMatchForeground": "#0000",
+    "editorOverviewRuler.modifiedForeground": "#0000",
+    "editorOverviewRuler.deletedForeground": "#0000",
+    "editorOverviewRuler.warningForeground": "#0000",
+    "editorOverviewRuler.addedForeground": "#0000",
+    "editorOverviewRuler.errorForeground": "#0000",
+    "editorOverviewRuler.infoForeground": "#0000",
+    "editorOverviewRuler.border": "#0000",
+  },
+  
+  // window
+  "workbench.layoutControl.enabled": false,
+  "window.titleBarStyle": "native",
+  
+  // appearance
+  "workbench.colorTheme": "Everforest Pro Dark",
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  
+  // cursor
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  
+  // font
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontWeight": 600,
+  "editor.fontSize": 20,
+  "editor.lineHeight": 1.8,
+  
+  // tabulation
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+
+  // explorer
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.enableStickyScroll": false,
+  "explorer.compactFolders": false,
+
+  // autosave
+  "files.autoSave": "afterDelay",
+  "workbench.activityBar.location": "top",
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.icons": false,
+  "workbench.navigationControl.enabled": false,
+  "chat.agentsControl.enabled": false,
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "never",
+  "window.menuBarVisibility": "hidden",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "editor.cursorHeight": 25,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.secondarySideBar.defaultVisibility": "visible",
+}

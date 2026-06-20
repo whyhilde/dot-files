@@ -1,0 +1,112 @@
+{
+  "logo": {
+    "source": "Gentoo",
+    "color": {
+      "1": "magenta",
+      "2": "#fbf1c7",
+    },
+    "padding": {
+      "left": 0,
+      "top": 0,
+      "bottom": 0,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": ": ",
+    "size": {
+      "maxPrefix": "GB",
+      "ndigits": 2,
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "#89b4fa",
+        "at": "#cdd6f4",
+        "host": "#89b4fa",
+      },
+    },
+    {
+      "type": "break",
+    },
+    {
+      "type": "os",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "host",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "kernel",
+      "keyColor": "#89b4fa",
+      "format": "{release}",
+    },
+    {
+      "type": "uptime",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "display",
+      "compactType": "original-with-refresh-rate",
+      "key": "Resolution",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "de",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "packages",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "shell",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "terminal",
+      "keyColor": "#89b4fa",
+    },
+    {
+      "type": "cpu",
+      "keyColor": "#89b4fa",
+      "format": "{name}",
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "#89b4fa",
+      "format": "{name}",
+    },
+    {
+      "type": "memory",
+      "key": "Memory",
+      "keyColor": "#89b4fa",
+      "format": "{used} / {total}",
+    },
+    {
+      "type": "disk",
+      "folders": "/",
+      "key": "Disk (/)",
+      "keyColor": "#89b4fa",
+      "format": "{size-used} / {size-total}",
+    },
+    {
+      "type": "disk",
+      "folders": "/home",
+      "key": "Disk (/home)",
+      "keyColor": "#89b4fa",
+      "format": "{size-used} / {size-total}",
+    },
+    {
+      "type": "break",
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+    },
+  ],
+}

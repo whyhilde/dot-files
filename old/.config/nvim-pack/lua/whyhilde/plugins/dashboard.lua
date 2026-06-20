@@ -1,0 +1,76 @@
+return {
+  "nvim-mini/mini.starter",
+  version = "*",
+  opts = {
+    autoopen = true,
+    evaluate_single = true,
+    items = nil,
+    header = nil,
+    footer = "",
+    content_hooks = nil,
+    query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_-.",
+    silent = false,
+  },
+}
+
+-- return {
+--   "nvimdev/dashboard-nvim",
+--   lazy = false,
+--   opts = {
+--     theme = "doom",
+--     config = {
+--       header = {
+--         "",
+--         "",
+--         "",
+--         "",
+--         "",
+--         "███╗   ██╗██╗   ██╗██╗███╗   ███╗",
+--         "████╗  ██║██║   ██║██║████╗ ████║",
+--         "██╔██╗ ██║██║   ██║██║██╔████╔██║",
+--         "██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+--         "██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
+--         "╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
+--         "",
+--         "",
+--         "",
+--       },
+--       center = {
+--         {
+--           desc = "New file",
+--           desc_hl = "DashboardDesc",
+--           key = "e",
+--           key_hl = "DashboardKey",
+--           key_format = "(%s)",
+--           action = ":enew",
+--         },
+--         {
+--           desc = "Find files",
+--           desc_hl = "DashboardDesc",
+--           key = "f",
+--           key_hl = "DashboardKey",
+--           key_format = "(%s)",
+--           action = ":Telescope find_files",
+--         },
+--         {
+--           desc = "Recent files",
+--           desc_hl = "DashboardDesc",
+--           key = "r",
+--           key_hl = "DashboardKey",
+--           key_format = "(%s)",
+--           action = ":Telescope oldfiles",
+--         },
+--         {
+--           desc = "Restore session          ",
+--           desc_hl = "DashboardDesc",
+--           key = "s",
+--           key_hl = "DashboardKey",
+--           key_format = "(%s)",
+--           action = ":lua require(\"persistence\").load { last = true }",
+--         },
+--       },
+--       footer = {},
+--       vertical_center = true,
+--     },
+--   },
+-- }
